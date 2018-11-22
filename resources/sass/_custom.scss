@@ -1,0 +1,51 @@
+html, body {
+    color: var(--yellow);
+    background: var(--dark)
+}
+
+.btn {
+    text-align: -webkit-center;
+    text-align: center;
+    border: 1px solid var(--dark);
+    border-radius: 4px;
+    color: var(--yellow);
+    margin: 0 5px;
+    background-color: var(--dark);
+    -webkit-transition: background-color .3s ease-in-out;
+    transition: background-color .3s ease-in-out;
+    &:hover{
+        background-color: var(--yellow);
+        color: var(--dark);
+        border-color: var(--gray);
+    }
+}
+.bg-light {
+    background-color: var(--dark) !important;
+}
+.navbar-brand {
+    color: var(--yellow) !important;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+.jumbotron {
+    background-color: var(--gray); 
+} 
+.navbar-nav {
+    flex-direction: row;
+    width: 50%;
+}
+.nav-item {
+    flex-basis: 50%;
+    margin: auto;
+    
+}
+.navbar-nav .nav-link {
+    border: 1px solid var(--yellow); 
+}
+.navbar {
+    padding-left: 0;
+    padding-right: 0;
+}
+.col-form-label {
+    font-size: 1.4em;
+}
