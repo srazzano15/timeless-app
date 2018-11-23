@@ -35962,7 +35962,7 @@ $(function () {
     window.testFunction();
 
     /**
-     * 
+     *
      * AJAX REQUEST HEADERS
      * ------------------------------------------------------------------------ *
      */
@@ -35974,14 +35974,14 @@ $(function () {
     });
 
     /**
-     * 
+     *
      * JAVASCRIPT STOPWATCH APP
      * ------------------------------------------------------------------------ *
      * Designed to operate the time inputs on batch extraction submission form.
-     * Two seperate clocks will be running, one with 'lap' split functionality 
+     * Two seperate clocks will be running, one with 'lap' split functionality
      * to track each step of the batch submission process.
      * ------------------------------------------------------------------------ *
-     * 
+     *
      */
     var hours = minutes = seconds = milliseconds = 0;
     var prev_hours = prev_minutes = prev_seconds = prev_milliseconds = undefined;
@@ -36127,14 +36127,14 @@ $(function () {
     };
     /*--------------------------------------------------------------------------*/
     /**
-     * 
+     *
      * DATE INPUT FORMATTER FUNCTION
      * ------------------------------------------------------------------------ *
      * Designed to operate the time inputs on batch extraction submission form.
-     * Two seperate clocks will be running, one with 'lap' split functionality 
+     * Two seperate clocks will be running, one with 'lap' split functionality
      * to track each step of the batch submission process.
      * ------------------------------------------------------------------------ *
-     * 
+     *
      */
     // First, we need to add an event handler to check if the field is edited
     dateFormat = function dateFormat(x) {

@@ -28,8 +28,8 @@ html, body {
     font-weight: bold;
 }
 .jumbotron {
-    background-color: var(--gray); 
-} 
+    background-color: var(--gray);
+}
 .navbar-nav {
     flex-direction: row;
     width: 50%;
@@ -37,10 +37,10 @@ html, body {
 .nav-item {
     flex-basis: 50%;
     margin: auto;
-    
+
 }
 .navbar-nav .nav-link {
-    border: 1px solid var(--yellow); 
+    border: 1px solid var(--yellow);
 }
 .navbar {
     padding-left: 0;
@@ -48,4 +48,56 @@ html, body {
 }
 .col-form-label {
     font-size: 1.4em;
+}
+.table_header label.thead {
+    text-align: center !important;
+    font-weight: bold;
+}
+.wrapper {
+    flex-basis: 50%;
+}
+#lap, {
+    visibility: hidden;
+}
+#controls {
+    text-align: center;
+    .btn {
+        font-size: 1.4em;
+        border-color: var(--yellow);
+        padding: 8px 50px !important;
+    }
+}
+#batchTimer {
+    margin-bottom: 10px;
+}
+#timer {
+    background-color: var(--gray);
+    border: 1px solid var(--gray);
+    border-radius: 4px;
+    display: flex;
+    #timer_holder {
+        vertical-align: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.3em;
+        font-weight: 600;
+        letter-spacing: 2px;
+        span {
+            flex-basis: 33%;
+            text-align: center;
+            /* font-size: 75%; */
+            height: auto;
+            vertical-align: center;
+        }
+        @media screen and (max-width: 500px) {
+            flex-direction: column;
+        }
+    }
+}
+input[type="submit"] {
+    font-size: 1.4em;
+    border-color: var(--yellow);
+    padding: 8px 50px !important;
 }
