@@ -232,7 +232,24 @@ window.console.log(bagsArray); */
     window.weightCalculator();
 
 
+/**
+ *
+ * ADD / REMOVE ROW FUNCTIONS
+ * ------------------------------------------------------------------------ *
+ * On extraction blade, form rows will be able to be added and removed
+ * dynamically per need of the user submitting batch
+ * ------------------------------------------------------------------------ *
+ *
+ */
+    dynamicRows = () => {
+        i = 1
+        $(`#addRow`).click(function() {
+            $(`div[name="row[${i}]"]`).removeAttr(`hidden`);
+             return ++i;
+        });
 
+    }
 
+    window.dynamicRows();
 
 }); // end ready function

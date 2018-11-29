@@ -101,3 +101,34 @@ input[type="submit"] {
     border-color: var(--yellow);
     padding: 8px 50px !important;
 }
+
+footer {
+    .fixed-bottom {
+        text-align: center;
+        max-height: 25px;
+        bottom: 5px;
+        span {
+            font-size: auto;
+        }
+    }
+}
+.table {
+    margin-top: 25px;
+    border-color: var(--dark);
+
+    tbody tr:nth-child(even) {
+        background: var(--gray);
+
+    }
+    thead tr {
+        background: var(--warning);
+        color: var(--dark);
+    }
+    td, th {
+        border-color: var(--dark);
+    }
+}
+#addRow, #rmvRow {
+    color: var(--dark);
+    background: var(--yellow);
+}

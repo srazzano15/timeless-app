@@ -10612,3 +10612,38 @@ input[type="submit"] {
   padding: 8px 50px !important;
 }
 
+footer .fixed-bottom {
+  text-align: center;
+  max-height: 25px;
+  bottom: 5px;
+}
+
+footer .fixed-bottom span {
+  font-size: auto;
+}
+
+.table {
+  margin-top: 25px;
+  border-color: var(--dark);
+}
+
+.table tbody tr:nth-child(even) {
+  background: var(--gray);
+}
+
+.table thead tr {
+  background: var(--warning);
+  color: var(--dark);
+}
+
+.table td,
+.table th {
+  border-color: var(--dark);
+}
+
+#addRow,
+#rmvRow {
+  color: var(--dark);
+  background: var(--yellow);
+}
+

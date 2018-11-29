@@ -36140,7 +36140,7 @@ $(function () {
      *
      */
 
-    weightCalculator = function weightCalculator() {
+    weightCalculator = function weightCalculator(field, sumField) {
 
         var total = 0;
         var bagsArray = '.bag_weight';
@@ -36152,9 +36152,27 @@ $(function () {
 
             $('#totalBatchWeight').val(total);
         });
-        //$(total).val(sum);
     };
     window.weightCalculator();
+
+    /**
+     *
+     * ADD / REMOVE ROW FUNCTIONS
+     * ------------------------------------------------------------------------ *
+     * On extraction blade, form rows will be able to be added and removed
+     * dynamically per need of the user submitting batch
+     * ------------------------------------------------------------------------ *
+     *
+     */
+    dynamicRows = function dynamicRows() {
+        i = 1;
+        $('#addRow').click(function () {
+            $('div[name="row[' + i + ']"]').removeAttr('hidden');
+            return ++i;
+        });
+    };
+
+    window.dynamicRows();
 }); // end ready function
 
 /***/ }),
