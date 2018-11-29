@@ -5,11 +5,12 @@ $(function() {
  */
 
 
-testFunction = () => {console.log(`This shit works!`)};
+testFunction = () => {console.log(`This shit works 2!`)};
 window.testFunction();
 
-
-
+//weightCalculator();
+/* let bagsArray = $('.bag_weight').val();
+window.console.log(bagsArray); */
 
 
 
@@ -203,25 +204,35 @@ window.testFunction();
         return ++i;
     };
 /*--------------------------------------------------------------------------*/
+
 /**
  *
- * DATE INPUT FORMATTER FUNCTION
+ * Automatic Weight Add FUNCTION
  * ------------------------------------------------------------------------ *
- * Designed to operate the time inputs on batch extraction submission form.
- * Two seperate clocks will be running, one with 'lap' split functionality
- * to track each step of the batch submission process.
+ * Will add total value to weight field as weights get entered.
  * ------------------------------------------------------------------------ *
  *
  */
-    // First, we need to add an event handler to check if the field is edited
-    dateFormat = ( x ) => {
-        $(`${x}`).change(function() {
-            if ( $(this).length === 2 ) {
-                $(this).concat('-');
-            }
+
+    weightCalculator = ( field, sumField ) => {
+
+        let total = 0;
+        let bagsArray = '.bag_weight';
+        $(bagsArray).change(function() {
+
+
+            value = parseFloat($(this).val());
+            total = total += value;
+            console.log(total);
+
+           $('#totalBatchWeight').val(total);
         });
+
     }
-    window.dateFormat(`#dateFilled`);
+    window.weightCalculator();
+
+
+
 
 
 }); // end ready function

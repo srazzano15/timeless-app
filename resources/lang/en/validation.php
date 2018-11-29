@@ -125,9 +125,19 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'dfilled' => [
+            'required' => 'Please enter a date filled!',
         ],
+        'drun' => [
+            'required' => 'Please enter a date run!',
+        ],
+        'cooler' => [
+            'required' => 'Please enter a Cooler Number!',
+        ],
+        'bnum' => [
+            'required' => 'Please enter a Batch Number!',
+            'unique' => 'This batch number has already been submitted!'
+        ]
     ],
 
     /*

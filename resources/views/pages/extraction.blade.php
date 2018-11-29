@@ -2,7 +2,6 @@
 
 @section('content')
 
-    {{-- @include('inc.stopwatch') --}}
 
     @include('inc.batchform')
 
