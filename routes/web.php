@@ -1,6 +1,8 @@
 <?php
 
 use Carbon\Carbon;
+use App\BatchSubmit;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,9 +14,9 @@ use Carbon\Carbon;
 |
 */
 
-Route::get('/', 'PagesController@index');
-
 Auth::routes();
+
+Route::get('/', 'PagesController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -24,14 +26,15 @@ Route::get('/search', 'PagesController@search');
 
 /**
  * --------------------------------------------------------------------------
- * Database CRUD routes
+ * ELOQUENT CRUD
  * --------------------------------------------------------------------------
  */
 
 Route::post('/extraction', 'BatchInsertController@storeSubmit');
+
 Route::post('/extraction', 'BatchInsertController@storeBag');
 
+Route::get('/home', 'BatchReadController@tableRead');
 
-/* Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home'); */
+

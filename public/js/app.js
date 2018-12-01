@@ -13708,8 +13708,8 @@ module.exports = __webpack_require__(37);
 __webpack_require__(12);
 
 /**
- * Finally, we will add in some custom scripts made for the purpose of making
- * custom JS apps work.
+ * Finally, we will add in our own custom scripts made for the purpose of making
+ * custom JS apps work as well as scripts for plugins.
  */
 
 __webpack_require__(36);
@@ -36165,27 +36165,23 @@ $(function () {
      *
      */
     dynamicRows = function dynamicRows() {
-        i = 1;
-        remTop = 3.315;
-        remBot = 3.315;
+        i = 8;
 
         $('#addRow').click(function () {
 
             $('div[name="row[' + i + ']"]').removeAttr('hidden');
 
-            $('#dynamicRowBtns').animate({ top: remTop + 'rem' });
-            remTop += 3.315;
-            return ++i;
+            return --i;
         });
 
         $('#rmvRow').click(function () {
-            if (i > 0) {
 
-                $('div[name="row[' + (i - 1) + ']"]').attr('hidden', true);
+            if (i < 8) {
+                i++;
 
-                $('#dynamicRowBtns').animate({ bottom: remBot + 'rem' });
-                remBot += 3.315;
-                return --i;
+                $('div[name="row[' + i + ']"]').attr('hidden', true);
+
+                return i;
             }
         });
     };

@@ -9,8 +9,8 @@ require('./bootstrap');
 
 
 /**
- * Finally, we will add in some custom scripts made for the purpose of making
- * custom JS apps work.
+ * Finally, we will add in our own custom scripts made for the purpose of making
+ * custom JS apps work as well as scripts for plugins.
  */
 
  require('./custom_scripts');

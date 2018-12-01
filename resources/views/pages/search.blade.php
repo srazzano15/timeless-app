@@ -2,5 +2,9 @@
 
 
 @section('content')
-    Here is content!
+
+
+    {{-- @include('inc.DataTable') --}}
+
+
 @endsection
