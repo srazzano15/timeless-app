@@ -40,7 +40,7 @@
                     <label for="bagWeight" class="col-3 col-form-label">Bag Weight</label>
                     <label for="flowerWeight" class="col-3 col-form-label">Flower Weight</label>
                 </div>
-                <div class="form-group row tbody_row" name="row[0]">
+                <div class="form-group row tbody_row" name="row[]">
                     <div class="col-3">
                         <input type="text" class="table_input form-control" aria-describedby="packageId" name="bag_number[]">
                     </div>
@@ -50,7 +50,7 @@
                     <div class="col-3">
                         <input type="number" class="table_input form-control flower_weight" aria-describedby="flowerWeight" name="flow_weight[]">
                     </div>
-                    <div class="col-3">
+                    <div class="col-3" id="dynamicRowBtns">
                         <input type="button" id="addRow" class="btn" value="Add Row">
                         <input type="button" id="rmvRow" class="btn" value="Remove Row">
                     </div>

@@ -9,9 +9,9 @@
         <div class="row justify-content-center">
             <span>Review the stuffed batches awaiting to be run or submit a new batch now!</span>
         </div>
-        <div class="wrapper">
-            <div class="container">
-                <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="wrapper" id="dashboardWrapper">
                     <table class="table table-striped table-bordered table-condensed">
                         <thead class="thead-default">
                             <tr>

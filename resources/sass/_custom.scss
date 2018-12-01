@@ -114,21 +114,31 @@ footer {
 }
 .table {
     margin-top: 25px;
-    border-color: var(--dark);
+    border-color: var(--yellow);
 
     tbody tr:nth-child(even) {
         background: var(--gray);
 
     }
     thead tr {
-        background: var(--warning);
+        background: var(--yellow);
         color: var(--dark);
     }
     td, th {
-        border-color: var(--dark);
+        border-color: var(--yellow);
     }
 }
 #addRow, #rmvRow {
     color: var(--dark);
     background: var(--yellow);
+}
+.card {
+    border-color: var(--yellow);
+
+    .card-header {
+        background: var(--dark);
+    }
+    .card-body {
+        background: var(--gray);
+    }
 }

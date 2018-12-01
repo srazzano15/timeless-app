@@ -243,9 +243,28 @@ window.console.log(bagsArray); */
  */
     dynamicRows = () => {
         i = 1
+        remTop = 3.315;
+        remBot = 3.315;
+
         $(`#addRow`).click(function() {
+
             $(`div[name="row[${i}]"]`).removeAttr(`hidden`);
-             return ++i;
+
+            $(`#dynamicRowBtns`).animate({top: `${remTop}rem`});
+            remTop += 3.315;
+            return ++i;
+        });
+
+        $(`#rmvRow`).click(function() {
+            if (i > 0) {
+
+                $(`div[name="row[${i-1}]"]`).attr(`hidden`, true);
+
+                $(`#dynamicRowBtns`).animate({bottom: `${remBot}rem`});
+                remBot += 3.315;
+                remTop -= 3.315;
+                return --i;
+            }
         });
 
     }

@@ -14,7 +14,9 @@ use Carbon\Carbon;
 
 Route::get('/', 'PagesController@index');
 
+Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/extraction', 'PagesController@extraction');
 
@@ -30,6 +32,6 @@ Route::post('/extraction', 'BatchInsertController@storeSubmit');
 Route::post('/extraction', 'BatchInsertController@storeBag');
 
 
-Auth::routes();
+/* Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home'); */

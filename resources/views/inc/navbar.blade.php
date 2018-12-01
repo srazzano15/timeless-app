@@ -49,7 +49,7 @@
                         </li> --}}
                     @else
                         <li class="nav-item">
-                            <a class="nav-link btn" href="/">Home</a>
+                            <a class="nav-link btn" href="/home">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link btn" href="/extraction">Submit A Batch</a>
