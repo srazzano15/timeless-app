@@ -36164,29 +36164,33 @@ $(function () {
      * ------------------------------------------------------------------------ *
      *
      */
-    dynamicRows = function dynamicRows() {
+    dynamicRows = function dynamicRows(add, rmv, tbl, i) {
         i = 8;
 
-        $('#addRow').click(function () {
+        $(add).click(function () {
 
-            $('div[name="row[' + i + ']"]').removeAttr('hidden');
+            if (i > -1) {
 
-            return --i;
+                $('div[name="' + tbl + '[' + i + ']"]').removeAttr('hidden');
+
+                return --i;
+            }
         });
 
-        $('#rmvRow').click(function () {
+        $(rmv).click(function () {
 
             if (i < 8) {
                 i++;
 
-                $('div[name="row[' + i + ']"]').attr('hidden', true);
+                $('div[name="' + tbl + '[' + i + ']"]').attr('hidden', true);
 
                 return i;
             }
         });
     };
 
-    window.dynamicRows();
+    dynamicRows('#addRow', '#rmvRow', 'row');
+    dynamicRows('#addPillow', '#rmvPillow', 'pillow');
 }); // end ready function
 
 /***/ }),

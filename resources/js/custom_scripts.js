@@ -241,24 +241,25 @@ window.console.log(bagsArray); */
  * ------------------------------------------------------------------------ *
  *
  */
-    dynamicRows = () => {
+    dynamicRows = ( add, rmv, tbl, i) => {
         i = 8
 
-        $(`#addRow`).click(function() {
+        $(add).click(function() {
 
+                if (i > -1) {
 
+                    $(`div[name="${tbl}[${i}]"]`).removeAttr(`hidden`);
 
-                $(`div[name="row[${i}]"]`).removeAttr(`hidden`);
-
-                return --i;
+                    return --i;
+                }
         });
 
-        $(`#rmvRow`).click(function() {
+        $(rmv).click(function() {
 
             if (i < 8) {
                 i++;
 
-                $(`div[name="row[${i}]"]`).attr(`hidden`, true);
+                $(`div[name="${tbl}[${i}]"]`).attr(`hidden`, true);
 
                 return i;
             }
@@ -266,6 +267,8 @@ window.console.log(bagsArray); */
 
     }
 
-    window.dynamicRows();
+    dynamicRows( `#addRow`, `#rmvRow`, `row` );
+    dynamicRows( `#addPillow`, `#rmvPillow`, `pillow` );
+
 
 }); // end ready function

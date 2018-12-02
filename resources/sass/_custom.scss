@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     color: var(--yellow);
     background: var(--dark)
 }
@@ -13,68 +14,87 @@ html, body {
     background-color: var(--dark);
     -webkit-transition: background-color .3s ease-in-out;
     transition: background-color .3s ease-in-out;
-    &:hover{
+
+    &:hover {
         background-color: var(--yellow);
         color: var(--dark);
         border-color: var(--gray);
     }
 }
+
 .bg-light {
     background-color: var(--dark) !important;
 }
+
 .navbar-brand {
     color: var(--yellow) !important;
     font-size: 1.8em;
     font-weight: bold;
 }
+
 .jumbotron {
     background-color: var(--gray);
 }
+
 .navbar-nav {
     flex-direction: row;
     width: 50%;
 }
+
 .nav-item {
     flex-basis: 50%;
     margin: auto;
 
 }
+
 .navbar-nav .nav-link {
     border: 1px solid var(--yellow);
 }
+
 .navbar {
     padding-left: 0;
     padding-right: 0;
 }
-.col-form-label {
-    font-size: 1.4em;
+
+.formElement .form-row label.form-label {
+    font-size: 1.1rem;
+    text-align: center;
 }
+
 .table_header label.thead {
     text-align: center !important;
     font-weight: bold;
 }
+
 .wrapper {
     flex-basis: 50%;
 }
-#lap, {
+
+#lap,
+    {
     visibility: hidden;
 }
+
 #controls {
     text-align: center;
+
     .btn {
         font-size: 1.4em;
         border-color: var(--yellow);
         padding: 8px 50px !important;
     }
 }
+
 #batchTimer {
     margin-bottom: 10px;
 }
+
 #timer {
     background-color: var(--gray);
     border: 1px solid var(--gray);
     border-radius: 4px;
     display: flex;
+
     #timer_holder {
         vertical-align: center;
         display: flex;
@@ -84,6 +104,7 @@ html, body {
         font-size: 1.3em;
         font-weight: 600;
         letter-spacing: 2px;
+
         span {
             flex-basis: 33%;
             text-align: center;
@@ -91,15 +112,16 @@ html, body {
             height: auto;
             vertical-align: center;
         }
+
         @media screen and (max-width: 500px) {
             flex-direction: column;
         }
     }
 }
+
 input[type="submit"] {
     font-size: 1.4em;
     border-color: var(--yellow);
-    padding: 8px 50px !important;
 }
 
 footer {
@@ -107,11 +129,13 @@ footer {
         text-align: center;
         max-height: 25px;
         bottom: 5px;
+
         span {
             font-size: auto;
         }
     }
 }
+
 .table {
     margin-top: 25px;
     border-color: var(--yellow);
@@ -120,24 +144,44 @@ footer {
         background: var(--gray);
 
     }
+
     thead tr {
         background: var(--yellow);
         color: var(--dark);
     }
-    td, th {
+
+    td,
+    th {
         border-color: var(--yellow);
     }
 }
-#addRow, #rmvRow {
-    color: var(--dark);
-    background: var(--yellow);
+
+.addRowBtn {
+    background: var(--green) !important;
+    color: var(--light) !important;
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 0 .75rem;
+    border-radius: 10px;
 }
+
+
+.rmvRowBtn {
+    background: var(--red) !important;
+    color: var(--light) !important;
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 0 .75rem;
+    border-radius: 10px;
+}
+
 .card {
     border-color: var(--yellow);
 
     .card-header {
         background: var(--dark);
     }
+
     .card-body {
         background: var(--gray);
     }

@@ -10527,8 +10527,9 @@ body {
   padding-right: 0;
 }
 
-.col-form-label {
-  font-size: 1.4em;
+.formElement .form-row label.form-label {
+  font-size: 1.1rem;
+  text-align: center;
 }
 
 .table_header label.thead {
@@ -10609,7 +10610,6 @@ body {
 input[type="submit"] {
   font-size: 1.4em;
   border-color: var(--yellow);
-  padding: 8px 50px !important;
 }
 
 footer .fixed-bottom {
@@ -10641,10 +10641,22 @@ footer .fixed-bottom span {
   border-color: var(--yellow);
 }
 
-#addRow,
-#rmvRow {
-  color: var(--dark);
-  background: var(--yellow);
+.addRowBtn {
+  background: var(--green) !important;
+  color: var(--light) !important;
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 0 .75rem;
+  border-radius: 10px;
+}
+
+.rmvRowBtn {
+  background: var(--red) !important;
+  color: var(--light) !important;
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 0 .75rem;
+  border-radius: 10px;
 }
 
 .card {
