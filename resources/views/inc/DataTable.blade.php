@@ -22,7 +22,7 @@
                         @else
                             <span>No pending batches at this time!</span>
                             <span>Please submit a new batch now!</span>
-                            <a class="btn btn-primary" href="{{ route('/extraction') }}" role="button">Submit New Batch</a>
+                            <a class="btn btn-primary" href="{{ url('extraction') }}" role="button">Submit New Batch</a>
                         @endif
                     </tbody>
                 </table>

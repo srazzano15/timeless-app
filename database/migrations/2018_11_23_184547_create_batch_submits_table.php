@@ -16,11 +16,16 @@ class CreateBatchSubmitsTable extends Migration
         if (!Schema::hasTable('batch_submits')) {
             Schema::create('batch_submits', function (Blueprint $table) {
                 $table->increments('id');
-                $table->timestamps();
+                $table->string('status');
+                $table->string('submitter');
                 $table->string('batch_id');
-                $table->date('date_filled');
                 $table->integer('cooler');
+                $table->string('kegs_filled');
+                $table->date('date_filled');
                 $table->date('date_run');
+                $table->decimal('total_flower_weight', 8, 2);
+                $table->decimal('total_batch_weight', 8, 2);
+                $table->timestamps();
             });
         }
     }

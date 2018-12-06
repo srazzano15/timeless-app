@@ -151,6 +151,7 @@ return [
          * Package Service Providers...
          */
         Yajra\DataTables\DataTablesServiceProvider::class,
+        Clarkeash\Doorman\Providers\DoormanServiceProvider::class,
 
 
 
@@ -213,6 +214,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Carbon' => Carbon\Carbon::class,
         'DataTables' => Yajra\DataTables\DataTablesServiceProvider::class,
+        'Doorman' => Clarkeash\Doorman\Facades\Doorman::class,
 
     ],
 

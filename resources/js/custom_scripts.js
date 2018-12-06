@@ -1,21 +1,11 @@
 $(function() {
 
-/**
- * FUNCTION CALLS
- */
-
-
+// check to make sure shit is working
 testFunction = () => {console.log(`This shit works 2!`)};
 window.testFunction();
 
-//weightCalculator();
-/* let bagsArray = $('.bag_weight').val();
-window.console.log(bagsArray); */
-
-
 
 /**
- *
  * AJAX REQUEST HEADERS
  * ------------------------------------------------------------------------ *
  */
@@ -193,15 +183,38 @@ window.console.log(bagsArray); */
     }
     // populate split fields
     const lapInterval = ( i ) => {
+
+        // if the 4 split fields are set...
+        if (i > 3) {
+            total_hours = parseInt($("#hours").html());
+            total_minutes = parseInt($("#minutes").html());
+            total_seconds = parseInt($("#seconds").html());
+
+            // parse the total time and set value of total_time
+            $(`#total_time`)
+                .val(`${total_hours}:${total_minutes}:${total_seconds}`)
+                .css('background-color', 'var(--success)');
+
+            // pause the clock as to signify an end to timing
+            clearInterval(timeUpdate);
+
+            // disable the timing buttons
+            $(`#controls button`).prop(`disabled`, true);
+
+        } else {
+
         // lets get current time integers as variables
         let splitHours = parseInt($("#lapHours").html());
         let splitMinutes = parseInt($("#lapMinutes").html());
         let splitSeconds = parseInt($("#lapSeconds").html());
 
-        // plug values into input
-        $(`#split_${i}`).val(`${splitHours}:${splitMinutes}:${splitSeconds}`);
+        // plug value into split_[i]
+        $(`#split_${i}`)
+            .val(`${splitHours}:${splitMinutes}:${splitSeconds}`)
+            .css('background-color', 'var(--success)');
 
         return ++i;
+        }
     };
 /*--------------------------------------------------------------------------*/
 
@@ -216,20 +229,27 @@ window.console.log(bagsArray); */
 
     weightCalculator = ( field, sumField ) => {
 
+        // set total value variable and set param for input column array
         let total = 0;
-        let bagsArray = '.bag_weight';
-        $(bagsArray).change(function() {
+        let bagsArray = field;
 
+        // on the change of a field value from that array
+        // parse the input value and add the total to the
+        // current total value var
+        $(bagsArray).change(function() {
 
             value = parseFloat($(this).val());
             total = total += value;
-            console.log(total);
 
-           $('#totalBatchWeight').val(total);
+            // set the value of the 'total' field to be
+            // the new value
+            $(sumField).val(total);
         });
 
     }
-    window.weightCalculator();
+
+    weightCalculator(`.flower_weight`, `#totalFlowerWeight`);
+    weightCalculator(`.pillow_weight`, `#totalBatchWeight`);
 
 
 /**

@@ -1,7 +1,7 @@
 <div class="container">
-
     @include('inc.stopwatch')
 </div>
+<!--end stopwatch-->
 <div class="container">
     <form action="{{URL::to('/extraction')}}" method="post">
 
@@ -33,6 +33,10 @@
                         <label for="kegsFilled" class="form-label">Kegs Filled</label>
                             <input type="text" class="form-control" name="kegsFilled" id="kegsFilled" aria-describedby="kegsFilled" value="{{ old('kegsFilled') }}" placeholder="1, 5, 8">
                         <small class="text-danger">{{ $errors->first('kegsFilled') }}</small>
+                    </div>
+                    <div class="col-2">
+                        <label for="submitter" class="form-label">Submitter</label>
+                            <input type="text" class="form-control" name="submitter" id="submitter" aria-describedby="submitter" value=" {{ $user->name }} " readonly>
                     </div>
                 </div>
             </div>
@@ -185,47 +189,47 @@
                     </div>
                     <div class="form-group form-row tbody_row" name="pillow[1]" hidden>
                         <div class="col-6">
-                            <input type="text" class="table_input form-control" aria-describedby="pillowWeight" name="pillow[]" value="{{ old('pillow[1]') }}">
+                            <input type="text" class="table_input pillow_weight form-control" aria-describedby="pillowWeight" name="pillow[]" value="{{ old('pillow[1]') }}">
                         </div>
                     </div>
                     <div class="form-group form-row tbody_row" name="pillow[2]" hidden>
                         <div class="col-6">
-                            <input type="text" class="table_input form-control" aria-describedby="pillowWeight" name="pillow[]" value="{{ old('pillow[2]') }}">
+                            <input type="text" class="table_input pillow_weight form-control" aria-describedby="pillowWeight" name="pillow[]" value="{{ old('pillow[2]') }}">
                         </div>
                     </div>
                     <div class="form-group form-row tbody_row" name="pillow[3]" hidden>
                         <div class="col-6">
-                            <input type="text" class="table_input form-control" aria-describedby="pillowWeight" name="pillow[]" value="{{ old('pillow[3]') }}">
+                            <input type="text" class="table_input pillow_weight form-control" aria-describedby="pillowWeight" name="pillow[]" value="{{ old('pillow[3]') }}">
                         </div>
                     </div>
                     <div class="form-group form-row tbody_row" name="pillow[4]" hidden>
                         <div class="col-6">
-                            <input type="text" class="table_input form-control" aria-describedby="pillowWeight" name="pillow[]" value="{{ old('pillow[4]') }}">
+                            <input type="text" class="table_input pillow_weight form-control" aria-describedby="pillowWeight" name="pillow[]" value="{{ old('pillow[4]') }}">
                         </div>
                     </div>
                     <div class="form-group form-row tbody_row" name="pillow[5]" hidden>
                         <div class="col-6">
-                            <input type="text" class="table_input form-control" aria-describedby="pillowWeight" name="pillow[]" value="{{ old('pillow[5]') }}">
+                            <input type="text" class="table_input pillow_weight form-control" aria-describedby="pillowWeight" name="pillow[]" value="{{ old('pillow[5]') }}">
                         </div>
                     </div>
                     <div class="form-group form-row tbody_row" name="pillow[6]" hidden>
                         <div class="col-6">
-                            <input type="text" class="table_input form-control" aria-describedby="pillowWeight" name="pillow[]" value="{{ old('pillow[6]') }}">
+                            <input type="text" class="table_input pillow_weight form-control" aria-describedby="pillowWeight" name="pillow[]" value="{{ old('pillow[6]') }}">
                         </div>
                     </div>
                     <div class="form-group form-row tbody_row" name="pillow[7]" hidden>
                         <div class="col-6">
-                            <input type="text" class="table_input form-control" aria-describedby="pillowWeight" name="pillow[]" value="{{ old('pillow[7]') }}">
+                            <input type="text" class="table_input pillow_weight form-control" aria-describedby="pillowWeight" name="pillow[]" value="{{ old('pillow[7]') }}">
                         </div>
                     </div>
                     <div class="form-group form-row tbody_row" name="pillow[8]" hidden>
                         <div class="col-6">
-                            <input type="text" class="table_input form-control" aria-describedby="pillowWeight" name="pillow[]" value="{{ old('pillow[8]') }}">
+                            <input type="text" class="table_input pillow_weight form-control" aria-describedby="pillowWeight" name="pillow[]" value="{{ old('pillow[8]') }}">
                         </div>
                     </div>
                     <div class="form-group form-row tbody_row" name="pillow[9]">
                         <div class="col-6">
-                            <input type="text" class="table_input form-control" aria-describedby="pillowWeight" name="pillow[]" value="{{ old('pillow[9]') }}">
+                            <input type="text" class="table_input pillow_weight form-control" aria-describedby="pillowWeight" name="pillow[]" value="{{ old('pillow[9]') }}">
                         </div>
                         <div class="col" id="pillowBtns">
                             <input type="button" id="addPillow" class="btn addRowBtn" value="+">
@@ -246,19 +250,19 @@
                     <div class="form-group form-row">
                         <div class="col-2">
                             <label for="resTempFirst" class=" form-label">Res Temp (1st)</label>
-                            <input type="text" class="form-control" name="resTempFirst" id="resTempFirst">
+                            <input type="number" class="form-control" name="resTempFirst" id="resTempFirst">
                         </div>
                         <div class="col-2">
                             <label for="splitOne" class=" form-label">Soak Time (1st)</label>
-                            <input type="text" class="time_split form-control" name="split[0]" id="split_0" readonly>
+                            <input type="text" class="time_split form-control" name="split[0]" id="split_0" value="" readonly>
                         </div>
                         <div class="col-2">
                             <label for="splitTwo" class="form-label">Aggitation Time (1st)</label>
-                            <input type="text" class="time_split form-control" name="split[1]" id="split_1" readonly>
+                            <input type="text" class="time_split form-control" name="split[1]" id="split_1" value="" readonly>
                         </div>
                         <div class="col-2">
                             <label for="exitTempFirst" class=" form-label">Exit Temp (1st)</label>
-                            <input type="text" class="form-control" name="exitTempFirst" id="exitTempFirst">
+                            <input type="number" class="form-control" name="exitTempFirst" id="exitTempFirst">
                         </div>
                     </div>
                     <div class="form-group form-row">
@@ -268,11 +272,11 @@
                         </div>
                         <div class="col-2">
                             <label for="splitThree" class="form-label">Soak Time (2nd)</label>
-                            <input type="text" class="time_split form-control" name="split[2]" id="split_2" readonly>
+                            <input type="text" class="time_split form-control" name="split[2]" id="split_2" value="" readonly>
                         </div>
                         <div class="col-2">
                             <label for="splitFour" class="form-label">Aggitation Time (2nd)</label>
-                            <input type="text" class="time_split form-control" name="split[3]" id="split_3" readonly>
+                            <input type="text" class="time_split form-control" name="split[3]" id="split_3" value="" readonly>
                         </div>
                         <div class="col-2">
                             <label for="exitTempScnd" class=" form-label">Exit Temp (2nd)</label>
@@ -280,7 +284,7 @@
                         </div>
                         <div class="col-2">
                             <label for="totalTime" class="form-label">Total Batch Time</label>
-                            <input type="text" class="time_split form-control" name="totTime" id="total_time" readonly>
+                            <input type="text" class="time_split form-control" name="totTime" id="total_time" value="" readonly>
                         </div>
                     </div>
                 </div>

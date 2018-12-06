@@ -3,6 +3,8 @@
 use Carbon\Carbon;
 use App\BatchSubmit;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,15 +16,17 @@ use App\BatchSubmit;
 |
 */
 
-Auth::routes();
+
 
 Route::get('/', 'PagesController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/extraction', 'PagesController@extraction');
+Route::get('/extraction', 'PagesController@extraction')->name('extraction');
 
-Route::get('/search', 'PagesController@search');
+Route::get('/search', 'PagesController@search')->name('search');
+
+Auth::routes();
 
 /**
  * --------------------------------------------------------------------------
@@ -32,9 +36,10 @@ Route::get('/search', 'PagesController@search');
 
 Route::post('/extraction', 'BatchInsertController@storeSubmit');
 
-Route::post('/extraction', 'BatchInsertController@storeBag');
+//Route::post('/extraction', 'BatchInsertController@storeBag');
 
 Route::get('/home', 'BatchReadController@tableRead');
+
 
 
 

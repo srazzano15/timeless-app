@@ -1,7 +1,7 @@
 <div class="container" id="batchTimer">
     <div class="row" id="stopwatch">
         <div class="col-2" id="timer">
-            <div id="timer_holder" style="width: auto;">
+            <div id="timer_holder">
                 <span id="hours">00</span>
                 <span class="colon">:</span>
                 <span id="minutes">00</span>
