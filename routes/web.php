@@ -16,7 +16,7 @@ use App\BatchSubmit;
 |
 */
 
-
+Auth::routes();
 
 Route::get('/', 'PagesController@index');
 
@@ -26,7 +26,7 @@ Route::get('/extraction', 'PagesController@extraction')->name('extraction');
 
 Route::get('/search', 'PagesController@search')->name('search');
 
-Auth::routes();
+
 
 /**
  * --------------------------------------------------------------------------

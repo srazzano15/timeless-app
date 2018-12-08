@@ -10,13 +10,13 @@
             <div class="formElement" id="batch_form">
                 <div class="form-group form-row">
                     <div class="col-2">
-                        <label for="batchNumber" class="form-label">Batch ID</label>
-                            <input type="text" class="form-control" name="bnum" id="batchNumber" aria-describedby="batchNumberInput" value="{{ old('bnum') }}" placeholder="MKA-...">
+                        <label for="batchtext" class="form-label">Batch ID</label>
+                            <input type="text" class="form-control" name="bnum" id="batchtext" aria-describedby="batchtextInput" value="{{ old('bnum') }}" placeholder="MKA-...">
                         <small class="text-danger">{{ $errors->first('bnum') }}</small>
                     </div>
                     <div class="col-2">
                         <label for="cooler" class="form-label">Cooler Stored In </label>
-                            <input type="number" class="form-control" name="cooler" id="cooler" aria-describedby="coolerStoredIn" value="{{ old('cooler') }}" min="1" max="99">
+                            <input type="text" class="form-control" name="cooler" id="cooler" aria-describedby="coolerStoredIn" value="{{ old('cooler') }}">
                         <small class="text-danger">{{ $errors->first('cooler') }}</small>
                     </div>
                     <div class="col-2">
@@ -56,112 +56,112 @@
                     </div>
                     <div class="form-group form-row tbody_row" name="row[0]" hidden="hidden">
                         <div class="col-3">
-                            <input type="text" class="table_input form-control" aria-describedby="packageId" name="bag_number[]" value="{{ old('bag_number[0]') }}">
+                            <input type="text" class="table_input form-control" aria-describedby="packageId" name="bag_text[]" value="{{ old('bag_text[0]') }}">
                         </div>
                         <div class="col-3">
-                            <input type="number" class="table_input  form-control bag_weight" aria-describedby="bagWeight" name="bag_weight[]" value="{{ old('bag_weight[0]') }}">
+                            <input type="text" class="table_input  form-control bag_weight" aria-describedby="bagWeight" name="bag_weight[]" value="{{ old('bag_weight[0]') }}">
                         </div>
                         <div class="col-3">
-                            <input type="number" class="table_input  form-control flower_weight" aria-describedby="flowerWeight" name="flow_weight[]" value="{{ old('flow_weight[0]') }}">
+                            <input type="text" class="table_input  form-control flower_weight" aria-describedby="flowerWeight" name="flow_weight[]" value="{{ old('flow_weight[0]') }}">
                         </div>
                     </div>
                     <div class="form-group form-row tbody_row" name="row[1]" hidden="hidden">
                         <div class="col-3">
-                            <input type="text" class="table_input form-control" aria-describedby="packageId" name="bag_number[]" value=" {{ old('bag_number[1]') }}">
+                            <input type="text" class="table_input form-control" aria-describedby="packageId" name="bag_text[]" value=" {{ old('bag_text[1]') }}">
                         </div>
                         <div class="col-3">
-                            <input type="number" class="table_input form-control bag_weight" aria-describedby="bagWeight" name="bag_weight[]" value="{{ old('bag_weight[1]') }}">
+                            <input type="text" class="table_input form-control bag_weight" aria-describedby="bagWeight" name="bag_weight[]" value="{{ old('bag_weight[1]') }}">
                         </div>
                         <div class="col-3">
-                            <input type="number" class="table_input form-control flower_weight" aria-describedby="flowerWeight" name="flow_weight[]" value="{{ old('flow_weight[1]') }}">
+                            <input type="text" class="table_input form-control flower_weight" aria-describedby="flowerWeight" name="flow_weight[]" value="{{ old('flow_weight[1]') }}">
                         </div>
                     </div>
                     <div class="form-group form-row tbody_row" name="row[2]" hidden="hidden">
                         <div class="col-3">
-                            <input type="text" class="table_input form-control" aria-describedby="packageId" name="bag_number[]" value="{{ old('bag_number[2]') }}">
+                            <input type="text" class="table_input form-control" aria-describedby="packageId" name="bag_text[]" value="{{ old('bag_text[2]') }}">
                         </div>
                         <div class="col-3">
-                            <input type="number" class="table_input form-control bag_weight" aria-describedby="bagWeight" name="bag_weight[]" value="{{ old('bag_weight[2]') }}">
+                            <input type="text" class="table_input form-control bag_weight" aria-describedby="bagWeight" name="bag_weight[]" value="{{ old('bag_weight[2]') }}">
                         </div>
                         <div class="col-3">
-                            <input type="number" class="table_input form-control flower_weight" aria-describedby="flowerWeight" name="flow_weight[]" value="{{ old('flow_weight[2]') }}">
+                            <input type="text" class="table_input form-control flower_weight" aria-describedby="flowerWeight" name="flow_weight[]" value="{{ old('flow_weight[2]') }}">
                         </div>
                     </div>
                     <div class="form-group form-row tbody_row" name="row[3]" hidden="hidden">
                         <div class="col-3">
-                            <input type="text" class="table_input form-control" aria-describedby="packageId" name="bag_number[]" value="{{ old('bag_number[3]') }}">
+                            <input type="text" class="table_input form-control" aria-describedby="packageId" name="bag_text[]" value="{{ old('bag_text[3]') }}">
                         </div>
                         <div class="col-3">
-                            <input type="number" class="table_input form-control bag_weight" aria-describedby="bagWeight" name="bag_weight[]" value="{{ old('bag_weight[3]') }}">
+                            <input type="text" class="table_input form-control bag_weight" aria-describedby="bagWeight" name="bag_weight[]" value="{{ old('bag_weight[3]') }}">
                         </div>
                         <div class="col-3">
-                            <input type="number" class="table_input form-control flower_weight" aria-describedby="flowerWeight" name="flow_weight[]" value="{{ old('flow_weight[3]') }}">
+                            <input type="text" class="table_input form-control flower_weight" aria-describedby="flowerWeight" name="flow_weight[]" value="{{ old('flow_weight[3]') }}">
                         </div>
                     </div>
                     <div class="form-group form-row tbody_row" name="row[4]" hidden="hidden">
                         <div class="col-3">
-                            <input type="text" class="table_input form-control" aria-describedby="packageId" name="bag_number[]" value="{{ old('bag_number[4]') }}">
+                            <input type="text" class="table_input form-control" aria-describedby="packageId" name="bag_text[]" value="{{ old('bag_text[4]') }}">
                         </div>
                         <div class="col-3">
-                            <input type="number" class="table_input form-control bag_weight" aria-describedby="bagWeight" name="bag_weight[]" value="{{ old('bag_weight[4]') }}">
+                            <input type="text" class="table_input form-control bag_weight" aria-describedby="bagWeight" name="bag_weight[]" value="{{ old('bag_weight[4]') }}">
                         </div>
                         <div class="col-3">
-                            <input type="number" class="table_input form-control flower_weight" aria-describedby="flowerWeight" name="flow_weight[]" value="{{ old('flow_weight[4]') }}">
+                            <input type="text" class="table_input form-control flower_weight" aria-describedby="flowerWeight" name="flow_weight[]" value="{{ old('flow_weight[4]') }}">
                         </div>
                     </div>
                     <div class="form-group form-row tbody_row" name="row[5]" hidden="hidden">
                         <div class="col-3">
-                            <input type="text" class="table_input form-control" aria-describedby="packageId" name="bag_number[]" value="{{ old('bag_number[5]') }}">
+                            <input type="text" class="table_input form-control" aria-describedby="packageId" name="bag_text[]" value="{{ old('bag_text[5]') }}">
                         </div>
                         <div class="col-3">
-                            <input type="number" class="table_input form-control bag_weight" aria-describedby="bagWeight" name="bag_weight[]" value="{{ old('bag_weight[5]') }}">
+                            <input type="text" class="table_input form-control bag_weight" aria-describedby="bagWeight" name="bag_weight[]" value="{{ old('bag_weight[5]') }}">
                         </div>
                         <div class="col-3">
-                            <input type="number" class="table_input form-control flower_weight" aria-describedby="flowerWeight" name="flow_weight[]" value="{{ old('flow_weight[5]') }}">
+                            <input type="text" class="table_input form-control flower_weight" aria-describedby="flowerWeight" name="flow_weight[]" value="{{ old('flow_weight[5]') }}">
                         </div>
                     </div>
                     <div class="form-group form-row tbody_row" name="row[6]" hidden="hidden">
                         <div class="col-3">
-                            <input type="text" class="table_input form-control" aria-describedby="packageId" name="bag_number[]" value="{{ old('bag_number[6]') }}">
+                            <input type="text" class="table_input form-control" aria-describedby="packageId" name="bag_text[]" value="{{ old('bag_text[6]') }}">
                         </div>
                         <div class="col-3">
-                            <input type="number" class="table_input form-control bag_weight" aria-describedby="bagWeight" name="bag_weight[]" value="{{ old('bag_weight[6]') }}">
+                            <input type="text" class="table_input form-control bag_weight" aria-describedby="bagWeight" name="bag_weight[]" value="{{ old('bag_weight[6]') }}">
                         </div>
                         <div class="col-3">
-                            <input type="number" class="table_input form-control flower_weight" aria-describedby="flowerWeight" name="flow_weight[]" value="{{ old('flow_weight[6]') }}">
+                            <input type="text" class="table_input form-control flower_weight" aria-describedby="flowerWeight" name="flow_weight[]" value="{{ old('flow_weight[6]') }}">
                         </div>
                     </div>
                     <div class="form-group form-row tbody_row" name="row[7]" hidden="hidden">
                         <div class="col-3">
-                            <input type="text" class="table_input form-control" aria-describedby="packageId" name="bag_number[]" value="{{ old('bag_number[7]') }}">
+                            <input type="text" class="table_input form-control" aria-describedby="packageId" name="bag_text[]" value="{{ old('bag_text[7]') }}">
                         </div>
                         <div class="col-3">
-                            <input type="number" class="table_input form-control bag_weight" aria-describedby="bagWeight" name="bag_weight[]" value="{{ old('bag_weight[7]') }}">
+                            <input type="text" class="table_input form-control bag_weight" aria-describedby="bagWeight" name="bag_weight[]" value="{{ old('bag_weight[7]') }}">
                         </div>
                         <div class="col-3">
-                            <input type="number" class="table_input form-control flower_weight" aria-describedby="flowerWeight" name="flow_weight[]" value="{{ old('flow_weight[7]') }}">
+                            <input type="text" class="table_input form-control flower_weight" aria-describedby="flowerWeight" name="flow_weight[]" value="{{ old('flow_weight[7]') }}">
                         </div>
                     </div>
                     <div class="form-group form-row tbody_row" name="row[8]" hidden="hidden">
                         <div class="col-3">
-                            <input type="text" class="table_input form-control" aria-describedby="packageId" name="bag_number[]" value="{{ old('bag_number[8]') }}">
+                            <input type="text" class="table_input form-control" aria-describedby="packageId" name="bag_text[]" value="{{ old('bag_text[8]') }}">
                         </div>
                         <div class="col-3">
-                            <input type="number" class="table_input form-control bag_weight" aria-describedby="bagWeight" name="bag_weight[]" value="{{ old('bag_weight[8]') }}">
+                            <input type="text" class="table_input form-control bag_weight" aria-describedby="bagWeight" name="bag_weight[]" value="{{ old('bag_weight[8]') }}">
                         </div>
                         <div class="col-3">
-                            <input type="number" class="table_input form-control flower_weight" aria-describedby="flowerWeight" name="flow_weight[]" value="{{ old('flow_weight[8]') }}">
+                            <input type="text" class="table_input form-control flower_weight" aria-describedby="flowerWeight" name="flow_weight[]" value="{{ old('flow_weight[8]') }}">
                         </div>
                     </div>
                     <div class="form-group form-row tbody_row" name="row[9]">
                         <div class="col-3">
-                            <input type="text" class="table_input form-control" aria-describedby="packageId" name="bag_number[]" value="{{ old('bag_number[9]') }}">
+                            <input type="text" class="table_input form-control" aria-describedby="packageId" name="bag_text[]" value="{{ old('bag_text[9]') }}">
                         </div>
                         <div class="col-3">
-                            <input type="number" class="table_input form-control bag_weight" aria-describedby="bagWeight" name="bag_weight[]" value="{{ old('bag_weight[9]') }}">
+                            <input type="text" class="table_input form-control bag_weight" aria-describedby="bagWeight" name="bag_weight[]" value="{{ old('bag_weight[9]') }}">
                         </div>
                         <div class="col-3">
-                            <input type="number" class="table_input form-control flower_weight" aria-describedby="flowerWeight" name="flow_weight[]" value="{{ old('flow_weight[9]') }}">
+                            <input type="text" class="table_input form-control flower_weight" aria-describedby="flowerWeight" name="flow_weight[]" value="{{ old('flow_weight[9]') }}">
                         </div>
                         <div class="col" id="dynamicRowBtns">
                             <input type="button" id="addRow" class="btn addRowBtn" value="+">
@@ -171,7 +171,7 @@
                     <div class="form-group form-row tbody_row">
                         <div class="col-3 offset-6">
                             <label for="totalFlowerWeight" class="form-label">Total Flower Weight</label>
-                            <input type="number" class="form-control" name="totalFlowWeight" id="totalFlowerWeight"
+                            <input type="text" class="form-control" name="totalFlowWeight" id="totalFlowerWeight"
                             aria-describedby="totalFlowerWeight" readonly>
                         </div>
                     </div>
@@ -239,7 +239,7 @@
                     <div class="form-group form-row tbody_row">
                         <div class="col-6">
                             <label for="totalBatchWeight" class="form-label">Total Weight</label>
-                            <input type="number" class="form-control" name="totalBatchWeight" id="totalBatchWeight"
+                            <input type="text" class="form-control" name="totalBatchWeight" id="totalBatchWeight"
                             aria-describedby="totalBatchWeight" readonly>
                         </div>
                     </div>
@@ -250,41 +250,41 @@
                     <div class="form-group form-row">
                         <div class="col-2">
                             <label for="resTempFirst" class=" form-label">Res Temp (1st)</label>
-                            <input type="number" class="form-control" name="resTempFirst" id="resTempFirst">
+                        <input type="text" class="form-control" name="resTempFirst" id="resTempFirst" value="{{ old('resTempFirst') }}">
                         </div>
                         <div class="col-2">
                             <label for="splitOne" class=" form-label">Soak Time (1st)</label>
-                            <input type="text" class="time_split form-control" name="split[0]" id="split_0" value="" readonly>
+                            <input type="text" class="time_split form-control" name="split[0]" id="split_0" value="{{ old('split[0]') }}" readonly>
                         </div>
                         <div class="col-2">
                             <label for="splitTwo" class="form-label">Aggitation Time (1st)</label>
-                            <input type="text" class="time_split form-control" name="split[1]" id="split_1" value="" readonly>
+                            <input type="text" class="time_split form-control" name="split[1]" id="split_1" value="{{ old('split[1]') }}" readonly>
                         </div>
                         <div class="col-2">
                             <label for="exitTempFirst" class=" form-label">Exit Temp (1st)</label>
-                            <input type="number" class="form-control" name="exitTempFirst" id="exitTempFirst">
+                            <input type="text" class="form-control" name="exitTempFirst" id="exitTempFirst" value="{{ old('exitTempFirst') }}">
                         </div>
                     </div>
                     <div class="form-group form-row">
                         <div class="col-2">
                             <label for="resTempScnd" class=" form-label">Res Temp (2nd)</label>
-                            <input type="text" class="form-control" name="resTempScnd" id="resTempScnd">
+                            <input type="text" class="form-control" name="resTempScnd" id="resTempScnd" value="{{ old('resTempScnd') }}">
                         </div>
                         <div class="col-2">
                             <label for="splitThree" class="form-label">Soak Time (2nd)</label>
-                            <input type="text" class="time_split form-control" name="split[2]" id="split_2" value="" readonly>
+                            <input type="text" class="time_split form-control" name="split[2]" id="split_2" value="{{ old('split[2]') }}" readonly>
                         </div>
                         <div class="col-2">
                             <label for="splitFour" class="form-label">Aggitation Time (2nd)</label>
-                            <input type="text" class="time_split form-control" name="split[3]" id="split_3" value="" readonly>
+                            <input type="text" class="time_split form-control" name="split[3]" id="split_3" value="{{ old('split[3]') }}" readonly>
                         </div>
                         <div class="col-2">
                             <label for="exitTempScnd" class=" form-label">Exit Temp (2nd)</label>
-                            <input type="text" class="form-control" name="exitTempScnd" id="exitTempScnd">
+                            <input type="text" class="form-control" name="exitTempScnd" id="exitTempScnd" value="{{ old('exitTempScnd') }}">
                         </div>
                         <div class="col-2">
                             <label for="totalTime" class="form-label">Total Batch Time</label>
-                            <input type="text" class="time_split form-control" name="totTime" id="total_time" value="" readonly>
+                            <input type="text" class="time_split form-control" name="totTime" id="total_time" value="{{ old('totTime') }}" readonly>
                         </div>
                     </div>
                 </div>
@@ -293,9 +293,9 @@
                     <div class="col-2">
                         <label for="batchStatus">Batch Status</label>
                         <select class="custom-select" name="status" id="batch_status">
-                            <option selected>Select one</option>
-                            <option value="stuffed">Stuffed</option>
-                            <option value="complete">Complete</option>
+                            <option>Select one</option>
+                            <option value="stuffed" @if(old('status') == 'stuffed')selected @endif >Stuffed</option>
+                            <option value="complete" @if(old('status') == 'complete')selected @endif >Complete</option>
                         </select>
                     </div>
                 </div>
@@ -305,6 +305,15 @@
                     </div>
                 </div>
             </div>
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
         </form>
     <!--end extraction form-->
 </div>

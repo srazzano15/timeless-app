@@ -13,16 +13,17 @@ class BatchSubmit extends Model
         'date_filled',
         'date_run',
         'cooler',
-        'kegsFilled',
+        'kegs_filled',
         'submitter',
         'status',
-        'totalFlowWeight',
-        'totalBatchWeight'
+        'total_flower_weight',
+        'total_batch_weight',
     ];
 
-    /* protected $dates = [
+     protected $dates = [
         'date_filled',
         'date_run'
-    ]; */
+    ];
+
 }
 
