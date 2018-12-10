@@ -1,7 +1,7 @@
 html,
 body {
     color: var(--yellow);
-    background: var(--dark)
+    background: var(--dark);
 }
 
 .btn {
@@ -12,8 +12,8 @@ body {
     color: var(--yellow);
     margin: 0 5px;
     background-color: var(--dark);
-    -webkit-transition: background-color .3s ease-in-out;
-    transition: background-color .3s ease-in-out;
+    -webkit-transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
 
     &:hover {
         background-color: var(--yellow);
@@ -44,7 +44,6 @@ body {
 .nav-item {
     flex-basis: 50%;
     margin: auto;
-
 }
 
 .navbar-nav .nav-link {
@@ -70,9 +69,11 @@ body {
     flex-basis: 50%;
 }
 
-#lap,
-    {
+#lap {
     visibility: hidden;
+    position: fixed;
+    top: 95%;
+    left: -50%;
 }
 
 #controls {
@@ -82,11 +83,23 @@ body {
         font-size: 1.4em;
         border-color: var(--yellow);
         padding: 8px 50px !important;
+        @media screen and (max-width: 990px) {
+            margin-bottom: 10px;
+        }
     }
 }
 
 #batchTimer {
     margin-bottom: 10px;
+    @media screen and (max-width: 432px) {
+        justify-content: center;
+    }
+}
+#stopwatch {
+    display: flex;
+    @media screen and (max-width: 508px) {
+        justify-content: center !important;
+    }
 }
 
 #timer {
@@ -94,6 +107,7 @@ body {
     border: 1px solid var(--gray);
     border-radius: 4px;
     display: flex;
+    max-width: 50% !important;
 
     #timer_holder {
         vertical-align: center;
@@ -113,9 +127,16 @@ body {
             vertical-align: center;
         }
 
-        @media screen and (max-width: 500px) {
-            flex-direction: column;
+        @media screen and (max-width: 800px) {
+            flex-direction: row;
         }
+    }
+    @media screen and (max-width: 766px) {
+        flex: 4 !important;
+    }
+    @media screen and (max-width: 508px) {
+        margin-bottom: 15px;
+        justify-content: center;
     }
 }
 
@@ -142,7 +163,6 @@ footer {
 
     tbody tr:nth-child(even) {
         background: var(--gray);
-
     }
 
     thead tr {
@@ -161,17 +181,16 @@ footer {
     color: var(--light) !important;
     font-size: 1.3rem;
     font-weight: 500;
-    padding: 0 .75rem;
+    padding: 0 0.75rem;
     border-radius: 10px;
 }
-
 
 .rmvRowBtn {
     background: var(--red) !important;
     color: var(--light) !important;
     font-size: 1.3rem;
     font-weight: 500;
-    padding: 0 .75rem;
+    padding: 0 0.75rem;
     border-radius: 10px;
 }
 
@@ -184,5 +203,21 @@ footer {
 
     .card-body {
         background: var(--gray);
+    }
+}
+
+.col-2 {
+    min-width: 150px;
+}
+
+.container {
+    form {
+        justify-content: center;
+    }
+}
+
+.form-group {
+    @media screen and (max-width: 500px) {
+        justify-content: center;
     }
 }
