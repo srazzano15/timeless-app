@@ -10671,3 +10671,13 @@ footer .fixed-bottom span {
   background: var(--gray);
 }
 
+#dashboardWrapper {
+  text-align: center;
+}
+
+#dashboardContent {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+

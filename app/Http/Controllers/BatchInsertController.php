@@ -30,35 +30,6 @@ class BatchInsertController extends Controller
     public function storeSubmit(SubmitBatch $request) {
 
 
-        /* $request = $request->validated(); */
-        // static input validation rules
-        /* $this->validate($request, [
-            'bnum' => 'required|unique:batch_submits,batch_id',
-            'dfilled' => 'required|date',
-            'cooler' => 'required|integer',
-            'drun' => 'required|date',
-            'submitter' => 'required|string',
-            'kegsFilled' => 'required_if:status,Complete',
-            'totalFlowWeight' => 'required',
-            'totalPillowWeight' => 'required',
-            'status' => 'required',
-        ]); */
-
-        // Return inputs to variables for ease of use
-        /* $batchNumber = $request->input('bnum');
-        $dateFilled = $request->input('dfilled');
-        $cooler = $request->input('cooler');
-        $dateRun = $request->input('drun');
-        $submitter = $request->input('submitter');
-        $kegs = $request->input('kegsFilled');
-        $totalFlowWt = $request->input('totalFlowWeight');
-        $totalBatchWt = $request->input('totalBatchWeight');
-        $status = $request->input('status'); */
-
-        // format date inputs using Carbon package
-        /* $dateFillParse = Carbon::parse($dateFilled)->format('Y-m-d');
-        $dateRunParse = Carbon::parse($dateRun)->format('Y-m-d'); */
-
         // prepare insert
         $batchSubmit = new BatchSubmit(array(
             'status' => $request->input('status'),
@@ -75,20 +46,6 @@ class BatchInsertController extends Controller
 
         // insert to DB
         $batchSubmit->save();
-
-
-        // make unique validator for dynamically set row quanities
-        $bagValidate = Validator::make($request->all(), [
-            'bag_number' => 'required|string',
-            'bag_weight' => 'required|numeric',
-            'flow_weight' => 'required|numeric',
-            'pillow' => 'required|numeric',
-        ]);
-        if ($bagValidate->fails()) {
-            return redirect('post/create')
-                        ->withErrors($bagValidate)
-                        ->withInput();
-        }
 
 
         $batchNumber = $request->input('bnum');
