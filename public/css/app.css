@@ -10480,8 +10480,8 @@ body {
   color: var(--yellow);
   margin: 0 5px;
   background-color: var(--dark);
-  -webkit-transition: background-color .3s ease-in-out;
-  transition: background-color .3s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .btn:hover {
@@ -10544,6 +10544,9 @@ body {
 
 #lap {
   visibility: hidden;
+  position: fixed;
+  top: 95%;
+  left: -50%;
 }
 
 #controls {
@@ -10556,8 +10559,36 @@ body {
   padding: 8px 50px !important;
 }
 
+@media screen and (max-width: 990px) {
+  #controls .btn {
+    margin-bottom: 10px;
+  }
+}
+
 #batchTimer {
   margin-bottom: 10px;
+}
+
+@media screen and (max-width: 432px) {
+  #batchTimer {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+#stopwatch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media screen and (max-width: 508px) {
+  #stopwatch {
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
+  }
 }
 
 #timer {
@@ -10567,6 +10598,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  max-width: 50% !important;
 }
 
 #timer #timer_holder {
@@ -10598,12 +10630,29 @@ body {
   vertical-align: center;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 800px) {
   #timer #timer_holder {
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 766px) {
+  #timer {
+    -webkit-box-flex: 4 !important;
+        -ms-flex: 4 !important;
+            flex: 4 !important;
+  }
+}
+
+@media screen and (max-width: 508px) {
+  #timer {
+    margin-bottom: 15px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
@@ -10646,7 +10695,7 @@ footer .fixed-bottom span {
   color: var(--light) !important;
   font-size: 1.3rem;
   font-weight: 500;
-  padding: 0 .75rem;
+  padding: 0 0.75rem;
   border-radius: 10px;
 }
 
@@ -10655,7 +10704,7 @@ footer .fixed-bottom span {
   color: var(--light) !important;
   font-size: 1.3rem;
   font-weight: 500;
-  padding: 0 .75rem;
+  padding: 0 0.75rem;
   border-radius: 10px;
 }
 
@@ -10671,13 +10720,21 @@ footer .fixed-bottom span {
   background: var(--gray);
 }
 
-#dashboardWrapper {
-  text-align: center;
+.col-2 {
+  min-width: 150px;
 }
 
-#dashboardContent {
+.container form {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media screen and (max-width: 500px) {
+  .form-group {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
