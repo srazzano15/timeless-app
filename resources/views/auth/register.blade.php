@@ -60,6 +60,19 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="invite" class="col-md-4 col-form-label text-md-right">Invite Code</label>
+
+                            <div class="col-md-6">
+                                <input id="inviteCode" type="text" class="form-control{{ $errors->has('code') ? ' is-invalid' : '' }}" name="code" required>
+
+                                @if ($errors->has('code'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('code') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
