@@ -10470,6 +10470,8 @@ html,
 body {
   color: var(--yellow);
   background: var(--dark);
+  -webkit-transition-duration: 0.2s !important;
+          transition-duration: 0.2s !important;
 }
 
 .btn {
@@ -10557,6 +10559,7 @@ body {
   font-size: 1.4em;
   border-color: var(--yellow);
   padding: 8px 50px !important;
+  max-width: 145px;
 }
 
 @media screen and (max-width: 990px) {
@@ -10583,7 +10586,7 @@ body {
   display: flex;
 }
 
-@media screen and (max-width: 508px) {
+@media screen and (max-width: 509px) {
   #stopwatch {
     -webkit-box-pack: center !important;
         -ms-flex-pack: center !important;
@@ -10735,6 +10738,79 @@ footer .fixed-bottom span {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .navbar {
+    left: 15%;
+  }
+
+  .navbar .navbar-collapse {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .totalFlowerWeightContainer .col-3 {
+    margin-left: 21% !important;
+    margin-top: 30px;
+    max-width: 33.3333%;
+    -webkit-box-flex: 4;
+        -ms-flex: 4;
+            flex: 4;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .totalFlowerWeightContainer .col-3 {
+    margin-left: -23% !important;
+    max-width: 33.3333%;
+    -webkit-box-flex: 4;
+        -ms-flex: 4;
+            flex: 4;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #dynamicRowBtns #addRow {
+    position: absolute !important;
+    left: -200% !important;
+    top: 125%;
+  }
+
+  #dynamicRowBtns #rmvRow {
+    position: absolute !important;
+    left: -150% !important;
+    top: 125%;
+  }
+}
+
+@media screen and (max-width: 457px) {
+  #dynamicRowBtns #addRow {
+    position: absolute !important;
+    left: -215% !important;
+    top: 125%;
+  }
+
+  #dynamicRowBtns #rmvRow {
+    position: absolute !important;
+    left: -150% !important;
+    top: 125%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .flowerWeightHeaders {
+    margin-left: -27%;
+  }
+
+  .flowerWeightHeaders :nth-child(1) {
+    margin-right: -8%;
+  }
+
+  .flowerWeightHeaders :nth-child(2) {
+    padding-left: 30px;
   }
 }
 

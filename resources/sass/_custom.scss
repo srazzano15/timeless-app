@@ -2,6 +2,7 @@ html,
 body {
     color: var(--yellow);
     background: var(--dark);
+    transition-duration: .2s!important;
 }
 
 .btn {
@@ -83,6 +84,7 @@ body {
         font-size: 1.4em;
         border-color: var(--yellow);
         padding: 8px 50px !important;
+        max-width: 145px;
         @media screen and (max-width: 990px) {
             margin-bottom: 10px;
         }
@@ -97,7 +99,7 @@ body {
 }
 #stopwatch {
     display: flex;
-    @media screen and (max-width: 508px) {
+    @media screen and (max-width: 509px) {
         justify-content: center !important;
     }
 }
@@ -219,5 +221,68 @@ footer {
 .form-group {
     @media screen and (max-width: 500px) {
         justify-content: center;
+    }
+}
+
+.navbar{
+    @media screen and (max-width: 767px) {
+        left: 15%;
+
+        .navbar-collapse{display:none;}
+    }
+}
+
+
+.totalFlowerWeightContainer .col-3{
+    @media screen and (max-width: 767px) {
+        margin-left: 21%!important;
+        margin-top:30px;
+        max-width: 33.3333%;
+        flex: 4;
+    }
+    @media screen and (max-width: 500px) {
+        margin-left: -23%!important;
+        max-width: 33.3333%;
+        flex: 4;
+    }
+}
+
+#dynamicRowBtns{
+    @media screen and (max-width: 767px) {
+        #addRow{
+            position: absolute!important;
+            left:-200%!important;
+            top:125%;
+        }
+        #rmvRow{
+            position: absolute!important;
+            left:-150%!important;
+            top:125%;
+        }
+    }
+    @media screen and (max-width: 457px) {
+        #addRow{
+            position: absolute!important;
+            left:-215%!important;
+            top:125%;
+        }
+        #rmvRow{
+            position: absolute!important;
+            left:-150%!important;
+            top:125%;
+        }
+    }
+}
+
+.flowerWeightHeaders{
+    @media screen and (max-width: 500px) {
+        margin-left: -27%;
+
+        :nth-child(1){
+            margin-right:-8%;
+        }
+        :nth-child(2){
+            padding-left:30px;
+        }
     }
 }

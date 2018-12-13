@@ -41,9 +41,9 @@
                 </div>
             </div>
             <!--end form elemet-->
-            <div class="row">
+            <div class="row flowerWeightCalcContainer">
                 <div class="formElement col-8" style="padding-right: 5px;">
-                    <div class="form-group form-row" style="text-align: center;">
+                    <div class="form-group form-row flowerWeightHeaders" style="text-align: center;">
                         <div class="col-3">
                             <label for="packageId" class="form-label">Package ID</label>
                         </div>
@@ -168,7 +168,7 @@
                             <input type="button" id="rmvRow" class="btn rmvRowBtn" value="-">
                         </div>
                     </div>
-                    <div class="form-group form-row tbody_row">
+                    <div class="form-group form-row tbody_row totalFlowerWeightContainer">
                         <div class="col-3 offset-6">
                             <label for="totalFlowerWeight" class="form-label">Total Flower Weight</label>
                             <input type="text" class="form-control" name="totalFlowWeight" id="totalFlowerWeight"
