@@ -2,7 +2,7 @@
 
 use Carbon\Carbon;
 use App\BatchSubmit;
-
+use App\User;
 
 
 /*
@@ -28,7 +28,9 @@ Route::get('/search', 'PagesController@search')->name('search');
 
 Route::get('/admin', function(){
 
-    return view('admin.index');
+    $user = Auth::user();
+
+    return view('admin.index', compact('user'));
 
 });
 
