@@ -26,7 +26,11 @@ Route::get('/extraction', 'PagesController@extraction')->name('extraction');
 
 Route::get('/search', 'PagesController@search')->name('search');
 
+Route::get('/admin', function(){
 
+    return view('admin.index');
+
+});
 
 /**
  * --------------------------------------------------------------------------
@@ -40,6 +44,6 @@ Route::post('/extraction', 'BatchInsertController@storeSubmit');
 
 Route::get('/home', 'BatchReadController@tableRead');
 
-
+Route::resource('admin/users', 'AdminUsersController');
 
 

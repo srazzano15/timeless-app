@@ -9,8 +9,10 @@ require('./bootstrap');
 
 
 /**
- * Finally, we will add in our own custom scripts made for the purpose of making
+ * We will add in our own custom scripts made for the purpose of making
  * custom JS apps work as well as scripts for plugins.
  */
 
- require('./custom_scripts');
+require('./custom_scripts');
+/* require('./metisMenu');
+require('./sb-admin-2'); */

@@ -13708,11 +13708,13 @@ module.exports = __webpack_require__(37);
 __webpack_require__(12);
 
 /**
- * Finally, we will add in our own custom scripts made for the purpose of making
+ * We will add in our own custom scripts made for the purpose of making
  * custom JS apps work as well as scripts for plugins.
  */
 
 __webpack_require__(36);
+/* require('./metisMenu');
+require('./sb-admin-2'); */
 
 /***/ }),
 /* 12 */
@@ -36209,6 +36211,52 @@ $(function () {
 
     dynamicRows('#addRow', '#rmvRow', 'row');
     dynamicRows('#addPillow', '#rmvPillow', 'pillow');
+
+    /**
+     * Beginning of Admin Panel scripts
+     */
+    $('#selectAllBoxes').click(function (event) {
+
+        if (this.checked) {
+
+            $('.checkBoxes').each(function () {
+
+                this.checked = true;
+            });
+        } else {
+
+            $('.checkBoxes').each(function () {
+
+                this.checked = false;
+            });
+        }
+    });
+
+    /**************** User Profile **********************/
+
+    var panels = $('.user-infos');
+    var panelsButton = $('.dropdown-user');
+    panels.hide();
+
+    //Click dropdown
+    panelsButton.click(function () {
+        //get data-for attribute
+        var dataFor = $(this).attr('data-for');
+        var idFor = $(dataFor);
+
+        //current button
+        var currentButton = $(this);
+        idFor.slideToggle(400, function () {
+            //Completed slidetoggle
+            if (idFor.is(':visible')) {
+                currentButton.html('<i class="glyphicon glyphicon-chevron-up text-muted"></i>');
+            } else {
+                currentButton.html('<i class="glyphicon glyphicon-chevron-down text-muted"></i>');
+            }
+        });
+    });
+
+    $('[data-toggle="tooltip"]').tooltip();
 }); // end ready function
 
 /***/ }),
