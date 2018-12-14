@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "49ac222ee0e5c17cb9297100668c2d82",
+    "content-hash": "4cc318a2fcb17b44be88498d551725a0",
     "packages": [
         {
             "name": "clarkeash/doorman",
@@ -1681,6 +1681,48 @@
                 "php"
             ],
             "time": "2018-10-10T09:24:14+00:00"
+        },
+        {
+            "name": "onokumus/metismenu",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/onokumus/metismenu.git",
+                "reference": "a595cf423076964ac6859b2cbab04221261f9ec8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/onokumus/metismenu/zipball/a595cf423076964ac6859b2cbab04221261f9ec8",
+                "reference": "a595cf423076964ac6859b2cbab04221261f9ec8",
+                "shasum": ""
+            },
+            "suggest": {
+                "components/jquery": ">=1.9"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Osman Nuri Okumus",
+                    "email": "onokumus@gmail.com",
+                    "homepage": "http://onokumus.com"
+                }
+            ],
+            "description": "A jQuery menu plugin",
+            "homepage": "https://github.com/onokumus/metisMenu",
+            "keywords": [
+                "JS",
+                "bootstrap",
+                "css",
+                "jquery",
+                "menu",
+                "plugin",
+                "web"
+            ],
+            "time": "2018-10-18T07:30:36+00:00"
         },
         {
             "name": "opis/closure",
@@ -5726,7 +5768,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "onokumus/metismenu": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

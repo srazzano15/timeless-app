@@ -216,8 +216,26 @@ footer {
     }
 }
 
-.form-group {
+.form-group
+{
     @media screen and (max-width: 500px) {
         justify-content: center;
     }
+}
+.w3-light-grey
+{
+    background: var(--dark) !important;
+}
+.w3-sidebar
+{
+    background-color: var(--gray) !important;
+}
+#admin_page
+{
+    color: var(--yellow) !important;
+}
+
+.admin_stats
+{
+    background-color: var(--gray) !important;
 }
