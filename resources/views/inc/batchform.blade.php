@@ -255,12 +255,12 @@
                         </div>
                         <div class="col-2">
                             <label for="splitOne" class=" form-label">Soak Time (1st)</label>
-                            <input type="text" class="time_split form-control" name="split[0]" id="split_0" value="0" readonly>
+                            <input type="text" class="time_split form-control" name="split[0]" id="split_0" value="{{ old('split[0]') }}" readonly>
                             <small class="text-danger">{{ $errors->first('split[0]') }}</small>
                         </div>
                         <div class="col-2">
                             <label for="splitTwo" class="form-label">Aggitation Time (1st)</label>
-                            <input type="text" class="time_split form-control" name="split[1]" id="split_1" value="0" readonly>
+                            <input type="text" class="time_split form-control" name="split[1]" id="split_1" value="{{ old('split[1]') }}" readonly>
                             <small class="text-danger">{{ $errors->first('split[1]') }}</small>
                         </div>
                         <div class="col-2">
@@ -277,12 +277,12 @@
                         </div>
                         <div class="col-2">
                             <label for="splitThree" class="form-label">Soak Time (2nd)</label>
-                            <input type="text" class="time_split form-control" name="split[2]" id="split_2" value="0" readonly>
+                            <input type="text" class="time_split form-control" name="split[2]" id="split_2" value="{{ old('split[2]') }}" readonly>
                             <small class="text-danger">{{ $errors->first('split[2]') }}</small>
                         </div>
                         <div class="col-2">
                             <label for="splitFour" class="form-label">Aggitation Time (2nd)</label>
-                            <input type="text" class="time_split form-control" name="split[3]" id="split_3" value="0" readonly>
+                            <input type="text" class="time_split form-control" name="split[3]" id="split_3" value="{{ old('split[3]') }}" readonly>
                             <small class="text-danger">{{ $errors->first('split[3]') }}</small>
                         </div>
                         <div class="col-2">

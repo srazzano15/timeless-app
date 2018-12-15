@@ -39,10 +39,7 @@
                     <td>{{ $user->id }}</td>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
-
                     <td>{{ $user->role_id == 1 ? 'Admin' : 'User'}}</td>
-
-
                     <td>{{ $user->is_active == 1 ? 'Active' : 'Inactive' }}</td>
                     <td>{{ $user->created_at->diffForHumans() }}</td>
 

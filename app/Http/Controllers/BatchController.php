@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use DB;
 use App\BatchSubmit;
 use App\BatchBag;
 use Carbon\Carbon;
@@ -13,24 +11,40 @@ use App\SubmitTime;
 use App\Http\Requests\SubmitBatch;
 use Validator;
 use Illuminate\Support\Collection;
+use DB;
 
-
-
-
-class BatchInsertController extends Controller
+class BatchController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $submits = BatchSubmit::where('status', 'Stuffed')->get();
+
+        return view('batch.index', compact('submits'));
+    }
 
     /**
-     * -----------------------------------------
-     * Insert batch_submit
-     * -----------------------------------------
-     * @param SubmitBatch $request
-     * @return void
-     * -----------------------------------------
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
      */
-    public function storeSubmit(SubmitBatch $request) {
+    public function create()
+    {
+        return view('pages.extraction');
+    }
 
-
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  App\Http\Requests\SubmitBatch  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(SubmitBatch $request)
+    {
         // prepare insert
         $batchSubmit = new BatchSubmit(array(
             'status' => $request->input('status'),
@@ -108,8 +122,51 @@ class BatchInsertController extends Controller
             }
         }
 
-
         return redirect('/home');
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
 }

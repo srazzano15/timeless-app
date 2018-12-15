@@ -48,4 +48,4 @@ Route::get('/home', 'BatchReadController@tableRead');
 
 Route::resource('admin/users', 'AdminUsersController');
 
-
+Route::resource('batch', 'BatchController');

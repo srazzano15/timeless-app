@@ -29,7 +29,7 @@ class SubmitBatch extends FormRequest
             // Validation Rules
 
             // static input validation rules
-            /* 'bnum' => 'required|unique:batch_submits,batch_id',
+            'bnum' => 'required|unique:batch_submits,batch_id',
             'dfilled' => 'required|date',
             'cooler' => 'required|integer',
             'drun' => 'required|date',
@@ -51,7 +51,7 @@ class SubmitBatch extends FormRequest
             'bag_number' => 'sometimes|required|string',
             'bag_weight' => 'sometimes|required',
             'flow_weight' => 'sometimes|required',
-            'pillow' => 'sometimes|required', */
+            'pillow' => 'sometimes|required',
 
         ];
     }
