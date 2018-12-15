@@ -250,41 +250,50 @@
                     <div class="form-group form-row">
                         <div class="col-2">
                             <label for="resTempFirst" class=" form-label">Res Temp (1st)</label>
-                        <input type="text" class="form-control" name="resTempFirst" id="resTempFirst" value="{{ old('resTempFirst') }}">
+                            <input type="text" class="form-control" name="resTempFirst" id="resTempFirst" value="{{ old('resTempFirst') }}">
+                            <small class="text-danger">{{ $errors->first('resTempFirst') }}</small>
                         </div>
                         <div class="col-2">
                             <label for="splitOne" class=" form-label">Soak Time (1st)</label>
-                            <input type="text" class="time_split form-control" name="split[0]" id="split_0" value="{{ old('split[0]') }}" readonly>
+                            <input type="text" class="time_split form-control" name="split[0]" id="split_0" value="0" readonly>
+                            <small class="text-danger">{{ $errors->first('split[0]') }}</small>
                         </div>
                         <div class="col-2">
                             <label for="splitTwo" class="form-label">Aggitation Time (1st)</label>
-                            <input type="text" class="time_split form-control" name="split[1]" id="split_1" value="{{ old('split[1]') }}" readonly>
+                            <input type="text" class="time_split form-control" name="split[1]" id="split_1" value="0" readonly>
+                            <small class="text-danger">{{ $errors->first('split[1]') }}</small>
                         </div>
                         <div class="col-2">
                             <label for="exitTempFirst" class=" form-label">Exit Temp (1st)</label>
                             <input type="text" class="form-control" name="exitTempFirst" id="exitTempFirst" value="{{ old('exitTempFirst') }}">
+                            <small class="text-danger">{{ $errors->first('exitTempFirst') }}</small>
                         </div>
                     </div>
                     <div class="form-group form-row">
                         <div class="col-2">
                             <label for="resTempScnd" class=" form-label">Res Temp (2nd)</label>
                             <input type="text" class="form-control" name="resTempScnd" id="resTempScnd" value="{{ old('resTempScnd') }}">
+                            <small class="text-danger">{{ $errors->first('resTempScnd') }}</small>
                         </div>
                         <div class="col-2">
                             <label for="splitThree" class="form-label">Soak Time (2nd)</label>
-                            <input type="text" class="time_split form-control" name="split[2]" id="split_2" value="{{ old('split[2]') }}" readonly>
+                            <input type="text" class="time_split form-control" name="split[2]" id="split_2" value="0" readonly>
+                            <small class="text-danger">{{ $errors->first('split[2]') }}</small>
                         </div>
                         <div class="col-2">
                             <label for="splitFour" class="form-label">Aggitation Time (2nd)</label>
-                            <input type="text" class="time_split form-control" name="split[3]" id="split_3" value="{{ old('split[3]') }}" readonly>
+                            <input type="text" class="time_split form-control" name="split[3]" id="split_3" value="0" readonly>
+                            <small class="text-danger">{{ $errors->first('split[3]') }}</small>
                         </div>
                         <div class="col-2">
                             <label for="exitTempScnd" class=" form-label">Exit Temp (2nd)</label>
                             <input type="text" class="form-control" name="exitTempScnd" id="exitTempScnd" value="{{ old('exitTempScnd') }}">
+                            <small class="text-danger">{{ $errors->first('exitTempScnd') }}</small>
                         </div>
                         <div class="col-2">
                             <label for="totalTime" class="form-label">Total Batch Time</label>
-                            <input type="text" class="time_split form-control" name="totTime" id="total_time" value="{{ old('totTime') }}" readonly>
+                            <input type="text" class="time_split form-control" name="totTime" id="total_time" value="0" readonly>
+                            <small class="text-danger">{{ $errors->first('totTime') }}</small>
                         </div>
                     </div>
                 </div>
