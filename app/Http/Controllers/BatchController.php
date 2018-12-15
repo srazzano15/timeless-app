@@ -11,7 +11,7 @@ use App\SubmitTime;
 use App\Http\Requests\SubmitBatch;
 use Validator;
 use Illuminate\Support\Collection;
-use DB;
+use Auth;
 
 class BatchController extends Controller
 {
@@ -34,7 +34,8 @@ class BatchController extends Controller
      */
     public function create()
     {
-        return view('pages.extraction');
+        
+        return view('batch.extraction');
     }
 
     /**
@@ -45,8 +46,11 @@ class BatchController extends Controller
      */
     public function store(SubmitBatch $request)
     {
+
+
         // prepare insert
         $batchSubmit = new BatchSubmit(array(
+            'user_id' => $user->id,
             'status' => $request->input('status'),
             'submitter' => $request->input('submitter'),
             'batch_id' => $request->input('bnum'),
@@ -122,7 +126,7 @@ class BatchController extends Controller
             }
         }
 
-        return redirect('/home');
+        return redirect('/batch');
     }
 
     /**
@@ -133,7 +137,7 @@ class BatchController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('batch.search');
     }
 
     /**
@@ -144,7 +148,7 @@ class BatchController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('batch.edit');
     }
 
     /**

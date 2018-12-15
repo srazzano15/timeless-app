@@ -52,10 +52,10 @@
                             <a class="nav-link btn" href="/home">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn" href="/extraction">Submit A Batch</a>
+                            <a class="nav-link btn" href="{{ route('batch.create') }}">Submit A Batch</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn" href="/search">Compare Batches</a>
+                            <a class="nav-link btn" href="{{ route('batch.index') }}">Batches</a>
                         </li>
 
                         <li class="nav-item dropdown">

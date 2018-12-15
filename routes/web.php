@@ -22,9 +22,9 @@ Route::get('/', 'PagesController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/extraction', 'PagesController@extraction')->name('extraction');
+//Route::get('/extraction', 'PagesController@extraction')->name('extraction');
 
-Route::get('/search', 'PagesController@search')->name('search');
+//Route::get('/search', 'PagesController@search')->name('search');
 
 Route::get('/admin', function(){
 
@@ -40,7 +40,7 @@ Route::get('/admin', function(){
  * --------------------------------------------------------------------------
  */
 
-Route::post('/extraction', 'BatchInsertController@storeSubmit');
+//Route::post('/extraction', 'BatchInsertController@storeSubmit');
 
 //Route::post('/extraction', 'BatchInsertController@storeBag');
 

@@ -20,4 +20,9 @@ class SubmitTime extends Model
         'exit_temp_scnd',
         'total_time'
     ];
+
+    /* public function time()
+    {
+        return $this->belongsTo('App\BatchSubmit');
+    } */
 }

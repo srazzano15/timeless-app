@@ -32,7 +32,7 @@ class BatchInsertController extends Controller
 
 
         // prepare insert
-        $batchSubmit = new BatchSubmit(array(
+        /* $batchSubmit = new BatchSubmit(array(
             'status' => $request->input('status'),
             'submitter' => $request->input('submitter'),
             'batch_id' => $request->input('bnum'),
@@ -109,7 +109,7 @@ class BatchInsertController extends Controller
         }
 
 
-        return redirect('/home');
+        return redirect('/home'); */
     }
 
 }

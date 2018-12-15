@@ -4,11 +4,12 @@
 
 
 <div class="container">
+    <h1>Edit Submission</h1>
         @include('inc.stopwatch')
     </div>
     <!--end stopwatch-->
     <div class="container">
-        <form action="{{URL::to('/extraction')}}" method="post">
+        <form action="" method="post">
 
                 @csrf
 
@@ -41,7 +42,7 @@
                         </div>
                         <div class="col-2">
                             <label for="submitter" class="form-label">Submitter</label>
-                                <input type="text" class="form-control" name="submitter" id="submitter" aria-describedby="submitter" value=" {{ $user->name }} " readonly>
+                                <input type="text" class="form-control" name="submitter" id="submitter" aria-describedby="submitter" value=" {{ old('submitter') }}" readonly>
                         </div>
                     </div>
                 </div>

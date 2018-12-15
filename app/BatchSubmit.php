@@ -25,5 +25,20 @@ class BatchSubmit extends Model
         'date_run'
     ];
 
+
+    public function bags()
+    {
+        return $this->hasMany('App\BatchBag', 'batch_id', 'batch_id');
+    }
+
+    public function time()
+    {
+        return $this->hasOne('App\SubmitTime', 'batch_id', 'batch_id');
+    }
+
+    public function pillows()
+    {
+        return $this->hasMany('App\PillowWeight', 'batch_id', 'batch_id');
+    }
 }
 

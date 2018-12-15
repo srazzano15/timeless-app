@@ -8,7 +8,7 @@
     </div>
     <!--end stopwatch-->
     <div class="container">
-        <form action="{{URL::to('/extraction')}}" method="post">
+        <form action="{{ route('batch.store') }}" method="post">
 
                 @csrf
 

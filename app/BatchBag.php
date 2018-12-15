@@ -14,4 +14,9 @@ class BatchBag extends Model
         'bag_weight',
         'flower_weight'
     ];
+
+    /* public function bag_submission()
+    {
+        return $this->belongsTo('App\BatchSubmit');
+    } */
 }
