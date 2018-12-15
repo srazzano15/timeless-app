@@ -29,7 +29,7 @@ class SubmitBatch extends FormRequest
             // Validation Rules
 
             // static input validation rules
-            'bnum' => 'required|unique:batch_submits,batch_id',
+            /* 'bnum' => 'required|unique:batch_submits,batch_id',
             'dfilled' => 'required|date',
             'cooler' => 'required|integer',
             'drun' => 'required|date',
@@ -40,10 +40,7 @@ class SubmitBatch extends FormRequest
             'status' => 'required',
 
             // temp/time validation
-            'split[0]' => 'required_if:status,complete',
-            'split[1}' => 'required_if:status,complete',
-            'split[2]' => 'required_if:status,complete',
-            'split[3]' => 'required_if:status,complete',
+            'split' => 'required_if:status,complete',
             'totTime' => 'required_if:status,complete',
             'resTempFirst' => 'required_if:status,complete',
             'exitTempFirst' => 'required_if:status,complete',
@@ -54,7 +51,7 @@ class SubmitBatch extends FormRequest
             'bag_number' => 'sometimes|required|string',
             'bag_weight' => 'sometimes|required',
             'flow_weight' => 'sometimes|required',
-            'pillow' => 'sometimes|required',
+            'pillow' => 'sometimes|required', */
 
         ];
     }

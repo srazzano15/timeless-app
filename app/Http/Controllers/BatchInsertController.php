@@ -12,6 +12,7 @@ use App\PillowWeight;
 use App\SubmitTime;
 use App\Http\Requests\SubmitBatch;
 use Validator;
+use Illuminate\Support\Collection;
 
 
 
@@ -47,12 +48,32 @@ class BatchInsertController extends Controller
         // insert to DB
         $batchSubmit->save();
 
-
         $batchNumber = $request->input('bnum');
-        $bagNumber = $request->input('bag_number');
+        $bagNumber = $request->input('bag_text');
         $bagWeight = $request->input('bag_weight');
         $flowerWeight = $request->input('flow_weight');
         $pillowWeight = $request->input('pillow');
+
+        //new SubmitTime;
+        $splits = collect($request->input('split'));
+
+        // times and temps
+        $timesAndTemps = new SubmitTime(array(
+            'batch_id' => $batchNumber,
+            'res_temp_first' => $request->input('resTempFirst'),
+            'soak_time_first' => $splits->get(0),
+            'aggitation_time_first' => $splits->get(1),
+            'exit_temp_first' => $request->input('exitTempFirst'),
+            'res_temp_scnd' => $request->input('resTempScnd'),
+            'soak_time_scnd' => $splits->get(2),
+            'aggitation_time_scnd' => $splits->get(3),
+            'exit_temp_scnd' => $request->input('exitTempScnd'),
+            'total_time' => $request->input('totTime')
+        ));
+
+
+        // insert into times and temps table
+        $timesAndTemps->save();
 
         // insert a row for each bag ID not equal to null
          for ($i = 9; $i > -1; $i--) {
@@ -86,6 +107,7 @@ class BatchInsertController extends Controller
                 break;
             }
         }
+
 
         return redirect('/home');
     }
