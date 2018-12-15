@@ -8,6 +8,8 @@ use Doorman;
 use Auth;
 use Validator;
 
+
+
 class AdminUsersController extends Controller
 {
     /**
@@ -19,9 +21,15 @@ class AdminUsersController extends Controller
     {
 
         $users = User::all();
+
         $user = Auth::user();
 
         return view('admin.users.index', compact('users', 'user'));
+
+
+
+        return view('admin.users.index', compact('users'));
+
     }
 
     /**
@@ -31,8 +39,12 @@ class AdminUsersController extends Controller
      */
     public function create()
     {
+
         $user = Auth::user();
         return view('admin.users.create', compact('user'));
+
+
+
     }
 
     /**
