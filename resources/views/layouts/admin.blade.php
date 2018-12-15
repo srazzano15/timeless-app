@@ -9,7 +9,7 @@
 
 <!--Styles-->
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
 
@@ -36,21 +36,19 @@
   </div>
   <hr>
   <div class="w3-container">
-    <h5>Dashboard</h5>
+    <h5>Where would you like to go?</h5>
   </div>
   <div class="w3-bar-block">
     <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Overview</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Views</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-tachometer-alt fa-fw"></i>  Dashboard</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Submissions</a>
     <button onclick="myFunction('user_mgmt')" class="w3-button w3-block w3-left-align"><i class="fa fa-users fa-fw"></i> User Management</button>
     <div id="user_mgmt" class="w3-hide">
         <a href="{{ url('admin/users') }}" class="w3-bar-item w3-button w3-padding"><i class="fa fa-angle-double-right"></i> Users</a>
         <a href="{{ url('admin/users/create') }}" class="w3-bar-item w3-button w3-padding"><i class="fa fa-angle-double-right"></i> Add User</a>
         <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-angle-double-right"></i> Edit Users</a>
     </div>
-    {{-- <a href="admin/users" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  User Management</a> --}}
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>  Geo</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-diamond fa-fw"></i>  Orders</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-barcode fa-fw"></i>  Orders</a>
     <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Settings</a><br><br>
   </div>
 </nav>
