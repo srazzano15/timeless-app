@@ -236,7 +236,7 @@
                             <input type="button" id="rmvPillow" class="btn rmvRowBtn" value="-">
                         </div>
                     </div>
-                    <div class="form-group form-row tbody_row">
+                    <div class="form-group form-row tbody_row totalBatchWeightContainter">
                         <div class="col-6">
                             <label for="totalBatchWeight" class="form-label">Total Weight</label>
                             <input type="text" class="form-control" name="totalBatchWeight" id="totalBatchWeight"
@@ -289,7 +289,7 @@
                     </div>
                 </div>
                     <!--end of form container-->
-                <div class="form-group form-row">
+                <div class="form-group form-row batchStatus">
                     <div class="col-2">
                         <label for="batchStatus">Batch Status</label>
                         <select class="custom-select" name="status" id="batch_status">
@@ -299,7 +299,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="form-group form-row justify-content-left">
+                <div class="form-group form-row justify-content-left batchSubmit">
                     <div class="col-2">
                         <input class="btn btn-primary" id="batchSubmitBtn" type="submit" name="submit" value="Submit">
                     </div>
