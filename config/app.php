@@ -152,6 +152,7 @@ return [
          */
         Yajra\DataTables\DataTablesServiceProvider::class,
         Clarkeash\Doorman\Providers\DoormanServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
 
 
 
@@ -215,6 +216,8 @@ return [
         'Carbon' => Carbon\Carbon::class,
         'DataTables' => Yajra\DataTables\DataTablesServiceProvider::class,
         'Doorman' => Clarkeash\Doorman\Facades\Doorman::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
 
     ],
 

@@ -2,7 +2,7 @@
 
 use Carbon\Carbon;
 use App\BatchSubmit;
-
+use App\User;
 
 
 /*
@@ -22,13 +22,17 @@ Route::get('/', 'PagesController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/extraction', 'PagesController@extraction')->name('extraction');
+//Route::get('/extraction', 'PagesController@extraction')->name('extraction');
 
-Route::get('/search', 'PagesController@search')->name('search');
+//Route::get('/search', 'PagesController@search')->name('search');
 
 Route::get('/admin', function(){
 
-    return view('admin.index');
+    $user = Auth::user();
+
+
+    return view('admin.index', compact('user'));
+
 
 });
 
@@ -38,12 +42,12 @@ Route::get('/admin', function(){
  * --------------------------------------------------------------------------
  */
 
-Route::post('/extraction', 'BatchInsertController@storeSubmit');
+//Route::post('/extraction', 'BatchInsertController@storeSubmit');
 
 //Route::post('/extraction', 'BatchInsertController@storeBag');
 
-Route::get('/home', 'BatchReadController@tableRead');
 
 Route::resource('admin/users', 'AdminUsersController');
 
 
+Route::resource('batch', 'BatchController');

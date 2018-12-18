@@ -13,15 +13,11 @@ class PagesController extends Controller
 
     public function extraction() {
 
-        $user = Auth::user();
 
-        return view('pages.extraction', compact('user'));
-
-        // return view('pages.extraction');
     }
 
     public function search() {
-        return view('pages.search');
+
     }
 
 

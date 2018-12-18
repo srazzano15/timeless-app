@@ -17,6 +17,7 @@ class CreateBatchSubmitsTable extends Migration
             Schema::create('batch_submits', function (Blueprint $table) {
                 $table->increments('id');
                 $table->string('status');
+                $table->integer('user_id');
                 $table->string('submitter');
                 $table->string('batch_id');
                 $table->integer('cooler');

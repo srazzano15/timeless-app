@@ -13,4 +13,9 @@ class PillowWeight extends Model
         'batch_id',
         'pillow'
     ];
+
+    /* public function pillow()
+    {
+        return $this->belongsTo('App\BatchSubmit');
+    } */
 }

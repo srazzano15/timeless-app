@@ -4,6 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
+use App\User;
+use Doorman;
+use Auth;
+use Validator;
+
+
+
+
 class AdminUsersController extends Controller
 {
     /**
@@ -13,7 +22,19 @@ class AdminUsersController extends Controller
      */
     public function index()
     {
-        return view('admin.users.index');
+
+
+        $users = User::all();
+
+        $user = Auth::user();
+
+        return view('admin.users.index', compact('users', 'user'));
+
+
+
+        return view('admin.users.index', compact('users'));
+
+
     }
 
     /**
@@ -23,7 +44,14 @@ class AdminUsersController extends Controller
      */
     public function create()
     {
-        
+
+
+        $user = Auth::user();
+        return view('admin.users.create', compact('user'));
+
+
+
+
     }
 
     /**
@@ -34,7 +62,19 @@ class AdminUsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        Validator::make($request->all(),[
+           'email' => 'required|unique:invites,for'
+        ])->validate();
+
+        new Doorman;
+
+        $email = $request->input('email');
+
+        Doorman::generate()->for($email)->make();
+
+        return redirect('admin/users');
+
     }
 
     /**
@@ -56,7 +96,11 @@ class AdminUsersController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $user = User::findORFail($id);
+
+        return view('admin.users.edit', compact('user'));
+
     }
 
     /**

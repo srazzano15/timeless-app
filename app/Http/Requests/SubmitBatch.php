@@ -40,10 +40,7 @@ class SubmitBatch extends FormRequest
             'status' => 'required',
 
             // temp/time validation
-            'split[0]' => 'required_if:status,complete',
-            'split[1}' => 'required_if:status,complete',
-            'split[2]' => 'required_if:status,complete',
-            'split[3]' => 'required_if:status,complete',
+            'split' => 'required_if:status,complete',
             'totTime' => 'required_if:status,complete',
             'resTempFirst' => 'required_if:status,complete',
             'exitTempFirst' => 'required_if:status,complete',

@@ -1,4 +1,15 @@
+@extends('layouts.app')
+
+
+@section('content')
 <div class="container">
+    <div class="row justify-content-center">
+        <h1>Stuffed Batches</h1>
+    </div>
+    <div class="row justify-content-center">
+        <span>Review the stuffed batches awaiting to be run or submit a new batch now!</span>
+    </div>
+    <div class="container">
         <div class="row" id="dashboardContent">
             <div class="wrapper" id="dashboardWrapper">
                 <table class="table table-striped table-bordered table-condensed">
@@ -8,7 +19,7 @@
                             <th>Submitter</th>
                             <th>Batch Number</th>
                             <th>Cooler</th>
-                            <th></th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -20,7 +31,7 @@
                                     <td>{{ $submit->submitter }}</td>
                                     <td>{{ $submit->batch_id }}</td>
                                     <td>{{ $submit->cooler }}</td>
-
+                                    <td> <a type="button" class="btn" href="{{ route('batch.edit', $submit->id) }}">Edit Batch</a></td>
                                 </tr>
                             @endforeach
                         @else
@@ -33,4 +44,5 @@
             </div>
         </div>
     </div>
-
+</div>
+@endsection

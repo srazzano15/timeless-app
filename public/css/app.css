@@ -10593,6 +10593,12 @@ body {
   }
 }
 
+@media screen and (max-width: 990px) {
+  #controls .btn {
+    margin-bottom: 10px;
+  }
+}
+
 #batchTimer {
   margin-bottom: 10px;
 }
@@ -10612,7 +10618,9 @@ body {
 }
 
 
+
 @media screen and (max-width: 509px) {
+
 
   #stopwatch {
     -webkit-box-pack: center !important;
@@ -10679,6 +10687,7 @@ body {
 
 
 @media screen and (max-width: 510px) {
+
 
   #timer {
     margin-bottom: 15px;
@@ -10770,6 +10779,7 @@ footer .fixed-bottom span {
             justify-content: center;
   }
 }
+
 
 
 @media screen and (max-width: 768px) {
@@ -10870,6 +10880,22 @@ footer .fixed-bottom span {
   .totalBatchWeightContainter {
     margin-top: 30px;
   }
+
+
+.w3-light-grey {
+  background: var(--dark) !important;
+}
+
+.w3-sidebar {
+  background-color: var(--gray) !important;
+}
+
+#admin_page {
+  color: var(--yellow) !important;
+}
+
+.admin_stats {
+  background-color: var(--gray) !important;
 
 }
 
