@@ -153,7 +153,7 @@ return [
         Yajra\DataTables\DataTablesServiceProvider::class,
         Clarkeash\Doorman\Providers\DoormanServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-
+        Maatwebsite\Excel\ExcelServiceProvider::class,
 
 
         /*
@@ -218,7 +218,7 @@ return [
         'Doorman' => Clarkeash\Doorman\Facades\Doorman::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
-
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ],
 
 ];
