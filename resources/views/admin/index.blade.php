@@ -1,5 +1,6 @@
 @extends('layouts.admin')
 
+
 @section('content')
 
  <!-- Header -->
@@ -51,3 +52,4 @@
       </div>
 
 @endsection
+
