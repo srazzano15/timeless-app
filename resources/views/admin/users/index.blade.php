@@ -1,3 +1,4 @@
+
 @extends('layouts.admin')
 
 
@@ -50,3 +51,4 @@
     </table>
 
 @endsection
+

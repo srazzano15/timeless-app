@@ -10468,8 +10468,17 @@ a.text-dark:focus {
 
 html,
 body {
+  width: 100%;
   color: var(--yellow);
   background: var(--dark);
+  text-align: center !important;
+}
+
+@media screen and (max-width: 400px) {
+  html,
+  body {
+    font-size: .8rem;
+  }
 }
 
 .btn {
@@ -10532,6 +10541,12 @@ body {
   text-align: center;
 }
 
+@media screen and (max-width: 400px) {
+  .formElement .form-row label.form-label {
+    font-size: .8rem;
+  }
+}
+
 .table_header label.thead {
   text-align: center !important;
   font-weight: bold;
@@ -10557,6 +10572,25 @@ body {
   font-size: 1.4em;
   border-color: var(--yellow);
   padding: 8px 50px !important;
+  max-width: 145px;
+}
+
+@media screen and (max-width: 990px) {
+  #controls .btn {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #controls .btn {
+    width: 145px !important;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  #controls .btn {
+    margin-bottom: 10px;
+  }
 }
 
 @media screen and (max-width: 990px) {
@@ -10583,7 +10617,11 @@ body {
   display: flex;
 }
 
-@media screen and (max-width: 508px) {
+
+
+@media screen and (max-width: 509px) {
+
+
   #stopwatch {
     -webkit-box-pack: center !important;
         -ms-flex-pack: center !important;
@@ -10647,7 +10685,10 @@ body {
   }
 }
 
-@media screen and (max-width: 508px) {
+
+@media screen and (max-width: 510px) {
+
+
   #timer {
     margin-bottom: 15px;
     -webkit-box-pack: center;
@@ -10730,13 +10771,116 @@ footer .fixed-bottom span {
           justify-content: center;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 768px) {
+
   .form-group {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
 }
+
+
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    left: 15%;
+    max-width: 75%;
+  }
+
+  .navbar .navbar-collapse {
+    display: none;
+  }
+
+  .navbar button.navbar-toggler {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .totalFlowerWeightContainer .col-3 {
+    margin-left: 0%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #dynamicRowBtns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 75%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #pillowBtns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 51%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #timeOutputs div:nth-child(2) .col-2:nth-child(1),
+  #timeOutputs div:nth-child(2) .col-2:nth-child(2) {
+    margin-top: 23px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  #timeOutputs div:nth-child(2) .col-2:nth-child(4) {
+    margin-top: 23px;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 500px) {
+  #timeOutputs div:nth-child(2) .col-2:nth-child(4) {
+    margin-top: 23px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .batchSubmit {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .batchStatus {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (min-width: 510px) and (max-width: 768px) {
+  .py-4 .container:nth-child(1) {
+    margin-left: 4%;
+  }
+}
+
+@media screen and (min-width: 401px) and (max-width: 768px) {
+  .totalBatchWeightContainter {
+    margin-top: 43px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .totalBatchWeightContainter {
+    margin-top: 30px;
+  }
+
 
 .w3-light-grey {
   background: var(--dark) !important;
@@ -10752,5 +10896,6 @@ footer .fixed-bottom span {
 
 .admin_stats {
   background-color: var(--gray) !important;
+
 }
 

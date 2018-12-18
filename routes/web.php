@@ -30,7 +30,9 @@ Route::get('/admin', function(){
 
     $user = Auth::user();
 
+
     return view('admin.index', compact('user'));
+
 
 });
 
@@ -44,6 +46,8 @@ Route::get('/admin', function(){
 
 //Route::post('/extraction', 'BatchInsertController@storeBag');
 
+
 Route::resource('admin/users', 'AdminUsersController');
+
 
 Route::resource('batch', 'BatchController');

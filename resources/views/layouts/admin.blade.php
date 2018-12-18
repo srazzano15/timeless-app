@@ -3,6 +3,7 @@
 <title>{{ config('app.name', 'Laravel') }}</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <!-- CSRF Token -->
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -19,6 +20,7 @@
 <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
   <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
   <span class="w3-bar-item w3-right"><a href="/home"><img src="{{ asset('images/timeless_drip_logo.png') }}" height="25px"></a></span>
+
 </div>
 
 <!-- Sidebar/menu -->
@@ -28,7 +30,9 @@
     <img src="{{ asset('images/timeless_drip_logo.png') }}" class="w3-circle w3-margin-right" style="width:46px">
     </div>
     <div class="w3-col s8 w3-bar">
+
     <span>Welcome, <strong>{{ $user->name }}</strong></span><br>
+
       <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
       <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
       <a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
@@ -36,6 +40,7 @@
   </div>
   <hr>
   <div class="w3-container">
+
     <h5>Where would you like to go?</h5>
   </div>
   <div class="w3-bar-block">
@@ -49,6 +54,7 @@
         {{-- <a href="{{  }}" class="w3-bar-item w3-button w3-padding"><i class="fa fa-angle-double-right"></i> Edit Users</a> --}}
     </div>
     <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-barcode fa-fw"></i>  Orders</a>
+
     <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Settings</a><br><br>
   </div>
 </nav>
@@ -62,7 +68,9 @@
 
 
 
+
   @yield('content')
+
 
 
 
@@ -95,6 +103,7 @@ function w3_close() {
     overlayBg.style.display = "none";
 }
 
+
 function myFunction(id) {
     var x = document.getElementById(id);
     if (x.className.indexOf("w3-show") == -1) {
@@ -103,6 +112,7 @@ function myFunction(id) {
         x.className = x.className.replace(" w3-show", "");
     }
 }
+
 
 </script>
 

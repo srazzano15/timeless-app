@@ -41,9 +41,9 @@
                 </div>
             </div>
             <!--end form elemet-->
-            <div class="row">
+            <div class="row flowerWeightCalcContainer">
                 <div class="formElement col-8" style="padding-right: 5px;">
-                    <div class="form-group form-row" style="text-align: center;">
+                    <div class="form-group form-row flowerWeightHeaders" style="text-align: center;">
                         <div class="col-3">
                             <label for="packageId" class="form-label">Package ID</label>
                         </div>
@@ -168,7 +168,7 @@
                             <input type="button" id="rmvRow" class="btn rmvRowBtn" value="-">
                         </div>
                     </div>
-                    <div class="form-group form-row tbody_row">
+                    <div class="form-group form-row tbody_row totalFlowerWeightContainer">
                         <div class="col-3 offset-6">
                             <label for="totalFlowerWeight" class="form-label">Total Flower Weight</label>
                             <input type="text" class="form-control" name="totalFlowWeight" id="totalFlowerWeight"
@@ -236,7 +236,7 @@
                             <input type="button" id="rmvPillow" class="btn rmvRowBtn" value="-">
                         </div>
                     </div>
-                    <div class="form-group form-row tbody_row">
+                    <div class="form-group form-row tbody_row totalBatchWeightContainter">
                         <div class="col-6">
                             <label for="totalBatchWeight" class="form-label">Total Weight</label>
                             <input type="text" class="form-control" name="totalBatchWeight" id="totalBatchWeight"
@@ -298,7 +298,7 @@
                     </div>
                 </div>
                     <!--end of form container-->
-                <div class="form-group form-row">
+                <div class="form-group form-row batchStatus">
                     <div class="col-2">
                         <label for="batchStatus">Batch Status</label>
                         <select class="custom-select" name="status" id="batch_status">
@@ -308,7 +308,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="form-group form-row justify-content-left">
+                <div class="form-group form-row justify-content-left batchSubmit">
                     <div class="col-2">
                         <input class="btn btn-primary" id="batchSubmitBtn" type="submit" name="submit" value="Submit">
                     </div>
