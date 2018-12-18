@@ -231,6 +231,7 @@ footer {
     }
 }
 
+
 .form-group {
     @media screen and (max-width: 768px) {
         justify-content: center;
@@ -271,6 +272,7 @@ footer {
 }
 
 .flowerWeightHeaders{
+
     @media screen and (max-width: 500px) {
 
     }
@@ -306,6 +308,7 @@ footer {
     }
 }
 
+
 .py-4{
     @media screen and (min-width: 510px) and (max-width: 768px) {
         .container:nth-child(1){
@@ -321,4 +324,22 @@ footer {
     @media screen and (max-width: 400px){
         margin-top: 30px;
     }
+
+.w3-light-grey
+{
+    background: var(--dark) !important;
+}
+.w3-sidebar
+{
+    background-color: var(--gray) !important;
+}
+#admin_page
+{
+    color: var(--yellow) !important;
+}
+
+.admin_stats
+{
+    background-color: var(--gray) !important;
+
 }

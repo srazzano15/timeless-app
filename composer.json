@@ -11,6 +11,7 @@
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
         "nesbot/carbon": "1.36.1",
+        "onokumus/metismenu": "dev-master",
         "yajra/laravel-datatables": "^1.4"
     },
     "require-dev": {

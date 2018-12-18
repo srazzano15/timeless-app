@@ -10587,6 +10587,12 @@ body {
   }
 }
 
+@media screen and (max-width: 990px) {
+  #controls .btn {
+    margin-bottom: 10px;
+  }
+}
+
 #batchTimer {
   margin-bottom: 10px;
 }
@@ -10605,7 +10611,9 @@ body {
   display: flex;
 }
 
+
 @media screen and (max-width: 509px) {
+
   #stopwatch {
     -webkit-box-pack: center !important;
         -ms-flex-pack: center !important;
@@ -10669,7 +10677,9 @@ body {
   }
 }
 
+
 @media screen and (max-width: 510px) {
+
   #timer {
     margin-bottom: 15px;
     -webkit-box-pack: center;
@@ -10753,12 +10763,14 @@ footer .fixed-bottom span {
 }
 
 @media screen and (max-width: 768px) {
+
   .form-group {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
 }
+
 
 @media screen and (max-width: 768px) {
   .navbar {
@@ -10858,5 +10870,6 @@ footer .fixed-bottom span {
   .totalBatchWeightContainter {
     margin-top: 30px;
   }
+
 }
 
