@@ -1,7 +1,12 @@
 html,
 body {
+    width:100%;
     color: var(--yellow);
     background: var(--dark);
+    text-align: center !important;
+    @media screen and (max-width: 400px) {
+        font-size: .8rem;
+    }
 }
 
 .btn {
@@ -58,6 +63,9 @@ body {
 .formElement .form-row label.form-label {
     font-size: 1.1rem;
     text-align: center;
+    @media screen and (max-width: 400px) {
+        font-size: .8rem;
+    }
 }
 
 .table_header label.thead {
@@ -79,12 +87,19 @@ body {
 #controls {
     text-align: center;
 
+    @media screen and (max-width:324px){
+    }
+
     .btn {
         font-size: 1.4em;
         border-color: var(--yellow);
         padding: 8px 50px !important;
+        max-width: 145px;
         @media screen and (max-width: 990px) {
             margin-bottom: 10px;
+        }
+        @media screen and (max-width: 400px) {
+            width: 145px!important;
         }
     }
 }
@@ -97,7 +112,7 @@ body {
 }
 #stopwatch {
     display: flex;
-    @media screen and (max-width: 508px) {
+    @media screen and (max-width: 509px) {
         justify-content: center !important;
     }
 }
@@ -134,7 +149,7 @@ body {
     @media screen and (max-width: 766px) {
         flex: 4 !important;
     }
-    @media screen and (max-width: 508px) {
+    @media screen and (max-width: 510px) {
         margin-bottom: 15px;
         justify-content: center;
     }
@@ -216,12 +231,100 @@ footer {
     }
 }
 
-.form-group
-{
-    @media screen and (max-width: 500px) {
+
+.form-group {
+    @media screen and (max-width: 768px) {
         justify-content: center;
     }
 }
+
+.navbar{
+    @media screen and (max-width: 768px) {
+        left: 15%;
+        max-width: 75%;
+        .navbar-collapse{display:none;}
+        button.navbar-toggler{display: none!important;}
+    }
+}
+
+
+.totalFlowerWeightContainer .col-3{
+    @media screen and (max-width: 767px) {
+        margin-left: 0%;
+    }
+}
+
+#dynamicRowBtns{
+    @media screen and (max-width: 767px) {
+        display: flex;
+        max-width: 75%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+#pillowBtns{
+    @media screen and (max-width: 767px) {
+        display: flex;
+        max-width: 51%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+
+.flowerWeightHeaders{
+
+    @media screen and (max-width: 500px) {
+
+    }
+}
+
+#timeOutputs{
+    @media screen and (max-width: 992px){
+        div:nth-child(2) .col-2:nth-child(1), div:nth-child(2) .col-2:nth-child(2){
+            margin-top: 23px;
+        }
+    }
+    @media screen and (min-width: 768px) and (max-width: 992px) {
+        div:nth-child(2) .col-2:nth-child(4){
+            margin-top: 23px;
+        }
+    }
+
+    @media screen and (min-width: 400px) and (max-width: 500px){
+        div:nth-child(2) .col-2:nth-child(4){
+            margin-top: 23px;
+        }
+    }
+}
+
+.batchSubmit{
+    @media screen and (max-width: 768px){
+        justify-content: center;
+    }
+}
+.batchStatus{
+    @media screen and (max-width: 768px){
+        justify-content: center;
+    }
+}
+
+
+.py-4{
+    @media screen and (min-width: 510px) and (max-width: 768px) {
+        .container:nth-child(1){
+            margin-left: 4%;
+        }
+    }
+}
+
+.totalBatchWeightContainter{
+    @media screen and (min-width: 401px) and (max-width: 768px){
+        margin-top: 43px;
+    }
+    @media screen and (max-width: 400px){
+        margin-top: 30px;
+    }
+
 .w3-light-grey
 {
     background: var(--dark) !important;
@@ -238,4 +341,5 @@ footer {
 .admin_stats
 {
     background-color: var(--gray) !important;
+
 }
