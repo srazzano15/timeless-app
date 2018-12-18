@@ -44,8 +44,6 @@ Route::get('/admin', function(){
 
 //Route::post('/extraction', 'BatchInsertController@storeBag');
 
-Route::get('/home', 'BatchReadController@tableRead');
-
 Route::resource('admin/users', 'AdminUsersController');
 
 Route::resource('batch', 'BatchController');

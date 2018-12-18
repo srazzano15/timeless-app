@@ -34,7 +34,7 @@ class BatchController extends Controller
      */
     public function create()
     {
-        
+
         return view('batch.extraction');
     }
 
@@ -148,7 +148,9 @@ class BatchController extends Controller
      */
     public function edit($id)
     {
-        return view('batch.edit');
+        $batch = BatchSubmit::findOrFail($id);
+
+        return view('batch.edit', compact('batch'));
     }
 
     /**

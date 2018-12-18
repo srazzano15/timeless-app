@@ -9,40 +9,40 @@
     </div>
     <!--end stopwatch-->
     <div class="container">
-        <form action="" method="post">
-
-                @csrf
+        <form action="{{ route('batch.update', $batch->id) }}" method="POST">
+            @method('PUT')
+            @csrf
 
                 <div class="formElement" id="batch_form">
                     <div class="form-group form-row">
                         <div class="col-2">
                             <label for="batchtext" class="form-label">Batch ID</label>
-                                <input type="text" class="form-control" name="bnum" id="batchtext" aria-describedby="batchtextInput" value="{{ old('bnum') }}" placeholder="MKA-...">
+                                <input type="text" class="form-control" name="bnum" aria-describedby="batchtextInput" value="{{ old('bnum') }}" placeholder="MKA-...">
                             <small class="text-danger">{{ $errors->first('bnum') }}</small>
                         </div>
                         <div class="col-2">
                             <label for="cooler" class="form-label">Cooler Stored In </label>
-                                <input type="text" class="form-control" name="cooler" id="cooler" aria-describedby="coolerStoredIn" value="{{ old('cooler') }}">
+                                <input type="text" class="form-control" name="cooler"  aria-describedby="coolerStoredIn" value="{{ old('cooler') }}">
                             <small class="text-danger">{{ $errors->first('cooler') }}</small>
                         </div>
                         <div class="col-2">
                             <label for="dateFilled" class="form-label">Date Filled </label>
-                                <input type="date" class="form-control" name="dfilled" id="dateFilled" aria-describedby="batchDateFilled" value="{{ old('dfilled') }}" placeholder="mm-dd-yyyy">
+                                <input type="date" class="form-control" name="dfilled"  aria-describedby="batchDateFilled" value="{{ old('dfilled') }}" placeholder="mm-dd-yyyy">
                             <small class="text-danger">{{ $errors->first('dfilled') }}</small>
                         </div>
                         <div class="col-2">
                             <label for="dateRun" class="form-label">Date Run </label>
-                                <input type="date" class="form-control" name="drun" id="dateRun" aria-describedby="dateRun" value="{{ old('drun') }}" placeholder="mm-dd-yyyy">
+                                <input type="date" class="form-control" name="drun"  aria-describedby="dateRun" value="{{ old('drun') }}" placeholder="mm-dd-yyyy">
                             <small class="text-danger">{{ $errors->first('drun') }}</small>
                         </div>
                         <div class="col-2">
                             <label for="kegsFilled" class="form-label">Kegs Filled</label>
-                                <input type="text" class="form-control" name="kegsFilled" id="kegsFilled" aria-describedby="kegsFilled" value="{{ old('kegsFilled') }}" placeholder="1, 5, 8">
+                                <input type="text" class="form-control" name="kegsFilled" aria-describedby="kegsFilled" value="{{ old('kegsFilled') }}" placeholder="1, 5, 8">
                             <small class="text-danger">{{ $errors->first('kegsFilled') }}</small>
                         </div>
                         <div class="col-2">
                             <label for="submitter" class="form-label">Submitter</label>
-                                <input type="text" class="form-control" name="submitter" id="submitter" aria-describedby="submitter" value=" {{ old('submitter') }}" readonly>
+                                <input type="text" class="form-control" name="submitter" aria-describedby="submitter" value=" {{ old('submitter') }}" readonly>
                         </div>
                     </div>
                 </div>
@@ -256,49 +256,49 @@
                         <div class="form-group form-row">
                             <div class="col-2">
                                 <label for="resTempFirst" class=" form-label">Res Temp (1st)</label>
-                                <input type="text" class="form-control" name="resTempFirst" id="resTempFirst" value="{{ old('resTempFirst') }}">
+                                <input type="text" class="form-control" name="resTempFirst" value="{{ old('resTempFirst') }}">
                                 <small class="text-danger">{{ $errors->first('resTempFirst') }}</small>
                             </div>
                             <div class="col-2">
                                 <label for="splitOne" class=" form-label">Soak Time (1st)</label>
-                                <input type="text" class="time_split form-control" name="split[0]" id="split_0" value="{{ old('split[0]') }}" readonly>
+                                <input type="text" class="time_split form-control" name="split[0]" value="{{ old('split[0]') }}" readonly>
                                 <small class="text-danger">{{ $errors->first('split[0]') }}</small>
                             </div>
                             <div class="col-2">
                                 <label for="splitTwo" class="form-label">Aggitation Time (1st)</label>
-                                <input type="text" class="time_split form-control" name="split[1]" id="split_1" value="{{ old('split[1]') }}" readonly>
+                                <input type="text" class="time_split form-control" name="split[1]" value="{{ old('split[1]') }}" readonly>
                                 <small class="text-danger">{{ $errors->first('split[1]') }}</small>
                             </div>
                             <div class="col-2">
                                 <label for="exitTempFirst" class=" form-label">Exit Temp (1st)</label>
-                                <input type="text" class="form-control" name="exitTempFirst" id="exitTempFirst" value="{{ old('exitTempFirst') }}">
+                                <input type="text" class="form-control" name="exitTempFirst" value="{{ old('exitTempFirst') }}">
                                 <small class="text-danger">{{ $errors->first('exitTempFirst') }}</small>
                             </div>
                         </div>
                         <div class="form-group form-row">
                             <div class="col-2">
                                 <label for="resTempScnd" class=" form-label">Res Temp (2nd)</label>
-                                <input type="text" class="form-control" name="resTempScnd" id="resTempScnd" value="{{ old('resTempScnd') }}">
+                                <input type="text" class="form-control" name="resTempScnd" value="{{ old('resTempScnd') }}">
                                 <small class="text-danger">{{ $errors->first('resTempScnd') }}</small>
                             </div>
                             <div class="col-2">
                                 <label for="splitThree" class="form-label">Soak Time (2nd)</label>
-                                <input type="text" class="time_split form-control" name="split[2]" id="split_2" value="{{ old('split[2]') }}" readonly>
+                                <input type="text" class="time_split form-control" name="split[2]" value="{{ old('split[2]') }}" readonly>
                                 <small class="text-danger">{{ $errors->first('split[2]') }}</small>
                             </div>
                             <div class="col-2">
                                 <label for="splitFour" class="form-label">Aggitation Time (2nd)</label>
-                                <input type="text" class="time_split form-control" name="split[3]" id="split_3" value="{{ old('split[3]') }}" readonly>
+                                <input type="text" class="time_split form-control" name="split[3]" value="{{ old('split[3]') }}" readonly>
                                 <small class="text-danger">{{ $errors->first('split[3]') }}</small>
                             </div>
                             <div class="col-2">
                                 <label for="exitTempScnd" class=" form-label">Exit Temp (2nd)</label>
-                                <input type="text" class="form-control" name="exitTempScnd" id="exitTempScnd" value="{{ old('exitTempScnd') }}">
+                                <input type="text" class="form-control" name="exitTempScnd" value="{{ old('exitTempScnd') }}">
                                 <small class="text-danger">{{ $errors->first('exitTempScnd') }}</small>
                             </div>
                             <div class="col-2">
                                 <label for="totalTime" class="form-label">Total Batch Time</label>
-                                <input type="text" class="time_split form-control" name="totTime" id="total_time" value="0" readonly>
+                                <input type="text" class="time_split form-control" name="totTime" value="{{ old('totTime') }}" readonly>
                                 <small class="text-danger">{{ $errors->first('totTime') }}</small>
                             </div>
                         </div>
