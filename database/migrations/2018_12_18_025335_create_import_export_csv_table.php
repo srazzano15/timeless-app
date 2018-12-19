@@ -13,15 +13,18 @@ class CreateImportExportCsvTable extends Migration
      */
     public function up()
     {
-        Schema::create('import_export_csv', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('user_id')->nullable();
-            $table->string('batch_id')->nullable();
-            $table->string('bag_id');
-            $table->decimal('bag_weight');
-            $table->decimal('flower_weight')->nullable();
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('import_export_csv')) {
+            Schema::create('import_export_csv', function (Blueprint $table) {
+                $table->increments('id');
+                $table->integer('user_id')->nullable();
+                $table->string('batch_id')->nullable();
+                $table->string('bag_id');
+                $table->decimal('bag_weight');
+                $table->decimal('flower_weight')->nullable();
+                $table->timestamps();
+            });
+        }
+
     }
 
     /**

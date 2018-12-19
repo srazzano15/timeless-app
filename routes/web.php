@@ -51,3 +51,7 @@ Route::resource('admin/users', 'AdminUsersController');
 
 
 Route::resource('batch', 'BatchController');
+
+Route::get('/admin/import', 'ImportCsvController@getImport')->name('import');
+Route::post('/admin/import_parse', 'ImportCsvController@parseImport')->name('import_parse');
+Route::post('/admin/import_process', 'ImportCsvController@processImport')->name('import_process');

@@ -221,4 +221,8 @@ return [
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ],
 
+    'db_fields' => [
+        'bag_id',
+        'bag_weight',
+    ],
 ];
