@@ -53,8 +53,12 @@
         <a href="{{ url('admin/users/create') }}" class="w3-bar-item w3-button w3-padding"><i class="fa fa-angle-double-right"></i> Add User</a>
         {{-- <a href="{{  }}" class="w3-bar-item w3-button w3-padding"><i class="fa fa-angle-double-right"></i> Edit Users</a> --}}
     </div>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-barcode fa-fw"></i>  Orders</a>
 
+    <button onclick="myFunction('order_mgmt')" class="w3-button w3-block w3-left-align"><i class="fas fa-barcode fa-fw"></i> Orders</button>
+    <div id="order_mgmt" class="w3-hide">
+        <a href="{{ url('admin/import') }}" class="w3-bar-item w3-button w3-padding"><i class="fa fa-angle-double-right"></i>  Import CSV</a>
+        <a href="{{ url('admin/edit') }}" class="w3-bar-item w3-button w3-padding"><i class="fa fa-angle-double-right"></i>  Export Report</a>
+    </div>
     <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Settings</a><br><br>
   </div>
 </nav>

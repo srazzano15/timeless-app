@@ -3,7 +3,8 @@
 use Carbon\Carbon;
 use App\BatchSubmit;
 use App\User;
-
+use App\ImportData;
+use App\BatchBag;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,15 +27,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Route::get('/search', 'PagesController@search')->name('search');
 
-Route::get('/admin', function(){
 
-    $user = Auth::user();
-
-
-    return view('admin.index', compact('user'));
-
-
-});
 
 /**
  * --------------------------------------------------------------------------
@@ -46,12 +39,16 @@ Route::get('/admin', function(){
 
 //Route::post('/extraction', 'BatchInsertController@storeBag');
 
+Route::middleware(['auth'])->group(function () {
 
-Route::resource('admin/users', 'AdminUsersController');
-
-
-Route::resource('batch', 'BatchController');
-
-Route::get('/admin/import', 'ImportCsvController@getImport')->name('import');
-Route::post('/admin/import_parse', 'ImportCsvController@parseImport')->name('import_parse');
-Route::post('/admin/import_process', 'ImportCsvController@processImport')->name('import_process');
+    Route::resource('admin/users', 'AdminUsersController');
+    Route::resource('batch', 'BatchController');
+    Route::get('/admin/import', 'ImportCsvController@getImport')->name('import');
+    Route::post('/admin/import_parse', 'ImportCsvController@parseImport')->name('import_parse');
+    Route::post('/admin/import_process', 'ImportCsvController@processImport')->name('import_process');
+    Route::get('/admin', function(){
+        $user = Auth::user();
+        return view('admin.index', compact('user'));
+    });
+    Route::get('/admin/edit', 'ExportsController@exportView');
+});

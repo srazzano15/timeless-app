@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\ImportData;
 use Auth;
-use Excel;
 use App\Http\Requests\CsvImportRequest;
 use App\CsvData;
 use Illuminate\Support\Facades\Redirect;
