@@ -82,7 +82,7 @@
 
 
 
-  @yield('footer')
+  @include('inc.footer')
   <!-- End page content -->
 </div>
 

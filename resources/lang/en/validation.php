@@ -137,6 +137,12 @@ return [
         'bnum' => [
             'required' => 'Please enter a Batch Number!',
             'unique' => 'This batch number has already been submitted!'
+        ],
+        'code' => [
+            'expired' => 'The invite code :CODE has expired.',
+            'invalid' => 'The invite code :CODE is invalid.',
+            'maxed' => 'The invite code :CODE has already been used the maximum number of times.',
+            'restricted' => 'The invite code :CODE belongs to another user.',
         ]
     ],
 

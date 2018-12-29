@@ -2,7 +2,8 @@
     <div class="container fixed-bottom">
         <span>
 
-            Written and owned by Steve Razzano in {{ Carbon::now()->format('Y') }}!
+            Timeless Batch Master - Version 1.0.0 <br>
+            Developed by Razzbury Holdings LLC {{ Carbon::now()->format('Y') }}.
 
 
         </span>

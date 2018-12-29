@@ -46,10 +46,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/import', 'ImportCsvController@getImport')->name('import');
     Route::post('/admin/import_parse', 'ImportCsvController@parseImport')->name('import_parse');
     Route::post('/admin/import_process', 'ImportCsvController@processImport')->name('import_process');
-    Route::get('/admin', function(){
-        $user = Auth::user();
-        return view('admin.index', compact('user'));
-    });
+    Route::get('/admin', 'PagesController@admin')->name('admin');
     Route::get('/admin/edit', 'ExportsController@exportView')->name('batch_report');
     Route::get('/admin/edit/download', 'ExportsController@export')->name('report_download');
 

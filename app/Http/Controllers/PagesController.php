@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\ImportData;
+
 
 class PagesController extends Controller
 {
@@ -11,14 +13,9 @@ class PagesController extends Controller
         return view('pages.index');
     }
 
-    public function extraction() {
-
-
+    public function admin() {
+        $user = Auth::user();
+        $rows = ImportData::with('bagMatch')->where('batch_id', '=', null)->get();
+        return view('admin.index', compact('user', 'rows'));
     }
-
-    public function search() {
-
-    }
-
-
 }

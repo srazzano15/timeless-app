@@ -51,5 +51,7 @@
         </div>
       </div>
 
+      @include('inc.adminDataTable')
+
 @endsection
 

@@ -28,7 +28,6 @@
                                 <td>{{ $h }}</td>
                                 <td>{{ $l }}</td>
                                 <td>{{ $h - $l }}</td>
-                                {{-- <td>{{ ($row->bag_weight) - ($row->bagMatch['flower_weight']) }}</td> --}}
                                 <td>{{ $row->created_at }}</td>
                             </tr>
                         @endif
