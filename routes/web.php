@@ -52,4 +52,8 @@ Route::middleware(['auth'])->group(function () {
     });
     Route::get('/admin/edit', 'ExportsController@exportView')->name('batch_report');
     Route::get('/admin/edit/download', 'ExportsController@export')->name('report_download');
+
+    Route::get('/admin/submit_bags', 'SingleBagsInsertController@index')->name('admin_submit_bags');
+    Route::post('/admin/processing_bags', 'SingleBagsInsertController@store')->name('admin_bags_processing');
+
 });

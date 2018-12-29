@@ -1,6 +1,7 @@
 <div class="container">
+        <h1 style="margin-top: 1.5em">Weighted Bag Report</h1>
         <div>
-            <a href="{{ route('report_download') }}" type="button">Download Report</a>
+            <a href="{{ route('report_download') }}" type="button" class="btn btn-primary" style="margin-top: 1.5em">Export Report</a>
         </div>
         <div class="table">
             <table class="table">
@@ -26,8 +27,8 @@
                                 <td>{{ $row->bag_id }}</td>
                                 <td>{{ $h }}</td>
                                 <td>{{ $l }}</td>
-                                {{-- <td>{{ $h - $l }}</td> --}}
-                                <td>{{ ($row->bag_weight) - ($row->bagMatch['flower_weight']) }}</td>
+                                <td>{{ $h - $l }}</td>
+                                {{-- <td>{{ ($row->bag_weight) - ($row->bagMatch['flower_weight']) }}</td> --}}
                                 <td>{{ $row->created_at }}</td>
                             </tr>
                         @endif

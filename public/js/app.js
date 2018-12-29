@@ -36211,6 +36211,35 @@ $(function () {
 
     dynamicRows('#addRow', '#rmvRow', 'row');
     dynamicRows('#addPillow', '#rmvPillow', 'pillow');
+    dynamicRows('#adminAddRow', '#adminRmvRow', 'adminRow');
+
+    /* adminRows = ( add, rmv, i) => {
+        row = `<div class="form-row" id="bag_row[${i}]">
+                <div class="form-group col-5">
+                    <label for="package_id" class="form-label">Package ID</label>
+                    <input type="text" class="form-control" name="package_id[]" aria-describedby="packageId">  
+                </div>
+                <div class="form-group col-5">
+                    <label for="flow_weight" class="form-label">Flower Weight</label>
+                    <input type="text" class="form-control" name="flow_weight[]" aria-describedby="flowerWeight">  
+                </div>
+            </div>`;
+         i = 0;
+         $(add).click(function() {
+             if (i < 10) {
+                i++;
+                 $('#admin_bags_form').appendTo(row);
+                 return i;
+            }
+        });
+         $(rmv).click(function() {
+             if (i > 0) {
+                 $('#admin_bags_form').remove(row);
+                 return --i;
+            }
+        });
+     }
+     adminRows( `#adminAddRow`, `#adminRmvRow` ); */
 
     /**
      * Beginning of Admin Panel scripts

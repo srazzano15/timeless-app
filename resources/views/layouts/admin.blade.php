@@ -45,8 +45,11 @@
   </div>
   <div class="w3-bar-block">
     <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-tachometer-alt fa-fw"></i>  Dashboard</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Submissions</a>
+    <a href="{{ url('admin') }}" class="w3-bar-item w3-button w3-padding"><i class="fa fa-tachometer-alt fa-fw"></i>  Dashboard</a>
+    <button onclick="myFunction('submission_mgmt')" class="w3-button w3-block w3-left-align"><i class="fas fa-barcode fa-fw"></i> Submissions</button>
+    <div id="submission_mgmt" class="w3-hide">
+        <a href="{{ url('admin/submit_bags') }}" class="w3-bar-item w3-button w3-padding"><i class="fa fa-angle-double-right"></i>  Submit Bag Weights</a>
+    </div>
     <button onclick="myFunction('user_mgmt')" class="w3-button w3-block w3-left-align"><i class="fa fa-users fa-fw"></i> User Management</button>
     <div id="user_mgmt" class="w3-hide">
         <a href="{{ url('admin/users') }}" class="w3-bar-item w3-button w3-padding"><i class="fa fa-angle-double-right"></i> Users</a>
@@ -119,6 +122,8 @@ function myFunction(id) {
 
 
 </script>
+
+<script src="{{ asset('js/app.js') }}"></script>
 
 </body>
 </html>

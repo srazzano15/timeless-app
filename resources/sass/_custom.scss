@@ -176,7 +176,7 @@ footer {
     margin-top: 25px;
     border-color: var(--yellow);
 
-    tbody tr:nth-child(even) {
+    tbody tr {
         background: var(--gray);
     }
 
@@ -198,6 +198,7 @@ footer {
     font-weight: 500;
     padding: 0 0.75rem;
     border-radius: 10px;
+    vertical-align: center;
 }
 
 .rmvRowBtn {
@@ -207,6 +208,7 @@ footer {
     font-weight: 500;
     padding: 0 0.75rem;
     border-radius: 10px;
+    vertical-align: center;
 }
 
 .card {
@@ -254,7 +256,7 @@ footer {
     }
 }
 
-#dynamicRowBtns{
+.dynamicRowBtns{
     @media screen and (max-width: 767px) {
         display: flex;
         max-width: 75%;
@@ -327,7 +329,7 @@ footer {
         margin-top: 30px;
     }
 
-
+}
 .w3-light-grey
 {
     background: var(--dark) !important;
@@ -339,10 +341,22 @@ footer {
 #admin_page
 {
     color: var(--yellow) !important;
+    .btn
+    {
+        border-color: var(--yellow);
+    }
 }
 
 .admin_stats
 {
     background-color: var(--gray) !important;
 
+}
+
+#admin_bags_form .wrapper
+{
+    margin-top: 3em;
+    padding: 1.25em;
+    border: 1px solid var(--yellow);
+    border-radius: 15px;
 }

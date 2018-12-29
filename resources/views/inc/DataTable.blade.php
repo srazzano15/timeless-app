@@ -1,7 +1,7 @@
 <div class="container">
         <div class="row" id="dashboardContent">
             <div class="wrapper" id="dashboardWrapper">
-                <table class="table table-striped table-bordered table-condensed">
+                <table class="table table-bordered table-condensed">
                     <thead class="thead-default">
                         <tr>
                             <th>Create Date</th>

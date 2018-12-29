@@ -10587,18 +10587,6 @@ body {
   }
 }
 
-@media screen and (max-width: 990px) {
-  #controls .btn {
-    margin-bottom: 10px;
-  }
-}
-
-@media screen and (max-width: 990px) {
-  #controls .btn {
-    margin-bottom: 10px;
-  }
-}
-
 #batchTimer {
   margin-bottom: 10px;
 }
@@ -10617,11 +10605,7 @@ body {
   display: flex;
 }
 
-
-
 @media screen and (max-width: 509px) {
-
-
   #stopwatch {
     -webkit-box-pack: center !important;
         -ms-flex-pack: center !important;
@@ -10685,10 +10669,7 @@ body {
   }
 }
 
-
 @media screen and (max-width: 510px) {
-
-
   #timer {
     margin-bottom: 15px;
     -webkit-box-pack: center;
@@ -10717,7 +10698,7 @@ footer .fixed-bottom span {
   border-color: var(--yellow);
 }
 
-.table tbody tr:nth-child(even) {
+.table tbody tr {
   background: var(--gray);
 }
 
@@ -10738,6 +10719,7 @@ footer .fixed-bottom span {
   font-weight: 500;
   padding: 0 0.75rem;
   border-radius: 10px;
+  vertical-align: center;
 }
 
 .rmvRowBtn {
@@ -10747,6 +10729,7 @@ footer .fixed-bottom span {
   font-weight: 500;
   padding: 0 0.75rem;
   border-radius: 10px;
+  vertical-align: center;
 }
 
 .card {
@@ -10772,15 +10755,12 @@ footer .fixed-bottom span {
 }
 
 @media screen and (max-width: 768px) {
-
   .form-group {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
 }
-
-
 
 @media screen and (max-width: 768px) {
   .navbar {
@@ -10804,7 +10784,7 @@ footer .fixed-bottom span {
 }
 
 @media screen and (max-width: 767px) {
-  #dynamicRowBtns {
+  .dynamicRowBtns {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -10880,7 +10860,7 @@ footer .fixed-bottom span {
   .totalBatchWeightContainter {
     margin-top: 30px;
   }
-
+}
 
 .w3-light-grey {
   background: var(--dark) !important;
@@ -10894,8 +10874,18 @@ footer .fixed-bottom span {
   color: var(--yellow) !important;
 }
 
+#admin_page .btn {
+  border-color: var(--yellow);
+}
+
 .admin_stats {
   background-color: var(--gray) !important;
+}
 
+#admin_bags_form .wrapper {
+  margin-top: 3em;
+  padding: 1.25em;
+  border: 1px solid var(--yellow);
+  border-radius: 15px;
 }
 
