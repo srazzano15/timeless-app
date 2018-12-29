@@ -50,5 +50,6 @@ Route::middleware(['auth'])->group(function () {
         $user = Auth::user();
         return view('admin.index', compact('user'));
     });
-    Route::get('/admin/edit', 'ExportsController@exportView');
+    Route::get('/admin/edit', 'ExportsController@exportView')->name('batch_report');
+    Route::get('/admin/edit/download', 'ExportsController@export')->name('report_download');
 });

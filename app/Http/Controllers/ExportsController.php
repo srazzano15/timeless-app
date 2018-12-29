@@ -8,7 +8,8 @@ use DB;
 use App\BatchBag;
 use App\ImportData;
 use Excel;
-
+use App\Exports\ReportExport;
+use App\Exports\ViewExport;
 
 class ExportsController extends Controller
 {
@@ -20,29 +21,38 @@ class ExportsController extends Controller
 
     }
 
-    public function export(Request $request)
+    public function export()
     {
-        $rows = ImportData::with('bagMatch')->get()->toArray();
+        return Excel::download(new ViewExport, 'bag_report.xlsx');
+        /* $rows = ImportData::with('bagMatch')->get()->toArray();
 
-        $exportArray[] = array('Batch ID', 'Bag ID', 'Bag Weight', 'Flower Weight', 'Difference', 'Date Submitted');
+        $exportArray[] = array('Batch ID', 'Bag ID', 'Bag Weight', 'Flower Weight', 'Difference', 'Date Submitted'); */
 
-        foreach($rows as $row)
-        {
-            if ($row->bagMatch['batch_id'] != null)
+        /* foreach ($rows as $row)
+            if ($row['bag_match']['batch_id'] != null)
             {
-                $h = $row->bag_weight;
-                $l = ($row->bagMatch['flower_weight']);
+                dd($row);
+            } */
+
+
+        /* foreach($rows as $row)
+        {
+            if ($row['bag_match']['batch_id'] != null)
+            {
+                $h = $row['bag_weight'];
+                $l = ($row['bag_match']['flower_weight']);
 
                 $exportArray[] = array(
-                'Batch ID' => $row->bagMatch['batch_id'],
-                'Bag ID' => $row->bag_id,
+                'Batch ID' => $row['bag_match']['batch_id'],
+                'Bag ID' => $row['bag_id'],
                 'Bag Weight' => $h,
                 'Flower Weight' => $l,
                 'Difference' => ($h - $l),
-                'Date Submitted' => $row->created_at
+                'Date Submitted' => $row['created_at']
                 );
             }
         }
-        Excel::download($exportArray, 'batch_master.xlsx');
+        //dd($exportArray);
+        return Excel::download($exportArray, 'batch_master.xlsx'); */
     }
 }
