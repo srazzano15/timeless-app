@@ -32,7 +32,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/admin';
 
     /**
      * Create a new controller instance.
@@ -78,11 +78,6 @@ class RegisterController extends Controller
 
         return $validator;
     }
-
-    /*
-     * Custom Validation
-     *
-     */
 
     /**
      * Create a new user instance after a valid registration.

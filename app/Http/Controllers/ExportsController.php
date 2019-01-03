@@ -16,7 +16,7 @@ class ExportsController extends Controller
     public function exportView()
     {
         $user = Auth::user();
-        $rows = ImportData::with('bagMatch')->get();
+        $rows = ImportData::has('bagMatch')->get();
         return view('admin.crud.edit', compact('rows', 'user'));
 
     }

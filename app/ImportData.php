@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\BatchBag;
+use Illuminate\Database\Eloquent\Collection;
 
 class ImportData extends Model
 {

@@ -360,3 +360,21 @@ footer {
     border: 1px solid var(--yellow);
     border-radius: 15px;
 }
+a.page-link, .page-item.disabled .page-link
+{
+    text-align: -webkit-center;
+    text-align: center;
+    border: 1px solid var(--yellow);
+    border-radius: 4px;
+    color: var(--yellow);
+    margin: 0 5px;
+    background-color: var(--dark);
+    -webkit-transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+        background-color: var(--yellow);
+        color: var(--dark);
+        border-color: var(--yellow);
+    }
+}

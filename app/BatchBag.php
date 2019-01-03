@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\ImportData;
+use Illuminate\Database\Eloquent\Relations;
 
 class BatchBag extends Model
 {
@@ -15,8 +16,8 @@ class BatchBag extends Model
         'flower_weight'
     ];
 
-    /* public function bagMatch()
+    public function importMatch()
     {
-        return $this->belongsTo('App\ImportData', 'bag_id', 'bag_number');
-    } */
+        return $this->belongsTo('App\ImportData', 'bag_number', 'bag_id');
+    }
 }

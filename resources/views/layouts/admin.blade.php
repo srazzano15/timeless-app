@@ -10,10 +10,15 @@
 
 <!--Styles-->
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<!--W3 CSS-->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+<!--Font Awesome 5-->
 <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+<!--Internal Styles-->
 <link rel="shortcut icon" href="{{ asset('images/timeless_drip_logo.png') }}" type="image/x-icon">
 
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
+<!--Laravel DataTables-->
 
 <body class="w3-light-grey" id="admin_page">
 <!-- Top container -->
@@ -119,11 +124,10 @@ function myFunction(id) {
         x.className = x.className.replace(" w3-show", "");
     }
 }
-
-
 </script>
 
 <script src="{{ asset('js/app.js') }}"></script>
+<!--Custom Scripts-->
 
 </body>
 </html>
