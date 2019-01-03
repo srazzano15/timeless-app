@@ -13,9 +13,9 @@
 <!--W3 CSS-->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <!--Font Awesome 5-->
-<link rel="stylesheet" href="{{ asset('css/app.css') }}">
+<link rel="stylesheet" href="{{ secure_asset('css/app.css', true) }}">
 <!--Internal Styles-->
-<link rel="shortcut icon" href="{{ asset('images/timeless_drip_logo.png') }}" type="image/x-icon">
+<link rel="shortcut icon" href="{{ secure_asset('images/timeless_drip_logo.png') }}" type="image/x-icon">
 
 <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
 <!--Laravel DataTables-->
@@ -24,7 +24,7 @@
 <!-- Top container -->
 <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
   <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
-  <span class="w3-bar-item w3-right"><a href="/home"><img src="{{ asset('images/timeless_drip_logo.png') }}" height="25px"></a></span>
+  <span class="w3-bar-item w3-right"><a href="/home"><img src="{{ secure_asset('images/timeless_drip_logo.png') }}" height="25px"></a></span>
 
 </div>
 
@@ -32,7 +32,7 @@
 <nav class="w3-sidebar w3-collapse w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
   <div class="w3-container w3-row">
     <div class="w3-col s4">
-    <img src="{{ asset('images/timeless_drip_logo.png') }}" class="w3-circle w3-margin-right" style="width:46px">
+    <img src="{{ secure_asset('images/timeless_drip_logo.png') }}" class="w3-circle w3-margin-right" style="width:46px">
     </div>
     <div class="w3-col s8 w3-bar">
 
@@ -135,7 +135,7 @@ function myFunction(id) {
 }
 </script>
 
-<script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ secure_asset('js/app.js') }}"></script>
 <!--Custom Scripts-->
 
 </body>
