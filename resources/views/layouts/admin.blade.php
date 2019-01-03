@@ -67,7 +67,16 @@
         <a href="{{ url('admin/import') }}" class="w3-bar-item w3-button w3-padding"><i class="fa fa-angle-double-right"></i>  Import CSV</a>
         <a href="{{ url('admin/edit') }}" class="w3-bar-item w3-button w3-padding"><i class="fa fa-angle-double-right"></i>  Export Report</a>
     </div>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Settings</a><br><br>
+    <a class="w3-bar-item w3-button w3-padding" href="{{ route('logout') }}"
+        onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+        <i class="fa fa-cog fa-fw"></i>
+        {{ __('Logout') }}
+    </a>
+
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form>
   </div>
 </nav>
 
