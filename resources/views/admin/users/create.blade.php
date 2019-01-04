@@ -16,7 +16,27 @@
             </div>
         <button type="submit" class="btn btn-dark" name="submitEmail">Submit</button>
     </form>
-
+    <h1 style="margin-top: 1.5em">Outstanding Invites</h1>
+        <div class="table">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Invite Code</th>
+                        <th>Email Associated</th>
+                        <th>Date Generated</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($invites as $inv)
+                        <tr>
+                            <td>{{ $inv->code }}</td>
+                            <td>{{ $inv->for }}</td>
+                            <td>{{ $inv->created_at }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
 </div>
 
 
