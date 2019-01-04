@@ -9,7 +9,7 @@ use App\User;
 use Doorman;
 use Auth;
 use Validator;
-
+use DB;
 
 
 
@@ -45,12 +45,12 @@ class AdminUsersController extends Controller
     public function create()
     {
 
-
         $user = Auth::user();
-        return view('admin.users.create', compact('user'));
 
+        // return outstanding invites that were created as var
+        $invites = DB::table('invites')->where('uses', '=', 0)->get();
 
-
+        return view('admin.users.create', compact('user', 'invites'));
 
     }
 

@@ -21,7 +21,7 @@
 
 <nav class="navbar navbar-expand-md navbar-laravel">
         <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">
+            <a class="navbar-brand" href="{{ url('/admin') }}">
                 <img src="{{asset('/images/timeless_drip_logo.png')}}" width="30px" height="30px" alt="">
                 {{config('app.name', 'Timeless Batch Master')}}
               </a>
@@ -49,14 +49,14 @@
                         </li> --}}
                     @else
                         <li class="nav-item">
-                            <a class="nav-link btn" href="/home">Home</a>
+                            <a class="nav-link btn" href="/admin">Home</a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link btn" href="{{ route('batch.create') }}">Submit A Batch</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link btn" href="{{ route('batch.index') }}">Batches</a>
-                        </li>
+                        </li> --}}
 
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle btn" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
