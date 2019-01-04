@@ -8,7 +8,8 @@ use App\ImportData;
 use DataTables;
 use App\DataTables\ImportDataTable;
 use App\BatchBag;
-//use Illuminate\Database\Eloquent\Builder;
+use App\CsvData;
+use App\User;
 
 class PagesController extends Controller
 {
@@ -16,22 +17,19 @@ class PagesController extends Controller
         return view('pages.index');
     }
 
-    /* public function adminIndex()
-    {
-        return view('admin.index');
-    } */
-    
     public function admin() {
+        // get current user
         $user = Auth::user();
-        /* $rows = ImportData::with(['bagMatch' => function ($query) {
-            $query->whereNull('bag_number');
-        }])->get();    */        
-        /* $rows = $rows->filter(function($row) {
-            return $row->bagMatch['batch_id'] == null;
-        }); */
+        
+        // get DB statistics
+        $importCount = CsvData::count();
+        $userCount = User::count();
+        $bagCount = ImportData::count();
+        $avgs = ImportData::has('bagMatch')->get();
+
         $rows = ImportData::doesntHave('bagMatch')->simplePaginate(8);
 
-        //dd($rows);
-        return view('admin.index', compact('user', 'rows'));
+
+        return view('admin.index', compact('user', 'rows', 'userCount', 'importCount', 'avgs', 'bagCount'));
     }
 }

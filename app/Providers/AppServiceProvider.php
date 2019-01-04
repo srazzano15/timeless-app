@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Schema;
 use Validator;
 use Auth;
 use View;
+use URL;
+use App;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,7 +21,10 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
 
-        
+        if (App::environment('production'))
+        {
+            URL::forceScheme('https');
+        }
     }
 
     /**
