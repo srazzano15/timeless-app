@@ -2,7 +2,7 @@
     <div class="container fixed-bottom">
         <span>
 
-            Timeless Batch Master - Version 1.0.1 <br>
+            Timeless Batch Master - Version 1.0.2 <br>
             Developed by Razzbury Holdings LLC {{ Carbon::now()->format('Y') }}.
 
 
