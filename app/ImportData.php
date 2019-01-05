@@ -14,7 +14,8 @@ class ImportData extends Model
         'batch_id',
         'bag_id',
         'bag_weight',
-        'flower_weight'
+        'flower_weight',
+        'product_weight'
     ];
 
 
