@@ -5,7 +5,7 @@ use App\BatchSubmit;
 use App\User;
 use App\ImportData;
 use App\BatchBag;
-
+use Illuminate\Support\Facades\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,7 +40,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Route::post('/extraction', 'BatchInsertController@storeBag');
 
 Route::middleware(['auth'])->group(function () {
-
+    
     Route::resource('admin/users', 'AdminUsersController');
     Route::resource('batch', 'BatchController');
     Route::get('/admin/import', 'ImportCsvController@getImport')->name('import');
@@ -52,5 +52,12 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/admin/submit_bags', 'SingleBagsInsertController@index')->name('admin_submit_bags');
     Route::post('/admin/processing_bags', 'SingleBagsInsertController@store')->name('admin_bags_processing');
-
+    Route::get('/test_form', function() {
+        $user = Auth::user();
+        return view('admin.crud.index', compact('user'));
+    });
+    Route::post('/test_form', function(Request $request) {
+        $data = $request->get();
+        dd($data);
+    })->name('test_post');
 });

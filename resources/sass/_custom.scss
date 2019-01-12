@@ -378,3 +378,9 @@ a.page-link, .page-item.disabled .page-link
         border-color: var(--yellow);
     }
 }
+#admin_index .col-form-label {
+    font-size: 1.4em;
+}
+[v-cloak] {
+    display:none;
+}
