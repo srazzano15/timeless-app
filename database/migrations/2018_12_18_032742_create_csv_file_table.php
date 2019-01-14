@@ -13,7 +13,7 @@ class CreateCsvFileTable extends Migration
      */
     public function up()
     {
-        if (!Schema::hasTable('csv_file')) {
+        if (!Schema::hasTable('csv_data')) {
             Schema::create('csv_data', function (Blueprint $table) {
                 $table->increments('id');
                 $table->string('csv_filename');
@@ -32,6 +32,6 @@ class CreateCsvFileTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('csv_file');
+        Schema::dropIfExists('csv_data');
     }
 }

@@ -18,6 +18,7 @@ class CreatePillowWeightsTable extends Migration
                 $table->increments('id');
                 $table->string('batch_id');
                 $table->string('pillow');
+                $table->timestamps();
             });
         }
 

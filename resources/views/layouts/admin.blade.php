@@ -17,7 +17,7 @@
 <!--Internal Styles-->
 <link rel="shortcut icon" href="{{ asset('images/timeless_drip_logo.png') }}" type="image/x-icon">
 
-<link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+
 <!-- Vuetify Styles -->
 <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
 <!--Laravel DataTables-->
@@ -59,7 +59,7 @@
     <a href="{{ url('admin') }}" class="w3-bar-item w3-button w3-padding"><i class="fa fa-tachometer-alt fa-fw"></i>  Dashboard</a>
     <button onclick="myFunction('submission_mgmt')" class="w3-button w3-block w3-left-align"><i class="fas fa-barcode fa-fw"></i> Submissions</button>
     <div id="submission_mgmt" class="w3-hide">
-        <a href="{{ url('admin/submit_bags') }}" class="w3-bar-item w3-button w3-padding"><i class="fa fa-angle-double-right"></i>  Submit Bag Weights</a>
+        <a href="{{ url('submit') }}" class="w3-bar-item w3-button w3-padding"><i class="fa fa-angle-double-right"></i>  Submit Bag Weights</a>
     </div>
     <button onclick="myFunction('user_mgmt')" class="w3-button w3-block w3-left-align"><i class="fa fa-users fa-fw"></i> User Management</button>
     <div id="user_mgmt" class="w3-hide">
@@ -91,7 +91,7 @@
 <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+<div class="w3-main" style="margin-left:300px;margin-top:43px;" id="admin_index">
 
 
 
@@ -144,8 +144,7 @@ function myFunction(id) {
 
 
 <script src="{{ asset('js/app.js') }}"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+
 <!--Custom Scripts-->
 @stack('scripts')
 

@@ -33,6 +33,9 @@ window.Vue = require('vue');
 
 Vue.component('bag', require('./components/BagForm.vue').default);
 
+import Datepicker from 'vuejs-datepicker';
+Vue.component('datepicker', Datepicker);
+
 // const files = require.context('./', true, /\.vue$/i)
 
 // files.keys().map(key => {
@@ -53,75 +56,92 @@ Vue.component('bag', require('./components/BagForm.vue').default);
  * Vue instance for admin page + scaffolding * 
  */
 const admin = new Vue({
-
-    el: '#admin_index',
+    el: "#admin_index",
     data: {
         step: 1,
         bagIndex: 1,
         pillowIndex: 1,
-        bagTotal: 0,
-        batches: [{
-            batchId: '',
-            cooler: '',
-            dateFilled: '',
-            kegs: '',
-            submitter: ''
-
-        }],
-        bags: [{
-            package_id: '',
-            flower_weight: ''
-        }],
-        pillows: [{
-            weight: '',
-        }],
+        batches: [
+            {
+                batchId: "",
+                cooler: "",
+                dateFilled: "",
+                kegs: "",
+                submitter: "",
+                status: "Stuffed",
+            }
+        ],
+        bags: [
+            {
+                package_id: "",
+                bag_weight: "",
+                flower_weight: ""
+            }
+        ],
+        pillows: [
+            {
+                weight: ""
+            }
+        ],
+        isBag: true,
+        isPillow: true,
     },
     computed: {
-        
+        bagTotal() {
+            let sum = 0;
+            return this.bags.reduce((sum, bag) => sum + bag.flower_weight, 0);
+        },
+        pillowTotal() {
+            let sum = 0;
+            return this.pillows.reduce((sum, pillow) => sum + pillow.weight, 0);
+        }
     },
     methods: {
+        // methods for adding/removing additional field rows on bags submission
         addNewBagRow() {
-            
-            if (this.bagIndex < 9) {
+            if (this.bagIndex < 10) {
                 this.bags.push({
-                    package_id: '',
-                    flower_weight: ''
-                })
+                    package_id: "",
+                    flower_weight: ""
+                });
                 this.bagIndex++;
             }
         },
         removeBagRow() {
-
             if (this.bagIndex > 1) {
                 this.bags.pop({
-                    package_id: '',
-                    flower_weight: ''
-                })
+                    package_id: "",
+                    flower_weight: ""
+                });
                 this.bagIndex--;
-            } 
+            }
         },
+        // methods for adding/removing additional fields from pillows submission
         addNewPillow() {
-            if (this.pillowIndex < 9) {
+            if (this.pillowIndex < 10) {
                 this.pillows.push({
-                    weight: ''
-                })
+                    weight: ""
+                });
                 this.pillowIndex++;
             }
         },
         removePillow() {
             if (this.pillowIndex > 1) {
                 this.pillows.pop({
-                    weight: '',
-                })
+                    weight: ""
+                });
                 this.pillowIndex--;
             }
         },
+        // methods to make my stepper work
         prev() {
             this.step--;
         },
         next() {
             this.step++;
         },
-
+        setStatus() {
+            return "Stuffed";
+        }
     }
-})
+});

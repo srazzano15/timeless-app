@@ -67,8 +67,7 @@ class BatchController extends Controller
         $batchSubmit->save();
 
         $batchNumber = $request->input('bnum');
-        $bagNumber = $request->input('bag_text');
-        $bagWeight = $request->input('bag_weight');
+        $bagNumber = $request->input('package_id');
         $flowerWeight = $request->input('flow_weight');
         $pillowWeight = $request->input('pillow');
         $status = $request->input('status');

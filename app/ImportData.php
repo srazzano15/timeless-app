@@ -21,7 +21,7 @@ class ImportData extends Model
 
     public function bagMatch()
     {
-        return $this->hasOne('App\BatchBag', 'bag_number', 'bag_id');
+        return $this->hasOne('App\BatchBag', 'package_id', 'bag_id');
     }
 
 }

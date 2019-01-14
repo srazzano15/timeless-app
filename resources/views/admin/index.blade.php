@@ -16,7 +16,7 @@
 			  <h3> {{ $bagCount }} </h3>
 			</div>
 			<div class="w3-clear"></div>
-			<h4>Individual Packages Imported</h4>
+			<h4>Packages Imported</h4>
 		  </div>
 		</div>
 		<div class="w3-quarter">
