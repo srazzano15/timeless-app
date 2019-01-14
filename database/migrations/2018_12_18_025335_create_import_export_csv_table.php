@@ -20,6 +20,7 @@ class CreateImportExportCsvTable extends Migration
                 $table->string('batch_id')->nullable();
                 $table->string('bag_id');
                 $table->decimal('bag_weight');
+                $table->decimal('product_weight');
                 $table->decimal('flower_weight')->nullable();
                 $table->timestamps();
             });

@@ -9,9 +9,9 @@ class BatchSubmit extends Model
     protected $table = 'batch_submits';
 
     protected $fillable = [
+        'user_id',
         'batch_id',
         'date_filled',
-        'date_run',
         'cooler',
         'kegs_filled',
         'submitter',
@@ -22,7 +22,6 @@ class BatchSubmit extends Model
 
      protected $dates = [
         'date_filled',
-        'date_run'
     ];
 
 

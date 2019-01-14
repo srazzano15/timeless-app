@@ -8,9 +8,9 @@
                 <thead>
                     <tr>
                         <th>Batch ID</th>
-                        <th>Bag ID</th>
+                        <th>Package ID</th>
+                        <th>Gross Weight</th>
                         <th>Bag Weight</th>
-                        <th>Flower Weight</th>
                         <th>Difference</th>
                         <th>Date Submitted</th>
                     </tr>

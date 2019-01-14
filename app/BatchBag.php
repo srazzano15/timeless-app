@@ -12,7 +12,7 @@ class BatchBag extends Model
 
     protected $fillable = [
         'batch_id',
-        'bag_number',
+        'package_id',
         'flower_weight'
     ];
 

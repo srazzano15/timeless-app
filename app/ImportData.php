@@ -14,13 +14,14 @@ class ImportData extends Model
         'batch_id',
         'bag_id',
         'bag_weight',
-        'flower_weight'
+        'flower_weight',
+        'product_weight'
     ];
 
 
     public function bagMatch()
     {
-        return $this->hasOne('App\BatchBag', 'bag_number', 'bag_id');
+        return $this->hasOne('App\BatchBag', 'package_id', 'bag_id');
     }
 
 }

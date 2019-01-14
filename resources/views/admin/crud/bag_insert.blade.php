@@ -23,7 +23,7 @@
                             <label for="packageId" class="form-label">Package ID</label>
                         </div>
                         <div class="col-5">
-                            <label for="flowerWeight" class="form-label">Flower Weight</label>
+                            <label for="flowerWeight" class="form-label">Bag Weight</label>
                         </div>
                     </div>
                     <div class="form-group form-row tbody_row" name="adminRow[0]" hidden="hidden">

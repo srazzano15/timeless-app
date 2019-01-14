@@ -172,24 +172,7 @@ footer {
     }
 }
 
-.table {
-    margin-top: 25px;
-    border-color: var(--yellow);
 
-    tbody tr {
-        background: var(--gray);
-    }
-
-    thead tr {
-        background: var(--yellow);
-        color: var(--dark);
-    }
-
-    td,
-    th {
-        border-color: var(--yellow);
-    }
-}
 
 .addRowBtn {
     background: var(--green) !important;
@@ -377,4 +360,96 @@ a.page-link, .page-item.disabled .page-link
         color: var(--dark);
         border-color: var(--yellow);
     }
+}
+#admin_index .col-form-label {
+    font-size: 1.4em;
+}
+[v-cloak] {
+    display:none;
+}
+#totalBagWeight, 
+#totalPillowWeight {
+    background-color: transparent;
+    font-size: 1.8em;
+    border-color: transparent;
+    color: var(--yellow);
+    text-align: center;
+    border-bottom-color: var(--yellow);
+}
+#totalBagWeightLabel,
+#totalPillowWeightLabel {
+    text-align: right !important;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.vdp-datepicker__calendar {
+    background-color: var(--gray) !important;
+}
+.vdp-datepicker__calendar header .prev,
+.vdp-datepicker__calendar header .next 
+{
+
+    &:hover {
+        background: var(--yellow) !important;
+    }
+}
+.vdp-datepicker__calendar header .up 
+{
+    color: #000 !important;
+
+    &:hover {
+        background: var(--yellow) !important;
+    }
+}
+.dataTable
+{
+    margin: 6em;
+    padding: 3em;
+    border: solid 2px var(--gray);
+    border-radius: 15px;
+    background: var(--gray);
+
+    .table {
+        border-color: var(--yellow);
+         
+        tbody tr {
+            background: var(--gray);
+            
+            th
+            {
+                border-left-color: var(--yellow) !important;
+                border-right-color: var(--yellow) !important;
+            }
+        }
+
+        thead tr {
+            background: var(--yellow);
+            color: var(--dark);
+        }
+
+        td,
+        th {
+            border-color: var(--yellow);
+            border-bottom: none;
+            
+        }
+    }
+    
+    .table tbody tr:hover
+    {
+        /* -o-transition: background-color .3s ease-in-out;
+        -moz-transition: background-color .3s ease-in-out;
+        -webkit-transition: background-color .3s ease-in-out; */
+        transition: background-color .3s ease;
+        background-color: #343a40bf
+    }
+
 }
