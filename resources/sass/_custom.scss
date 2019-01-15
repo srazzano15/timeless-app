@@ -370,7 +370,7 @@ a.page-link, .page-item.disabled .page-link
 #totalBagWeight, 
 #totalPillowWeight {
     background-color: transparent;
-    font-size: 1.8em;
+    font-size: 1.4rem;
     border-color: transparent;
     color: var(--yellow);
     text-align: center;
@@ -412,7 +412,7 @@ input[type=date]::-webkit-outer-spin-button {
 .dataTable
 {
     margin: 6em;
-    padding: 3em;
+/*     padding: 3em; */
     border: solid 2px var(--gray);
     border-radius: 15px;
     background: var(--gray);
