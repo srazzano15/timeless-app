@@ -46,16 +46,7 @@
                     </div>
 
             </div>
-            {{-- <div class="form-group form-row">
 
-                    <label for="dateFilled" class="col-sm-2 col-form-label offset-md-2">Date Filled </label>
-                    <div class="col-sm-4">
-                        <input type="date" class="form-control" name="dfilled" id="dateFilled" 
-                        aria-describedby="batchDateFilled" v-model="batches.dateFilled" placeholder="mm-dd-yyyy">
-                        <small class="text-danger">{{ $errors->first('dfilled') }}</small>
-                    </div>
-
-            </div> --}}
             <div class="form-group form-row">
 
                     <label for="dateFilled" class="col-sm-2 col-form-label offset-md-2">Date Filled </label>
@@ -71,7 +62,7 @@
 
             </div>
 
-            <div class="form-group form-row">
+{{--             <div class="form-group form-row">
 
                     <label for="kegsFilled" class="col-sm-2 col-form-label offset-md-2">Kegs Filled</label>
                     <div class="col-sm-4">
@@ -80,7 +71,7 @@
                         <small class="text-danger">{{ $errors->first('kegsFilled') }}</small>
                     </div>
 
-            </div>
+            </div> --}}
             <div class="form-group form-row">
 
                     <label for="submitter" class="col-sm-2 col-form-label offset-md-2">Submitter</label>
