@@ -14,8 +14,7 @@ require('./bootstrap');
  */
 
 require('./custom_scripts');
-/* require('./metisMenu');
-require('./sb-admin-2'); */
+
 
 window.Vue = require('vue');
 
@@ -35,6 +34,8 @@ Vue.component('bag', require('./components/BagForm.vue').default);
 
 import Datepicker from 'vuejs-datepicker';
 Vue.component('datepicker', Datepicker);
+
+
 
 // const files = require.context('./', true, /\.vue$/i)
 
@@ -61,16 +62,13 @@ const admin = new Vue({
         step: 1,
         bagIndex: 1,
         pillowIndex: 1,
-        batches: [
-            {
-                batchId: "",
-                cooler: "",
-                dateFilled: "",
-                kegs: "",
-                submitter: "",
-                status: "Stuffed",
-            }
-        ],
+        batches: {
+            batchId: "",
+            cooler: "",
+            dateFilled: "",
+            submitter: "",
+            status: "Stuffed"
+        },
         bags: [
             {
                 package_id: "",
@@ -83,8 +81,31 @@ const admin = new Vue({
                 weight: ""
             }
         ],
-        isBag: true,
-        isPillow: true,
+        resetBtn: false,
+    },
+    mounted() {
+        // flash data on page if reauth or validation error
+        if (localStorage.getItem("batches")) {
+            try {
+                this.batches = JSON.parse(localStorage.getItem("batches"));
+            } catch (e) {
+                localStorage.removeItem("batches");
+            }
+        }
+        if (localStorage.getItem("bags")) {
+            try {
+                this.bags = JSON.parse(localStorage.getItem("bags"));
+            } catch (e) {
+                localStorage.removeItem("bags");
+            }
+        }
+        if (localStorage.getItem("pillows")) {
+            try {
+                this.pillows = JSON.parse(localStorage.getItem("pillows"));
+            } catch (e) {
+                localStorage.removeItem("pillows");
+            }
+        }
     },
     computed: {
         bagTotal() {
@@ -94,27 +115,47 @@ const admin = new Vue({
         pillowTotal() {
             let sum = 0;
             return this.pillows.reduce((sum, pillow) => sum + pillow.weight, 0);
-        }
+        },
     },
     methods: {
+        saveBatches() {
+            let parsed = JSON.stringify(this.batches);
+            localStorage.setItem("batches", parsed, 900);
+        },
+        saveBags() {
+            let parsed = JSON.stringify(this.bags);
+            localStorage.setItem("bags", parsed, 900);
+        },
+        savePillows() {
+            let parsed = JSON.stringify(this.pillows);
+            localStorage.setItem("pillows", parsed, 900);
+        },
         // methods for adding/removing additional field rows on bags submission
         addNewBagRow() {
             if (this.bagIndex < 10) {
                 this.bags.push({
                     package_id: "",
+                    bag_weight: "",
                     flower_weight: ""
                 });
                 this.bagIndex++;
             }
+
+            this.saveBags();
+            this.savePillows();
         },
         removeBagRow() {
             if (this.bagIndex > 1) {
                 this.bags.pop({
                     package_id: "",
+                    bag_weight: "",
                     flower_weight: ""
                 });
                 this.bagIndex--;
             }
+
+            this.saveBags();
+            this.savePillows();
         },
         // methods for adding/removing additional fields from pillows submission
         addNewPillow() {
@@ -124,6 +165,9 @@ const admin = new Vue({
                 });
                 this.pillowIndex++;
             }
+
+            this.saveBags();
+            this.savePillows();
         },
         removePillow() {
             if (this.pillowIndex > 1) {
@@ -132,16 +176,51 @@ const admin = new Vue({
                 });
                 this.pillowIndex--;
             }
+
+            this.saveBags();
+            this.savePillows();
         },
         // methods to make my stepper work
         prev() {
             this.step--;
+            this.saveBatches();
+            this.saveBags();
+            this.savePillows();
         },
         next() {
             this.step++;
+            this.saveBatches();
+            this.saveBags();
+            this.savePillows();
         },
         setStatus() {
             return "Stuffed";
+        },
+        clearStorage() {
+            /* this.batches.batchId = '';
+            this.batches.cooler = '';
+            this.batches.dateFilled = '';
+            this.batches.submitter = '';
+            for (j = this.bagIndex; j > 1; j--) {
+                this.bags[j].pop({
+                    package_id: "",
+                    bag_weight: "",
+                    flower_weight: ""
+                });
+            }
+            for (i = this.pillowIndex; i > 1; i--) {
+                this.pillows[i].pop({
+                    weight: ""
+                });
+            } */
+            
+            localStorage.clear();
+
+        },
+        showResetBtn() {
+            if (localStorage.length > 0) {
+               return this.resetBtn = true;
+            }
         }
     }
 });

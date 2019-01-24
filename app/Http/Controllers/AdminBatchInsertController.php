@@ -69,7 +69,6 @@ class AdminBatchInsertController extends Controller
         $batchSubmit->submitter = $request->input('submitter');
         $batchSubmit->batch_id = $request->input('bnum');
         $batchSubmit->cooler = $request->input('cooler');
-        $batchSubmit->kegs_filled = $request->input('kegsFilled');
         $batchSubmit->date_filled = $formattedDate;
         $batchSubmit->total_flower_weight = $request->input('totalPillowWeight');
         $batchSubmit->total_batch_weight = $request->input('totalBagWeight');
@@ -111,8 +110,12 @@ class AdminBatchInsertController extends Controller
 
             $newPillow->save();
         }
+        
+        
 
-        return redirect('/admin');
+        
+
+        //return redirect('/admin');
     }
 
     /**

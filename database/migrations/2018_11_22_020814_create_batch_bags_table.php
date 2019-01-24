@@ -18,6 +18,7 @@ class CreateBatchBagsTable extends Migration
                 $table->increments('id');
                 $table->string('batch_id');
                 $table->string('package_id');
+                $table->float('bag_weight');
                 $table->float('flower_weight');
                 $table->timestamps();
             });

@@ -13944,8 +13944,6 @@ __webpack_require__(13);
  */
 
 __webpack_require__(36);
-/* require('./metisMenu');
-require('./sb-admin-2'); */
 
 window.Vue = __webpack_require__(37);
 
@@ -13989,14 +13987,13 @@ var admin = new Vue({
         step: 1,
         bagIndex: 1,
         pillowIndex: 1,
-        batches: [{
+        batches: {
             batchId: "",
             cooler: "",
             dateFilled: "",
-            kegs: "",
             submitter: "",
             status: "Stuffed"
-        }],
+        },
         bags: [{
             package_id: "",
             bag_weight: "",
@@ -14005,9 +14002,33 @@ var admin = new Vue({
         pillows: [{
             weight: ""
         }],
-        isBag: true,
-        isPillow: true
+        resetBtn: false
     },
+    mounted: function mounted() {
+        // flash data on page if reauth or validation error
+        if (localStorage.getItem("batches")) {
+            try {
+                this.batches = JSON.parse(localStorage.getItem("batches"));
+            } catch (e) {
+                localStorage.removeItem("batches");
+            }
+        }
+        if (localStorage.getItem("bags")) {
+            try {
+                this.bags = JSON.parse(localStorage.getItem("bags"));
+            } catch (e) {
+                localStorage.removeItem("bags");
+            }
+        }
+        if (localStorage.getItem("pillows")) {
+            try {
+                this.pillows = JSON.parse(localStorage.getItem("pillows"));
+            } catch (e) {
+                localStorage.removeItem("pillows");
+            }
+        }
+    },
+
     computed: {
         bagTotal: function bagTotal() {
             var sum = 0;
@@ -14023,24 +14044,45 @@ var admin = new Vue({
         }
     },
     methods: {
+        saveBatches: function saveBatches() {
+            var parsed = JSON.stringify(this.batches);
+            localStorage.setItem("batches", parsed, 900);
+        },
+        saveBags: function saveBags() {
+            var parsed = JSON.stringify(this.bags);
+            localStorage.setItem("bags", parsed, 900);
+        },
+        savePillows: function savePillows() {
+            var parsed = JSON.stringify(this.pillows);
+            localStorage.setItem("pillows", parsed, 900);
+        },
+
         // methods for adding/removing additional field rows on bags submission
         addNewBagRow: function addNewBagRow() {
             if (this.bagIndex < 10) {
                 this.bags.push({
                     package_id: "",
+                    bag_weight: "",
                     flower_weight: ""
                 });
                 this.bagIndex++;
             }
+
+            this.saveBags();
+            this.savePillows();
         },
         removeBagRow: function removeBagRow() {
             if (this.bagIndex > 1) {
                 this.bags.pop({
                     package_id: "",
+                    bag_weight: "",
                     flower_weight: ""
                 });
                 this.bagIndex--;
             }
+
+            this.saveBags();
+            this.savePillows();
         },
 
         // methods for adding/removing additional fields from pillows submission
@@ -14051,6 +14093,9 @@ var admin = new Vue({
                 });
                 this.pillowIndex++;
             }
+
+            this.saveBags();
+            this.savePillows();
         },
         removePillow: function removePillow() {
             if (this.pillowIndex > 1) {
@@ -14059,17 +14104,51 @@ var admin = new Vue({
                 });
                 this.pillowIndex--;
             }
+
+            this.saveBags();
+            this.savePillows();
         },
 
         // methods to make my stepper work
         prev: function prev() {
             this.step--;
+            this.saveBatches();
+            this.saveBags();
+            this.savePillows();
         },
         next: function next() {
             this.step++;
+            this.saveBatches();
+            this.saveBags();
+            this.savePillows();
         },
         setStatus: function setStatus() {
             return "Stuffed";
+        },
+        clearStorage: function clearStorage() {
+            /* this.batches.batchId = '';
+            this.batches.cooler = '';
+            this.batches.dateFilled = '';
+            this.batches.submitter = '';
+            for (j = this.bagIndex; j > 1; j--) {
+                this.bags[j].pop({
+                    package_id: "",
+                    bag_weight: "",
+                    flower_weight: ""
+                });
+            }
+            for (i = this.pillowIndex; i > 1; i--) {
+                this.pillows[i].pop({
+                    weight: ""
+                });
+            } */
+
+            localStorage.clear();
+        },
+        showResetBtn: function showResetBtn() {
+            if (localStorage.length > 0) {
+                return this.resetBtn = true;
+            }
         }
     }
 });

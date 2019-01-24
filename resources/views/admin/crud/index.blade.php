@@ -9,6 +9,8 @@
         <hr class="my-2" style="border-color: var(--yellow);">
     </div>
 
+
+
     <form action=" {{ route('submit.store') }} " method="post" class="px-3">
         @csrf
         
@@ -62,22 +64,13 @@
 
             </div>
 
-{{--             <div class="form-group form-row">
 
-                    <label for="kegsFilled" class="col-sm-2 col-form-label offset-md-2">Kegs Filled</label>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control" name="kegsFilled" id="kegsFilled" 
-                        aria-describedby="kegsFilled" v-model="batches.kegs" placeholder="Seperate keg numbers with a comma...">
-                        <small class="text-danger">{{ $errors->first('kegsFilled') }}</small>
-                    </div>
-
-            </div> --}}
             <div class="form-group form-row">
 
                     <label for="submitter" class="col-sm-2 col-form-label offset-md-2">Submitter</label>
                     <div class="col-sm-4">
                         <input type="text" class="form-control" name="submitter" id="submitter" 
-                        aria-describedby="submitter" value=" {{ $user }} "v-model="batches.submitter">
+                        aria-describedby="submitter" v-model="batches.submitter">
                     </div>
 
             </div>
@@ -85,8 +78,8 @@
                 
                 
                 
-
-            <button class="btn" type="button" @click.prevent="next()">Next</button>
+            <button class="btn" type="button" v-if="showResetBtn()" v-on:click.prevent="clearStorage()">Reset Form</button>
+            <button class="btn" type="button" v-on:click.prevent="next()">Next</button>
 
         </div>
 
