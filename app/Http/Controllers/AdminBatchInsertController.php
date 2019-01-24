@@ -112,10 +112,10 @@ class AdminBatchInsertController extends Controller
         }
         
         
-
+        
         
 
-        //return redirect('/admin');
+        return redirect('/admin');
     }
 
     /**
