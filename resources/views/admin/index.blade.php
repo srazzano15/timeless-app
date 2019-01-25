@@ -81,3 +81,8 @@
 
 @endsection
 
+@if ($success = true)
+		<script>
+				localStorage.clear();
+		</script>
+@endif
