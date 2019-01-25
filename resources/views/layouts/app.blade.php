@@ -24,7 +24,7 @@
 
 </head>
 <body>
-    <div id="app" class="container">
+    <div id="admin_index" class="container">
         @include('inc.navbar')
 
         <main class="py-4">
