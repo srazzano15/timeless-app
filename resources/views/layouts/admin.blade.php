@@ -17,8 +17,8 @@
 <!--Internal Styles-->
 <link rel="shortcut icon" href="{{ asset('images/timeless_drip_logo.png') }}" type="image/x-icon">
 
-
-<!-- Vuetify Styles -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<!-- MaterializeCSS Styles -->
 <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
 <!--Laravel DataTables-->
 
