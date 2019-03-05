@@ -1,0 +1,59 @@
+/**
+* Button Styles
+*/
+
+/** Base Btn **/
+.btn {
+    color: $dark;
+    transition: all .1s ease-in;
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    &:hover {
+        opacity: .8;
+    }
+}
+
+/** Primary Btn **/
+.btn--p {
+    background: $yellow ;
+    &:hover {
+        background: $yellow;
+    }
+    &:focus {
+        background: $yellow;
+    }
+    &:active {
+        background: $yellow;
+    }
+}
+
+/** Secondary Btn **/
+.btn--s {
+    background-color: #8e00b6;
+    color: #fff;
+    &:hover {
+        background: #8e00b6;
+    }
+}
+
+/** Link Btn **/
+.btn--lk {
+    color: #fff;
+    background: #afafaf;
+    &:hover {
+        background: #aaaaaa;
+    }
+}
+
+/** Minimalist Btn **/
+.btn--bare {
+    border-color: transparent;
+    background: transparent;
+    color: #8e00b6;
+    font-weight: 500;
+    text-transform: none;
+    &:hover {
+        border-color: transparent;
+        background: transparent;
+        color: #8e00b6;
+    }
+}

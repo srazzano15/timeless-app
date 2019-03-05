@@ -1,8 +1,8 @@
 <footer class="footer">
-    <div class="container fixed-bottom">
-        <span>
+    <div class="container-fluid center-align">
+        <span >
 
-            Timeless Batch Master - Version 1.0.2 <br>
+            Timeless Batch Master - Version 1.1.0 <br>
             Developed by Razzbury Holdings LLC {{ Carbon::now()->format('Y') }}.
 
 
