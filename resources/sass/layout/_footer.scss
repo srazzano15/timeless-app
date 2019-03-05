@@ -1,0 +1,16 @@
+/**
+* Footer Styles
+*/
+
+.footer {
+    background: #1d1d1d;
+    color: $yellow;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 9999; /* move under everything else */
+    div {
+        height: auto;
+        padding: 8px 0;
+    }
+}
