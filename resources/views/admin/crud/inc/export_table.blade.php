@@ -1,10 +1,10 @@
-<div class="container">
+
         <h1 style="margin-top: 1.5em">Weighted Bag Report</h1>
         <div>
-            <a href="{{ route('report_download') }}" type="button" class="btn btn-primary" style="margin-top: 1.5em">Export Report</a>
+            <a href="{{ route('report_download') }}" type="button" class="btn btn--p" style="margin-top: 1.5em">Export Report</a>
         </div>
-        <div class="table">
-            <table class="table">
+        <div class="row">
+            <table class="highlight">
                 <thead>
                     <tr>
                         <th>Batch ID</th>
@@ -35,4 +35,4 @@
                 </tbody>
             </table>
         </div>
-    </div>
+

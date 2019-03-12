@@ -1,0 +1,26 @@
+/**
+* MIXINS
+*/
+
+/// Media Query Manager
+/// @author Steve Razzano
+@mixin resp-sm {
+    @media (max-width: 600px) {
+        @content;
+    }
+}
+@mixin resp-md {
+    @media (max-width: 992px) {
+        @content;
+    }
+}
+@mixin resp-lg {
+    @media (min-width: 993px) {
+        @content;
+    }
+}
+@mixin resp-xl {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}

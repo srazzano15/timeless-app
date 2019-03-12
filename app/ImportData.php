@@ -11,7 +11,6 @@ class ImportData extends Model
     protected $table = 'import_export_csv';
 
     public $fillable = [
-        'batch_id',
         'bag_id',
         'bag_weight',
         'flower_weight',

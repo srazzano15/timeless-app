@@ -9,10 +9,6 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
 
@@ -24,15 +20,24 @@
 
 </head>
 <body>
-    <div id="admin_index" class="container">
-        @include('inc.navbar')
-
-        <main class="py-4">
-            @yield('content')
+    <div id="admin_index">
+        <header class="header">
+            <div class="container-fluid">
+                @include('inc.navbar')
+            </div>
+        </header>
+        <main class="main-content">
+            <div class="container">
+                @yield('content')
+            </div>
         </main>
     </div>
 
         @include('inc.footer')
-
+    
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </body>
 </html>

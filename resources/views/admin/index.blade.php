@@ -4,11 +4,11 @@
 @section('content')
 
  <!-- Header -->
- <header class="w3-container" style="padding-top:22px">
+{{--  <header class="container">
 		<h5><b><i class="fa fa-dashboard"></i> My Dashboard</b></h5>
-	  </header>
+	  </header> --}}
 
-	  <div class="w3-row-padding w3-margin-bottom">
+	  {{-- <div class="w3-row-padding w3-margin-bottom">
 		<div class="w3-quarter">
 		  <div class="w3-container admin_stats w3-padding-16">
 			<div class="w3-left"><i class="fa fa-cannabis w3-xxxlarge"></i></div>
@@ -75,7 +75,7 @@
 			<h4>Users</h4>
 		  </div>
 		</div>
-	  </div>
+	  </div> --}}
 
 	  @include('inc.adminDataTable')
 

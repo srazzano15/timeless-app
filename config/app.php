@@ -226,9 +226,9 @@ return [
      */
 
     'db_fields' => [
-        'batch_id' => 'Batch',
-        'bag_id' => 'Package ID',
-        'product_weight' => 'Product Weight',
-        'bag_weight' => 'Gross Weight',
+        'bag_id',
+        'product_weight',
+        'bag_weight',
+        'flower_weight'
     ],
 ];
