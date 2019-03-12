@@ -1,0 +1,44 @@
+/**
+* Utility Classes
+*/
+
+/******FLEXBOX******/
+.flex__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.flex--column {
+    flex-direction: column;
+}
+
+/******GENERAL STYLING******/
+/** Formatting Utilities **/
+
+/**PADDING**/
+.p-l {
+    padding-left: 15px !important;
+}
+.p-r {
+    padding-right: 15px !important;
+}
+.p-t {
+    padding-top: 15px !important;
+}
+.p-b {
+    padding-bottom: 15px !important;
+}
+/**MARGIN**/
+
+.m-l {
+    margin-left: 15px !important;
+}
+.m-r {
+    margin-right: 15px !important;
+}
+.m-t {
+    margin-top: 15px !important;
+}
+.pm-b {
+    margin-bottom: 15px !important;
+}

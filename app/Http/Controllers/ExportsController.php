@@ -17,6 +17,7 @@ class ExportsController extends Controller
     {
         $user = Auth::user();
         $rows = ImportData::has('bagMatch')->get();
+
         return view('admin.crud.edit', compact('rows', 'user'));
 
     }
@@ -25,4 +26,6 @@ class ExportsController extends Controller
     {
         return Excel::download(new ViewExport, 'bag_report.xlsx');
     }
+
+    
 }

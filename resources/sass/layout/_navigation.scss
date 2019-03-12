@@ -4,39 +4,61 @@
 **************************
 */
 .main-nav {
-    background: $dark;
+    background: $gray;
     height: 100%;
-    padding: 0 !important;
+    padding-top: 85px;
     overflow: auto;
-    z-index: 1;
+    z-index: 3;
+    font-size: 1.3em;
     &__wrapper {
         height: auto; 
     }
     &__items {
         margin: 15px 0;
+        color: $yellow;
+        a {
+            color: $yellow;
+        }
     }
     &__item {
         height: 35px;
         padding-left: 10px;
-        margin: 25px 0;
-        
-        a {
-            text-transform: uppercase;
-            font-size: 1.25em;
-            color: $yellow;
-            letter-spacing: 1.5px;
-            transition: all .13s ease-in-out;
-            &:hover {
-                padding-left: 8px;
-            }
-            
+        margin: 8px 0;
+        color: $yellow !important;
+        text-transform: uppercase;
+        font-size: .8em;
+        border-bottom: 1px solid $yellow;
+        letter-spacing: 1.5px;
+        transition: all .13s ease-in-out;
+        &:hover {
+            padding-left: 20px;
         }
-        i {
-            vertical-align: middle;
-        }
-        span {
-            vertical-align: middle;
-        }
-    }
+                
 
+            i {
+                vertical-align: middle;
+            }
+            span {
+                vertical-align: middle;
+            }
+        }
+    img {
+        height: 35px;
+    }
+    &__dropdown {
+        height: 35px;
+        margin: 8px 0;
+        color: $yellow !important;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        cursor: pointer;
+        font-size: .8em;
+        padding-left: 10px;
+        border-bottom: 1px solid $yellow;
+    }
+    .dropdown__item {
+        border-bottom: 1px solid #a8a8a8;
+
+    }
+    
 }

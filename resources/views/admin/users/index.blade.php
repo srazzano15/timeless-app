@@ -4,21 +4,17 @@
 
 
 @section('content')
-    <div class="container">
 
-        <div class="row justify-content center" style="padding-top: 1.4em;">
-
-        <div class="row">
-
-            <div class="col-3">
-                <h1>Users</h1>
-            </div>
-            <div class="col-3 offset-6">
-                <a href="users/create"><input style="border-color: var(--yellow);" class="btn" type="button" value="Add User"></a>
-            </div>
+    <div class="row" style="padding-top: 1.4em;">
+        <div>
+            <h3>Users</h3>
+        </div>
+        <div>
+            <a href="users/create"><input class="btn btn--p" type="button" value="Add User"></a>
         </div>
     </div>
-    <table class="table">
+    <div class="row">
+    <table class="highlight responsive-table">
         <thead>
             <tr>
                 <th>ID</th>
@@ -42,13 +38,13 @@
                     <td>{{ $user->role_id == 1 ? 'Admin' : 'User'}}</td>
                     <td>{{ $user->is_active == 1 ? 'Active' : 'Inactive' }}</td>
                     <td>{{ $user->created_at->diffForHumans() }}</td>
-                    <td><a href="{{ route('users.edit', $user->id) }}" type="button" class="btn">Edit User</a></td>
+                    <td><a href="{{ route('users.edit', $user->id) }}" type="button" class="btn btn--s">Edit User</a></td>
                 </tr>
             @endforeach
 
             @endif
         </tbody>
     </table>
-
+    </div>
 @endsection
 

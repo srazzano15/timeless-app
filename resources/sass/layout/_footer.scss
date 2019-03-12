@@ -4,11 +4,12 @@
 
 .footer {
     background: #1d1d1d;
-    color: $yellow;
     position: fixed;
     bottom: 0;
+    color: $yellow;
     width: 100%;
-    z-index: 9999; /* move under everything else */
+    margin-top: 64px;
+    z-index: 4; /* move under everything else */
     div {
         height: auto;
         padding: 8px 0;

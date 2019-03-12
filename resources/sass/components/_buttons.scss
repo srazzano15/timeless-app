@@ -29,9 +29,10 @@
 /** Secondary Btn **/
 .btn--s {
     background-color: #8e00b6;
-    color: #fff;
+    color: #fafafa;
     &:hover {
-        background: #8e00b6;
+        background: #510068;
+        opacity: 1;
     }
 }
 
@@ -55,5 +56,32 @@
         border-color: transparent;
         background: transparent;
         color: #8e00b6;
+    }
+}
+
+/** Add / Remove Row Btns **/
+.addRowBtn {
+    background: $green !important;
+    color: var(--light);
+    font-size: .7rem;
+    font-weight: 300;
+    padding: 0 0.75rem;
+    border-radius: 10px;
+    vertical-align: center;
+    &:hover {
+        opacity: .8;
+    }
+}
+
+.rmvRowBtn {
+    background: $red !important;
+    color: var(--light);
+    font-size: .7rem;
+    font-weight: 300;
+    padding: 0 0.75rem;
+    border-radius: 10px;
+    vertical-align: center;
+    &:hover {
+        opacity: .8;
     }
 }
