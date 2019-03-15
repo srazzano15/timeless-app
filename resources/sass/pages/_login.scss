@@ -1,0 +1,13 @@
+.login__nav {
+    background: #888888;
+    .brand-logo {
+        margin: 0 10px;
+        img {
+            height: 2.5rem;
+            width: 2.5rem;
+        }
+        @include resp-sm() {
+            font-size: 1em;
+        }
+    }
+}

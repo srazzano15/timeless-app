@@ -398,4 +398,8 @@ window.testFunction();
 
 
 
-}); // end ready function
+}); // end function
+
+$(document).ready(function () {
+    M.updateTextFields();
+});

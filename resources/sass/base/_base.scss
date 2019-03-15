@@ -1,0 +1,25 @@
+/**
+* BASE STYLES
+*/
+
+body, 
+html {
+    box-sizing: border-box;
+    background: #fdfdfd;
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    font-size: 100%; // 1rem
+    color: $dark;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}

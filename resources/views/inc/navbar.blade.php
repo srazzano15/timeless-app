@@ -19,24 +19,17 @@
 </div> --}}
 
 
-<nav class="navbar navbar-expand-md navbar-laravel">
-        <div class="container">
-            <a class="navbar-brand" href="{{ url('/admin') }}">
-                <img src="{{asset('/images/timeless_drip_logo.png')}}" width="30px" height="30px" alt="">
-                {{config('app.name', 'Timeless Batch Master')}}
+<nav>
+    <div class="nav-wrapper header--main">
+            <a class="brand-logo" href="{{ url('/') }}">
+                <img src="{{asset('/images/timeless_drip_logo.png')}}" {{-- width="45px" height="45px" --}} alt="">
+                <span class="hide-on-med-and-down">{{config('app.name', 'Timeless Batch Master')}}</span>
               </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav mr-auto">
 
-                </ul>
-
+            <div class="dropdown-content" id="navbarSupportedContent">
                 <!-- Right Side Of Navbar -->
-                <ul class="navbar-nav ml-auto">
+                <ul class="right hide-on-medium-down">
                     <!-- Authentication Links -->
                     @guest
                         {{-- <li class="nav-item">

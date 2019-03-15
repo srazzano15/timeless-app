@@ -1,16 +1,16 @@
-<div class="container">
+
         <h1 style="margin-top: 1.5em">Weighted Bag Report</h1>
         <div>
-            <a href="{{ route('report_download') }}" type="button" class="btn btn-primary" style="margin-top: 1.5em">Export Report</a>
+            <a href="{{ route('report_download') }}" type="button" class="btn btn--p" style="margin-top: 1.5em">Export Report</a>
         </div>
-        <div class="table">
-            <table class="table">
+        <div class="row">
+            <table class="highlight">
                 <thead>
                     <tr>
                         <th>Batch ID</th>
-                        <th>Bag ID</th>
+                        <th>Package ID</th>
+                        <th>Gross Weight</th>
                         <th>Bag Weight</th>
-                        <th>Flower Weight</th>
                         <th>Difference</th>
                         <th>Date Submitted</th>
                     </tr>
@@ -35,4 +35,4 @@
                 </tbody>
             </table>
         </div>
-    </div>
+

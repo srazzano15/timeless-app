@@ -6,8 +6,34 @@
 @import 'variables';
 
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+/* // Bootstrap
+@import '~bootstrap/scss/bootstrap'; */
 
-// Custom
-@import 'custom';
+// vendors
+@import url('https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css');
+
+// Abstracts
+@import 'abstracts/mixins';
+@import 'abstracts/utilities';
+
+// Base
+@import 'base/base';
+@import 'base/typography';
+
+// Pages
+@import 'pages/login';
+@import 'pages/admin';
+
+// layouts
+@import 'layout/footer';
+@import 'layout/header';
+@import 'layout/navigation';
+@import 'layout/tables';
+
+// components
+@import 'components/buttons';
+@import 'components/form';
+@import 'components/cards';
+
+// themes
+@import 'themes/colors';

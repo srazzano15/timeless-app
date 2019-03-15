@@ -221,8 +221,14 @@ return [
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ],
 
+    /**
+     * Fields on import CSV table to use on the blade
+     */
+
     'db_fields' => [
         'bag_id',
+        'product_weight',
         'bag_weight',
+        'flower_weight'
     ],
 ];

@@ -17,6 +17,7 @@ class CreateTimeTempTable extends Migration
             Schema::create('submit_times', function (Blueprint $table) {
                 $table->increments('id');
                 $table->string('batch_id');
+                $table->date('date_run');
                 $table->decimal('res_temp_first', 8, 2);
                 $table->string('soak_time_first');
                 $table->string('aggitation_time_first');
@@ -26,6 +27,7 @@ class CreateTimeTempTable extends Migration
                 $table->string('aggitation_time_scnd');
                 $table->decimal('exit_temp_scnd', 8, 2);
                 $table->string('total_time');
+                $table->timestamps();
             });
         }
 

@@ -16,10 +16,11 @@ class CreateBatchBagsTable extends Migration
         if (!Schema::hasTable('batch_bags')) {
             Schema::create('batch_bags', function (Blueprint $table) {
                 $table->increments('id');
-                $table->timestamps();
                 $table->string('batch_id');
-                $table->string('bag_number');
+                $table->string('package_id');
+                $table->float('bag_weight');
                 $table->float('flower_weight');
+                $table->timestamps();
             });
         }
     }
