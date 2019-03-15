@@ -3,7 +3,7 @@
         <div class=" center-align">
             <span >
 
-                Timeless Batch Master - Version 1.1.0 <br>
+                Timeless Batch Master - Version 1.1.1 <br>
                 Developed by Razzbury Holdings LLC {{ Carbon::now()->format('Y') }}.
 
 

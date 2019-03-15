@@ -15,14 +15,18 @@
 /** Primary Btn **/
 .btn--p {
     background: $yellow ;
+    border: .5px solid #808080;
     &:hover {
         background: $yellow;
+        border: .5px solid #808080;
     }
     &:focus {
         background: $yellow;
+        border: .5px solid #808080;
     }
     &:active {
         background: $yellow;
+        border: .5px solid #808080;
     }
 }
 
@@ -40,8 +44,18 @@
 .btn--lk {
     color: #fff;
     background: #afafaf;
+    border: .5px solid #808080 ;
     &:hover {
         background: #aaaaaa;
+        border: .5px solid #808080;
+    }
+    &:active {
+        background: #aaaaaa;
+        border: .5px solid #808080;
+    }
+    &:focus {
+        background: #aaaaaa;
+        border: .5px solid #808080;
     }
 }
 
