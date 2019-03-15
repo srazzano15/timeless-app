@@ -38,7 +38,7 @@
                     <td>{{ $user->role_id == 1 ? 'Admin' : 'User'}}</td>
                     <td>{{ $user->is_active == 1 ? 'Active' : 'Inactive' }}</td>
                     <td>{{ $user->created_at->diffForHumans() }}</td>
-                    <td><a href="{{ route('users.edit', $user->id) }}" type="button" class="btn btn--s">Edit User</a></td>
+                    <td><a href="{{ route('users.edit', $user->id) }}" type="button" class="btn btn--p bgc--yellow">Edit User</a></td>
                 </tr>
             @endforeach
 

@@ -14,11 +14,18 @@ use App\BatchSubmit;
 
 class PagesController extends Controller
 {
-    public function index() {
+    public function index() 
+    {
         return view('pages.index');
     }
 
-    public function admin() {
+    public function bagStats()
+    {
+        return view('reports.submitted_bags');
+    }
+
+    public function admin() 
+    {
         // get current user
         $user = Auth::user();
         

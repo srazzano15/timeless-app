@@ -1,6 +1,6 @@
 
 
-<div class="row" style="padding-bottom: 100px;">
+<div class="row" style="padding-bottom: 25%;">
     <h3>Stuffed Batches</h3>
     <table class="highlight" id="pending_table">
         <thead>
@@ -23,7 +23,7 @@
                     <td>{{ $row['total_batch_weight'] }}</td>
                     <td>{{ $row['total_flower_weight'] }}</td>
                     <td>{{ $row['date_filled']->format('m-d-Y') }}</td>
-                    <td><a href="#" type="button" class="btn btn--p">Run Batch</a></td>
+                    <td><a href="#" type="button" class="btn btn--p bgc--yellow">Run Batch</a></td>
                 </tr>
             @endforeach
         </tbody>

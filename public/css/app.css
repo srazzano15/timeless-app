@@ -209,6 +209,13 @@ nav {
   border-bottom: 1px solid #a8a8a8;
 }
 
+/******************
+***** TABLE STYLES
+*******************/
+.base__table--full {
+  padding-bottom: 100px;
+}
+
 /**
 * Button Styles
 */
@@ -225,15 +232,19 @@ nav {
 /** Primary Btn **/
 .btn--p {
   background: #fdd00c;
+  border: 0.5px solid #808080;
 }
 .btn--p:hover {
   background: #fdd00c;
+  border: 0.5px solid #808080;
 }
 .btn--p:focus {
   background: #fdd00c;
+  border: 0.5px solid #808080;
 }
 .btn--p:active {
   background: #fdd00c;
+  border: 0.5px solid #808080;
 }
 
 /** Secondary Btn **/
@@ -250,9 +261,19 @@ nav {
 .btn--lk {
   color: #fff;
   background: #afafaf;
+  border: 0.5px solid #808080;
 }
 .btn--lk:hover {
   background: #aaaaaa;
+  border: 0.5px solid #808080;
+}
+.btn--lk:active {
+  background: #aaaaaa;
+  border: 0.5px solid #808080;
+}
+.btn--lk:focus {
+  background: #aaaaaa;
+  border: 0.5px solid #808080;
 }
 
 /** Minimalist Btn **/
@@ -358,6 +379,10 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
 /**
 * THEME COLOR CLASSES
 */
-.yel-text {
-  color: #fdd00c;
+.yel--text {
+  color: #fdd00c !important;
+}
+
+.bgc--yellow {
+  background-color: #fdd00c !important;
 }

@@ -1,6 +1,10 @@
 /**
 * THEME COLOR CLASSES
 */
-.yel-text {
-    color: $yellow;
+.yel--text {
+    color: $yellow !important;
+}
+
+.bgc--yellow {
+    background-color: $yellow !important;
 }

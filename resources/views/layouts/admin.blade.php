@@ -56,9 +56,10 @@
       export-report="{{ url('admin/edit') }}"
       logout-route="{{ route('logout') }}"
       logout="{{ route('logout') }}"
+      bags-sub="{{  route('report_bags_submitted') }}"
     >
     <template v-slot:welcome-name >
-      {{ $user->name }}
+      {{ Auth::user()->name }}
     </template>
       <form id="logout-form" action=" {{ route('logout') }} " method="POST" style="display: none;">
           @csrf
@@ -115,8 +116,6 @@
     </div>
   </div> --}}
 
-
-
   <div class="col m9">
     <div class="container">
       @yield('content')
@@ -129,41 +128,6 @@
 
   <!-- End page content -->
 </div>
-
-<script>
-// Get the Sidebar
-var mySidebar = document.getElementById("mySidebar");
-
-// Get the DIV with overlay effect
-var overlayBg = document.getElementById("myOverlay");
-
-// Toggle between showing and hiding the sidebar, and add overlay effect
-function w3_open() {
-    if (mySidebar.style.display === 'block') {
-        mySidebar.style.display = 'none';
-        overlayBg.style.display = "none";
-    } else {
-        mySidebar.style.display = 'block';
-        overlayBg.style.display = "block";
-    }
-}
-
-// Close the sidebar with the close button
-function w3_close() {
-    mySidebar.style.display = "none";
-    overlayBg.style.display = "none";
-}
-
-
-function myFunction(id) {
-    var x = document.getElementById(id);
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-    }
-}
-</script>
 
 
 <!-- Compiled and minified JavaScript -->

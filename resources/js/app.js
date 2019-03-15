@@ -15,9 +15,13 @@ require('./bootstrap');
 
 require('./custom_scripts');
 
+/**
+ * Papa Parse is a neat JSON -> CSV utility and vice versa.
+ */
+
+
 
 window.Vue = require('vue');
-
 
 
 /**
@@ -32,14 +36,11 @@ window.Vue = require('vue');
 
 
 
-/**
- * High level components
- */ 
-Vue.component('text-field', require('./components/TextInput.vue').default)
 
+Vue.component('text-field', require('./components/TextInput.vue').default);
 Vue.component('bag', require('./components/BagForm.vue').default);
 Vue.component('admin-nav', require('./components/AdminNav.vue').default);
-
+Vue.component('batch-statistics', require('./components/BatchStatistics.vue').default);
 
 import Datepicker from 'vuejs-datepicker';
 Vue.component('datepicker', Datepicker);
