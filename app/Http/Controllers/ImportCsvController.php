@@ -18,8 +18,8 @@ class ImportCsvController extends Controller
 
     public function getImport()
     {
-        $user = Auth::user();
-        return view('admin.crud.import', compact('user'));
+/*         $user = Auth::user();
+        return view('admin.crud.import', compact('user')); */
     }
 
 

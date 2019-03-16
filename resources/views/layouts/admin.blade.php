@@ -52,7 +52,7 @@
       submit-url="{{ url('submit') }}"
       admin-users="{{ url('admin/users') }}"
       admin-create="{{ url('admin/users/create') }}"
-      import-csv="{{ url('admin/import') }}"
+      import-csv="{{ url('/import_csv') }}"
       export-report="{{ url('admin/edit') }}"
       logout-route="{{ route('logout') }}"
       logout="{{ route('logout') }}"

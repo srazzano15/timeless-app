@@ -43,25 +43,52 @@ Route::middleware(['auth'])->group(function () {
     
     Route::resource('admin/users', 'AdminUsersController');
     Route::resource('batch', 'BatchController');
-    Route::get('/admin/import', 'ImportCsvController@getImport')->name('import');
-    Route::post('/admin/import_parse', 'ImportCsvController@parseImport')->name('import_parse');
-    Route::post('/admin/import_process', 'ImportCsvController@processImport')->name('import_process');
+
     Route::get('/admin', 'PagesController@admin')->name('admin');
-    Route::get('/admin/edit', 'ExportsController@exportView')->name('batch_report');
-    Route::get('/admin/edit/download', 'ExportsController@export')->name('report_download');
+    
 
     Route::get('/admin/submit_bags', 'SingleBagsInsertController@index')->name('admin_submit_bags');
     Route::post('/admin/processing_bags', 'SingleBagsInsertController@store')->name('admin_bags_processing');
-    Route::get('/test_form', function() {
+
+    Route::resource('submit', 'AdminBatchInsertController');
+
+    /**
+     * IMPORTING / EXPORTING ROUTESX
+     */
+    /* Route::get('export', 'ImportExportController@export')->name('export'); */
+    Route::get('import_csv', 'ImportExportController@getImport')->name('import_csv');
+    Route::post('import', 'ImportExportController@import')->name('import');
+    Route::get('/admin/edit', 'ExportsController@exportView')->name('batch_report');
+    Route::get('/admin/edit/download', 'ExportsController@export')->name('report_download');
+
+    // REPORTS ROUTES
+    Route::get('/reports/bags_submitted', 'PagesController@bagStats')->name('report_bags_submitted');
+
+
+
+    /**
+     * Testing Routes
+     */
+    /*     Route::get('/test_form', function() {
         $user = Auth::user();
         return view('admin.test', compact('user'));
-    });
-    /* Route::post('/test_form', function(Request $request) {
+    }); */
+    /* Route::post('/test_post', function(Request $request) {
         $data = $request->get();
         dd($data);
     })->name('test_post'); */
-    Route::resource('submit', 'AdminBatchInsertController');
-    // REPORTS ROUTES
-    Route::get('/reports/bags_submitted', 'PagesController@bagStats')->name('report_bags_submitted');
+
+
+
+
+    /**
+     * RETIRED ROUTES
+     */
+    /*Route::get('/admin/import', 'ImportCsvController@getImport')->name('import');
+    Route::post('/admin/import_parse', 'ImportCsvController@parseImport')->name('import_parse');
+    Route::post('/admin/import_process', 'ImportCsvController@processImport')->name('import_process'); */
+
+
+
 
 });
