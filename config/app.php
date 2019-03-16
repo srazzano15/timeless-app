@@ -226,8 +226,8 @@ return [
      */
 
     'db_fields' => [
+        'batch_id',
         'bag_id',
-        'product_weight',
         'bag_weight',
         'flower_weight'
     ],
