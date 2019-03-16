@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="row">
+{{--     <div class="row">
         <div class="col s12 m6 offset-m2">
             <div class="card">
                 <div class="card-content">
@@ -22,7 +22,7 @@
                             </div>
                         </div>
 
-                        {{-- <div class="form-group">
+                        <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <div class="checkbox">
                                     <label>
@@ -30,7 +30,7 @@
                                     </label>
                                 </div>
                             </div>
-                        </div> --}}
+                        </div>
                             <hr>
                             <div class="row">
                                 <div class="col s6 m6 ">
@@ -45,6 +45,33 @@
                 </div>
             </div>
         </div>
+    </div> --}}
+    <div class="row">
+    <div class="card col s12 m6 offset-m3">
+        <div class="card-content">
+            <div class="card-title">
+                CSV File Import
+            </div>
+            <hr>
+            
+            <p>Please add a CSV file to import.</p>
+            <br>
+            <p>The file should not include a header row.</p>
+            <br>
+            <p>The following should be the columns represented in the import file.</p>
+            <p><b>Batch  |  Package  |  Flower Weight  |  Gross Weight</b></p>
+            <hr>
+            <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="input-field">
+                    <input type="file" name="file">
+                </div>
+                <br>
+                <button class="btn btn--lk">Import File</button>
+            </form>
+            
+        </div>
     </div>
+</div>
 
 @endsection

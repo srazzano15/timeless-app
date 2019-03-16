@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class DropKegsFilledFromBatchSubmits extends Migration
+class DropProductWeightFromCsvImport extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class DropKegsFilledFromBatchSubmits extends Migration
      */
     public function up()
     {
-        if (Schema::hasColumn('batch_submits', 'kegs_filled')) {
-            Schema::table('batch_submits', function (Blueprint $table) {
-                $table->dropColumn('kegs_filled');
+        if (Schema::hasColumn('import_export_csv', 'product_weight')) {
+            Schema::table('import_export_csv', function (Blueprint $table) {
+                $table->dropColumn('product_weight');
             });
         }
     }
@@ -27,8 +27,7 @@ class DropKegsFilledFromBatchSubmits extends Migration
      */
     public function down()
     {
-        
-        
 
+        
     }
 }
