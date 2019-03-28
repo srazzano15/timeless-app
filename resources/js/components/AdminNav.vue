@@ -12,11 +12,14 @@
     </div>
     <hr>
     <span style="padding: 0 10px; font-size: 1em;">Where would you like to go?</span>
+    
     <div class="main-nav__items">
+    
         <div class="main-nav__item">
             <a :href="adminUrl">
             <i class="fa fa-tachometer-alt fa-fw"></i> Dashboard</a>
         </div>
+        
         <div class="main-nav__item">
             <a :href="submitUrl">
             <i class="fas fa-leaf"></i>  Submit Bag Weights</a>
@@ -25,15 +28,18 @@
           <a @click="toggleReportsDropDown"><i class="far fa-chart-bar"></i> Reports    
           <i id="reports_dropdown" class="fas fa-angle-right"></i></a>
         </div>
-        <div id="reports_mgmt" v-show="reportsDropDown">
-            <div class="main-nav__item dropdown__item">
-              <a :href="bagsSub" class="p-l"><i class="fa fa-angle-double-right"></i> Submitted Bags</a>
+        <transition name="dropdown">
+            <div id="reports_mgmt" v-show="reportsDropDown" >
+                <div class="main-nav__item dropdown__item">
+                <a :href="bagsSub" class="p-l"><i class="fa fa-angle-double-right"></i> Submitted Bags</a>
+                </div>
             </div>
-        </div>
+        </transition>
         <div class="main-nav__dropdown">
-        <a @click="toggleUserDropDown"><i class="fa fa-users fa-fw"></i> User Management     
-        <i id="user_dropdown" class="fas fa-angle-right"></i></a>
+            <a @click="toggleUserDropDown"><i class="fa fa-users fa-fw"></i> User Management     
+            <i id="user_dropdown" class="fas fa-angle-right"></i></a>
         </div>
+        <transition name="dropdown">
         <div id="user_mgmt" v-show="userDropDown">
             <div class="main-nav__item dropdown__item">
                 <a :href="adminUsers" class="p-l"><i class="fa fa-angle-double-right"></i> Users</a>
@@ -42,18 +48,21 @@
                 <a :href="adminCreate" class="p-l"><i class="fa fa-angle-double-right"></i> Add User</a>
             </div>
         </div>
+        </transition>
         <div class="main-nav__dropdown">
             <a @click="toggleAdminDropDown"><i class="fas fa-barcode fa-fw"></i> Orders  
             <i id="admin_dropdown" class="fas fa-angle-right"></i></a>
         </div>
-        <div id="order_mgmt" v-show="adminDropDown">
-            <div class="main-nav__item dropdown__item">
-                <a :href="importCsv" class="p-l"><i class="fa fa-angle-double-right"></i>  Import CSV</a>
+        <transition name="dropdown">
+            <div id="order_mgmt" v-show="adminDropDown">
+                <div class="main-nav__item dropdown__item" >
+                    <a :href="importCsv" class="p-l"><i class="fa fa-angle-double-right"></i>  Import CSV</a>
+                </div>
+                <div class="main-nav__item dropdown__item" >
+                    <a :href="exportReport" class="p-l"><i class="fa fa-angle-double-right"></i>  Export Report</a>
+                </div>
             </div>
-            <div class="main-nav__item dropdown__item">
-                <a :href="exportReport" class="p-l"><i class="fa fa-angle-double-right"></i>  Export Report</a>
-            </div>
-        </div>
+        </transition>
         <div class="main-nav__item">
         <a class="" :href="logout"
             @click.prevent="submitForm">
@@ -62,7 +71,9 @@
         </a>
         </div>
         <slot></slot>
+    
     </div>
+    
     </div>
 
 </template>
@@ -121,8 +132,18 @@ export default {
 #admin_dropdown, 
 #user_dropdown,
 #reports_dropdown  {
-    transition: all .2s ease;
+    transition: all .3s ease;
 }
-
+.dropdown-leave-active, {
+    transition: all .5s;
+}
+.dropdown-enter-active {
+    transition: all .15s;
+}
+.dropdown-enter,
+.dropdown-leave-to {
+    opacity: 0;
+    transform: translateY(-30px)
+}
 
 </style>

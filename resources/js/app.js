@@ -33,14 +33,14 @@ window.Vue = require('vue');
  */
 
 /* Vue.component('example-component', require('./components/ExampleComponent.vue')); */
-/* Vue.component('csv-importer', require('./components/CsvImporter.vue').default) */
+Vue.component('dashboard', require('./components/Dashboard.vue').default)
 Vue.component('text-field', require('./components/TextInput.vue').default);
 Vue.component('bag', require('./components/BagForm.vue').default);
 Vue.component('admin-nav', require('./components/AdminNav.vue').default);
 Vue.component('batch-statistics', require('./components/BatchStatistics.vue').default);
 
-import VueCsvImport from 'vue-csv-import';
-Vue.component('vue-csv-import', VueCsvImport);
+/* import VueCsvImport from 'vue-csv-import';
+Vue.component('vue-csv-import', VueCsvImport); */
 
 import Datepicker from 'vuejs-datepicker';
 Vue.component('datepicker', Datepicker);

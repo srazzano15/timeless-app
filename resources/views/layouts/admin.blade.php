@@ -9,8 +9,6 @@
 
 
 <!--Styles-->
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<!--W3 CSS-->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <!--Font Awesome 5-->
 <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -115,7 +113,7 @@
       </form>
     </div>
   </div> --}}
-
+  
   <div class="col m9">
     <div class="container">
       @yield('content')

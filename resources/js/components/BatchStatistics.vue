@@ -114,6 +114,7 @@ export default {
             if (this.searchFilter) 
             return this.currentPage = 1;
         }
+
     }
 
 }

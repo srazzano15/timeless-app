@@ -78,6 +78,13 @@ main {
   box-sizing: inherit;
 }
 
+button,
+html [type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: none;
+}
+
 /**
 * Custom Type Styles
 */
@@ -214,6 +221,19 @@ nav {
 *******************/
 .base__table--full {
   padding-bottom: 100px;
+}
+
+/*
+************************
+****** DASHBOARD MODULES 
+************************
+*/
+.dashboard__card {
+  background-color: #818181 !important;
+  color: #fdd00c;
+}
+.dashboard__card span {
+  font-size: 0.68em;
 }
 
 /**

@@ -17,7 +17,18 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/bag_stats', function() {
 
+
+/**
+ * Reporting API Endpoints
+ */
+Route::get('/bag_stats', function() {
     return BatchBag::all();
+});
+
+/**
+ * Dashboard API Endpoints
+ */
+Route::get('/dash_stats', function () {
+    return BatchBag::count();
 });

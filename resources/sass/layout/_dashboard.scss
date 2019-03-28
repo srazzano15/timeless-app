@@ -1,0 +1,16 @@
+/*
+************************
+****** DASHBOARD MODULES 
+************************
+*/
+.dashboard {
+
+    &__card {
+        background-color: $gray !important;
+        color: $yellow;
+        span {
+            font-size: .68em;
+        }
+    }
+
+}
