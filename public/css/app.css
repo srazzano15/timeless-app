@@ -1,6 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway);@import url(https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css);/* // Bootstrap
-@import '~bootstrap/scss/bootstrap'; */
-/**
+@import url(https://fonts.googleapis.com/css?family=Raleway);@import url(https://fonts.googleapis.com/css?family=Open+Sans);@import url(https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css);/**
 * MIXINS
 */
 /**
@@ -88,6 +86,13 @@ html [type=button],
 /**
 * Custom Type Styles
 */
+table,
+tr,
+td,
+th {
+  font-family: "Open Sans", sans-serif;
+}
+
 .login__nav {
   background: #888888;
 }
@@ -187,10 +192,13 @@ nav {
   font-size: 0.8em;
   border-bottom: 1px solid #fdd00c;
   letter-spacing: 1.5px;
-  transition: all 0.13s ease-in-out;
+  transition: color 0.3s ease-in-out;
 }
 .main-nav__item:hover {
-  padding-left: 20px;
+  padding-left: 10px;
+}
+.main-nav__item:hover a {
+  color: #383838;
 }
 .main-nav__item i {
   vertical-align: middle;
@@ -204,13 +212,17 @@ nav {
 .main-nav__dropdown {
   height: 35px;
   margin: 8px 0;
-  color: #fdd00c !important;
+  color: #fdd00c;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   cursor: pointer;
   font-size: 0.8em;
   padding-left: 10px;
   border-bottom: 1px solid #fdd00c;
+  transition: color 0.3s ease-in-out;
+}
+.main-nav__dropdown:hover a, .main-nav__dropdown:hover i {
+  color: #383838;
 }
 .main-nav .dropdown__item {
   border-bottom: 1px solid #a8a8a8;
@@ -221,6 +233,10 @@ nav {
 *******************/
 .base__table--full {
   padding-bottom: 100px;
+}
+
+.reports__table {
+  overflow: hidden;
 }
 
 /*

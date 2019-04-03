@@ -1,6 +1,6 @@
 <template>
     <div class="row base__table--full">
-        <h3>Bag Statistics</h3>
+        <h3>Disparity Report</h3>
         <hr>
         <div class="row">
             <div class="input-field col s6 m3 l3">
@@ -15,18 +15,20 @@
                 <tr>
                     <th @click="sortCol('batch_id')">Batch ID</th>
                     <th @click="sortCol('package_id')">Package ID</th>
+                    <th @click="sortCol('gross_weight')">Gross Weight</th>
                     <th @click="sortCol('bag_weight')">Bag Weight</th>
-                    <th @click="sortCol('flower_weight')">Flower Weight</th>
+                    <th @click="sortCol('disparity')">Disparity</th>
                     <th @click="sortCol('created_at')">Date Submitted</th>
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(bag, index) in sortedBags" :key="index">
-                    <td>{{ bag.batch_id }}</td>
-                    <td>{{ bag.package_id }}</td>
-                    <td>{{ bag.bag_weight }}</td>
-                    <td>{{ bag.flower_weight }}</td>
-                    <td>{{ bag.created_at }}</td>
+                <tr v-for="(result, index) in sortedResults" :key="index">
+                    <td>{{ result.bag_match.batch_id }}</td>
+                    <td>{{ result.bag_id }}</td>
+                    <td>{{ result.bag_weight }}</td>
+                    <td>{{ result.bag_match.flower_weight }}</td>
+                    <td>{{ result.bag_weight - result.bag_match.flower_weight }}</td>
+                    <td>{{ result.created_at }}</td>
                 </tr>
             </tbody>
         </table>
@@ -35,6 +37,7 @@
             <button class="btn btn--lk" @click="prevPage">Back</button>
             <button class="btn btn--lk" @click="nextPage">Next</button>
         </p>
+        
     </div>
 </template>
 
@@ -45,18 +48,24 @@ import Papa from 'papaparse';
 export default {
     data() {
         return {
-            bags: [],
+            results: [],
             currentSort: 'batch_id',
             currentSortDir: 'asc',
-            pageSize: 8,
+            pageSize: 10,
             currentPage: 1,
-            searchFilter: ''
+            searchFilter: '',
+            export: []
         }
     },
     created() {
         window.axios
-            .get('/api/bag_stats')
-            .then(response => (this.bags = response.data))
+            .get('/api/disparity_data')
+            .then(response => {
+                this.results = response.data
+                this.exportObject()                
+            })
+            .catch(e => (console.log(e)))
+            
     },
     methods: {
         sortCol(col) {
@@ -67,7 +76,7 @@ export default {
             this.currentSort = col;
         },
         nextPage() {
-            if ((this.currentPage * this.pageSize) < this.bags.length)
+            if ((this.currentPage * this.pageSize) < this.results.length)
             this.currentPage++;
         },
         prevPage() {
@@ -76,7 +85,7 @@ export default {
         },
         downloadCsv() {
             // data from API
-            let csv = Papa.unparse(this.bags);
+            let csv = Papa.unparse(this.export);
             // new blob for csv
             let csvData = new Blob([csv], {type: 'text/csv;charset=utf-8'});
             // object url
@@ -84,19 +93,37 @@ export default {
 
             let downloadBtn = document.createElement('a');
             downloadBtn.href = csvUrl;
-            downloadBtn.setAttribute('download', 'bags_report.csv');
+            downloadBtn.setAttribute('download', 'disparity_report.csv');
             downloadBtn.click();
         },
+        exportObject() {
+            // callback method to follow the ajax response
+            // run a loop over each index and push object into the export data object
+            for (let i = 0; i < this.results.length; i++) {
+                // premake the disparity equation and return as var
+                let disp = this.results[i].bag_weight - this.results[i].bag_match.flower_weight;
+                // our object
+                let object = {
+                    'Batch ID' : this.results[i].bag_match.batch_id,
+                    'Package ID' : this.results[i].bag_id,
+                    'Gross Weight' : this.results[i].bag_weight,
+                    'Bag Weight' : this.results[i].bag_match.flower_weight,
+                    'Disparity' : disp,
+                    'Date Submitted' : this.results[i].created_at
+                }
+                this.export.push(object)
+            }
+        }
     },
     computed: {
-        sortedBags() {
+        sortedResults() {
             let filter = this.searchFilter.toLowerCase();
-            let bags = this.bags.filter((row, index) => {
-                if (this.searchFilter === '' || this.bags[index].package_id.toLowerCase().indexOf(filter) >= 0) return true;
+            let results = this.results.filter((row, index) => {
+                if (this.searchFilter === '' || this.results[index].package_id.toLowerCase().indexOf(filter) >= 0) return true;
                     return false;
             });
 
-            return bags.sort((a, b) => {
+            return results.sort((a, b) => {
                 let mod = 1;
                 if (this.currentSortDir === 'desc') mod = -1;
                 if (a[this.currentSort] < b[this.currentSort]) return -1 * mod;
@@ -113,10 +140,9 @@ export default {
         firstPage() {
             if (this.searchFilter) 
             return this.currentPage = 1;
-        }
+        },
 
     }
-
 }
 </script>
 
@@ -124,7 +150,5 @@ export default {
 th {
     cursor: pointer;
 }
-.bagStatsTable {
-    overflow: hidden;
-}
+
 </style>

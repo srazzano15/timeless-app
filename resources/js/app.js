@@ -38,6 +38,7 @@ Vue.component('text-field', require('./components/TextInput.vue').default);
 Vue.component('bag', require('./components/BagForm.vue').default);
 Vue.component('admin-nav', require('./components/AdminNav.vue').default);
 Vue.component('batch-statistics', require('./components/BatchStatistics.vue').default);
+Vue.component('disparity-report', require('./components/DisparityReport.vue').default);
 
 /* import VueCsvImport from 'vue-csv-import';
 Vue.component('vue-csv-import', VueCsvImport); */
