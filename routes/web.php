@@ -53,7 +53,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('submit', 'AdminBatchInsertController');
 
     /**
-     * IMPORTING / EXPORTING ROUTESX
+     * IMPORTING / EXPORTING ROUTES
      */
     /* Route::get('export', 'ImportExportController@export')->name('export'); */
     Route::get('import_csv', 'ImportExportController@getImport')->name('import_csv');
@@ -69,7 +69,7 @@ Route::middleware(['auth'])->group(function () {
     /**
      * Testing Routes
      */
-    /*     Route::get('/test_form', function() {
+        /* Route::get('/test_form', function() {
         $user = Auth::user();
         return view('admin.test', compact('user'));
     }); */

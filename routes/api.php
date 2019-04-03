@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use App\BatchBag;
+use App\ImportData;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -24,6 +25,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
  */
 Route::get('/bag_stats', function() {
     return BatchBag::all();
+});
+
+Route::get('/disparity_data', function () {
+
+    $data = ImportData::has('bagMatch')->with('bagMatch')->get();
+
+    return $data;
 });
 
 /**

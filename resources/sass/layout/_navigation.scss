@@ -29,12 +29,14 @@
         font-size: .8em;
         border-bottom: 1px solid $yellow;
         letter-spacing: 1.5px;
-        transition: all .13s ease-in-out;
+        transition: color .3s ease-in-out;
         &:hover {
-            padding-left: 20px;
-        }
-                
-
+            padding-left: 10px;
+            
+            a {
+                color: rgb(56, 56, 56);
+            }
+        }  
             i {
                 vertical-align: middle;
             }
@@ -48,13 +50,19 @@
     &__dropdown {
         height: 35px;
         margin: 8px 0;
-        color: $yellow !important;
+        color: $yellow;
         text-transform: uppercase;
         letter-spacing: 1.5px;
         cursor: pointer;
         font-size: .8em;
         padding-left: 10px;
         border-bottom: 1px solid $yellow;
+        transition: color .3s ease-in-out;
+        &:hover {
+            a, i {
+                color: rgb(56, 56, 56);
+            }
+        }
     }
     .dropdown__item {
         border-bottom: 1px solid #a8a8a8;
