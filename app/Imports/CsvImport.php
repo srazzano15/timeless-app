@@ -16,7 +16,7 @@ class CsvImport implements ToModel
     {
         return new ImportData([
             'batch_id' => $row[0],
-            'bag_id' => $row[1],
+            'bag_id' => str_replace(' ', '', ucwords(strtolower($row[1]))),
             'bag_weight' => str_replace(',','',$row[3]),
             'flower_weight' => str_replace(',','',$row[2])
         ]);
