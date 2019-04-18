@@ -42,6 +42,24 @@ textarea.materialize-textarea:focus:not([readonly])+label {
     color: $yellow;
 }
 .submission__form {
-
     padding-bottom: 100px;
+}
+
+/**
+ ****************
+ * Message Styles
+ ****************
+ */
+.form {
+    &__msg {
+        &--success {
+            width: 100%;
+            height: auto;
+            max-height: 2em;
+            background: #03b31b2f;
+            color: black;
+            padding: 9px;
+            margin-top: 2px;
+        }
+    }
 }

@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use App\BatchBag;
 use App\ImportData;
+use App\BatchSubmit;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -23,20 +24,33 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 /**
  * Reporting API Endpoints
  */
-Route::get('/bag_stats', function() {
-    return BatchBag::all();
-});
+/* Route::get('/bag_stats', 'ApiEndpointController@bagStats');
+Route::get('/disparity_data', 'ApiEndpointController@disparityData');
+Route::get('/stuffed_batches', 'ApiEndpointController@stuffedBatches'); */
 
-Route::get('/disparity_data', function () {
 
-    $data = ImportData::has('bagMatch')->with('bagMatch')->get();
-
-    return $data;
-});
 
 /**
  * Dashboard API Endpoints
  */
 Route::get('/dash_stats', function () {
     return BatchBag::count();
+});
+
+/**
+ * Retired Routes
+ */
+Route::get('/bag_stats', function() {
+    return BatchBag::all();
+});
+Route::get('/disparity_data', function () {
+
+    $data = ImportData::has('bagMatch')->with('bagMatch')->get();
+
+    return $data;
+});
+Route::get('/stuffed_batches', function () {
+    $data = BatchSubmit::where('status', 'Stuffed')->get();
+    return $data;
+    
 });
