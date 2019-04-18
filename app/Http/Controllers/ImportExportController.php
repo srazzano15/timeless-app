@@ -16,6 +16,6 @@ class ImportExportController extends Controller
     {
         Excel::import(new CsvImport, request()->file('file'));
 
-        return back();
+        return back()->with('success', 'File Successfully Imported');
     }
 }

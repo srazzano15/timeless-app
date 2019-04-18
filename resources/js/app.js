@@ -39,6 +39,9 @@ Vue.component('bag', require('./components/BagForm.vue').default);
 Vue.component('admin-nav', require('./components/AdminNav.vue').default);
 Vue.component('batch-statistics', require('./components/BatchStatistics.vue').default);
 Vue.component('disparity-report', require('./components/DisparityReport.vue').default);
+Vue.component('stuffed-table', require('./components/StuffedBatchTable.vue').default)
+Vue.component('batch-times', require('./components/BatchTimes.vue').default);
+Vue.component('stopwatch', require('./components/Stopwatch.vue').default);
 
 /* import VueCsvImport from 'vue-csv-import';
 Vue.component('vue-csv-import', VueCsvImport); */

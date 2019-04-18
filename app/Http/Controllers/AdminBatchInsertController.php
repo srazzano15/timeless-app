@@ -137,7 +137,8 @@ class AdminBatchInsertController extends Controller
      */
     public function edit($id)
     {
-        //
+/*         $entry = BatchSubmit::findOrFail($id);
+        return view('admin.crud.update')->with('entry', $entry); */
     }
 
     /**
@@ -149,7 +150,7 @@ class AdminBatchInsertController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
     }
 
     /**

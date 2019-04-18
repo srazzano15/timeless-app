@@ -47,6 +47,7 @@
         </div>
     </div> --}}
     <div class="row">
+
     <div class="card col s12 m6 offset-m3">
         <div class="card-content">
             <div class="card-title">
@@ -59,19 +60,38 @@
             <p>The file should not include a header row.</p>
             <br>
             <p>The following should be the columns represented in the import file.</p>
-            <p><b>Batch  |  Package  |  Flower Weight  |  Gross Weight</b></p>
+            <p style="font-weight: 700">Batch  |  Package  |  Flower Weight  |  Gross Weight</p>
             <hr>
             <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                <div class="input-field">
-                    <input type="file" name="file">
+                <div class="file-field input-field">
+                    <div class="btn--p btn">
+                        <span>File</span>
+                        <input type="file" name="file" accept=".csv">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input type="text" class="file-path">
+                    </div>
                 </div>
                 <br>
                 <button class="btn btn--lk">Import File</button>
+                <br>
+                <br>
+                @if ($message = Session::get('success'))
+                    <span class="form__msg--success"> {{ $message }} </span>
+                @endif
             </form>
+
             
+            
+
         </div>
+        
     </div>
 </div>
+<div class="row">
+    
+</div>
+
 
 @endsection
