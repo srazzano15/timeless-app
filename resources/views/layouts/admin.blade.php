@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<head>
 <title>{{ config('app.name', 'Laravel') }}</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,6 +21,7 @@
 <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
 <!--Laravel DataTables-->
 
+</head>
 
 
 

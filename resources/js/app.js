@@ -35,7 +35,7 @@ window.Vue = require('vue');
 /* Vue.component('example-component', require('./components/ExampleComponent.vue')); */
 Vue.component('dashboard', require('./components/Dashboard.vue').default)
 Vue.component('text-field', require('./components/TextInput.vue').default);
-Vue.component('bag', require('./components/BagForm.vue').default);
+Vue.component('bag-form', require('./components/BagForm.vue').default);
 Vue.component('admin-nav', require('./components/AdminNav.vue').default);
 Vue.component('batch-statistics', require('./components/BatchStatistics.vue').default);
 Vue.component('disparity-report', require('./components/DisparityReport.vue').default);
@@ -72,7 +72,7 @@ Vue.component('datepicker', Datepicker);
  */
 const admin = new Vue({
     el: "#admin_index",
-    data: {
+/*     data: {
         step: 1,
         bagIndex: 1,
         pillowIndex: 1,
@@ -230,7 +230,7 @@ const admin = new Vue({
                 this.pillows[i].pop({
                     weight: ""
                 });
-            } */
+            } 
             
             localStorage.clear();
             location.reload(true);
@@ -241,5 +241,5 @@ const admin = new Vue({
                return this.resetBtn = true;
             }
         }
-    }
+    } */
 });

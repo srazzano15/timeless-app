@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use App\BatchBag;
 use App\ImportData;
 use App\BatchSubmit;
+use App\User;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -38,19 +40,23 @@ Route::get('/dash_stats', function () {
 });
 
 /**
- * Retired Routes
+ * FORM/REPORT Endpoints
  */
 Route::get('/bag_stats', function() {
     return BatchBag::all();
 });
 Route::get('/disparity_data', function () {
-
     $data = ImportData::has('bagMatch')->with('bagMatch')->get();
-
     return $data;
 });
 Route::get('/stuffed_batches', function () {
     $data = BatchSubmit::where('status', 'Stuffed')->get();
     return $data;
-    
+});
+Route::get('/all_users', function() {
+    return User::all();
+});
+Route::get('/imported', function() {
+    $data = ImportData::doesntHave('bagMatch')->get();
+    return $data;
 });

@@ -1,7 +1,13 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="submission__form">
+<bag-form
+    form-action=" {{ url('/submit') }} "
+
+>
+@csrf
+</bag-form>
+{{-- <div class="submission__form">
 
     <div class="jumbotron">
         <h1 class="display-3">Bag Submissions</h1>
@@ -61,7 +67,7 @@
                 
                 <div class="input-field col s12">
                     <input type="text" class="form-control" name="submitter" id="submitter" 
-                    aria-describedby="submitter" :value=" {{ json_encode($user->id) }} " {{-- v-model="batches.submitter" --}} readonly>
+                    aria-describedby="submitter" :value=" {{ json_encode($user->id) }} " {{-- v-model="batches.submitter"  readonly>
                     <label for="submitter">Submitter</label>
                 </div>
             </div>
@@ -177,10 +183,15 @@
 
 </div>
 
-    
+     --}}
 @endsection
 
 @push('scripts')
-   
+{{-- <script>
+     document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, options);
+  });
+</script> --}}
 @endpush
 

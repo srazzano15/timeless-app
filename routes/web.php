@@ -69,7 +69,7 @@ Route::middleware(['auth'])->group(function () {
     /**
      * Testing Routes
      */
-        /* Route::get('/test_form', function() {
+/*         Route::get('/test_form', function() {
         $user = Auth::user();
         return view('admin.test', compact('user'));
     }); */
@@ -78,7 +78,19 @@ Route::middleware(['auth'])->group(function () {
         dd($data);
     })->name('test_post'); */
 
+    Route::get('/manipulate_data', function() {
+        $arr = BatchBag::all();
+        foreach ($arr as $i)
+        {
+            $p_id = $i->package_id;
+            $p_id = str_replace('timeless', 'Timeless', $p_id);
+            $p_id = str_replace('trim', 'Trim', $p_id);
+            $p_id = str_replace('--', '-', $p_id);
+            $p_id = str_replace(' ', '', $p_id);
+            $i->save();
+        }
 
+    });
 
 
     /**
