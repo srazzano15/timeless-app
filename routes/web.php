@@ -83,8 +83,8 @@ Route::middleware(['auth'])->group(function () {
         foreach ($arr as $i)
         {
             $p_id = $i->package_id;
-            $p_id = str_replace('timeless', 'Timeless', $p_id);
-            $p_id = str_replace('trim', 'Trim', $p_id);
+            $p_id = substr_replace('timeless', 'Timeless', $p_id);
+            $p_id = substr_replace('trim', 'Trim', $p_id);
             $p_id = str_replace('--', '-', $p_id);
             $p_id = str_replace(' ', '', $p_id);
             $i->save();
