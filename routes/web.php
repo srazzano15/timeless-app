@@ -78,7 +78,7 @@ Route::middleware(['auth'])->group(function () {
         dd($data);
     })->name('test_post'); */
 
-    Route::put('/manipulate_data', function() {
+    Route::any('/manipulate_data', function() {
         $arr = BatchBag::all();
         foreach ($arr as $i)
         {
@@ -87,7 +87,9 @@ Route::middleware(['auth'])->group(function () {
             $p_id = str_replace('trim', 'Trim', $p_id);
             $p_id = str_replace('--', '-', $p_id);
             $p_id = str_replace(' ', '', $p_id);
+            $p_id = str_replace('extract', 'Extract', $p_id);
             $i->save();
+            echo $p_id . '<br>';
         }
 
     });
