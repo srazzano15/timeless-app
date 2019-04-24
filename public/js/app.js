@@ -2663,13 +2663,13 @@ __webpack_require__.r(__webpack_exports__);
       // run a loop over each index and push object into the export data object
       for (var i = 0; i < this.results.length; i++) {
         // premake the disparity equation and return as var
-        var disp = this.results[i].bag_weight - this.results[i].bag_match.flower_weight; // our object
+        var disp = this.results[i].bag_weight - this.results[i].bag_match.bag_weight; // our object
 
         var object = {
           'Batch ID': this.results[i].bag_match.batch_id,
           'Package ID': this.results[i].bag_id,
           'Gross Weight': this.results[i].bag_weight,
-          'Bag Weight': this.results[i].bag_match.flower_weight,
+          'Input Bag Weight': this.results[i].bag_match.bag_weight,
           'Disparity': disp,
           'Date Submitted': this.results[i].created_at
         };
@@ -57535,7 +57535,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("Bag Weight")]
+            [_vm._v("Input Bag Weight")]
           ),
           _vm._v(" "),
           _c(
@@ -57574,10 +57574,10 @@ var render = function() {
             _vm._v(" "),
             _c("td", [_vm._v(_vm._s(result.bag_weight))]),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(result.bag_match.flower_weight))]),
+            _c("td", [_vm._v(_vm._s(result.bag_match.bag_weight))]),
             _vm._v(" "),
             _c("td", [
-              _vm._v(_vm._s(result.bag_weight - result.bag_match.flower_weight))
+              _vm._v(_vm._s(result.bag_weight - result.bag_match.bag_weight))
             ]),
             _vm._v(" "),
             _c("td", [_vm._v(_vm._s(result.created_at))])
