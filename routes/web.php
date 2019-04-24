@@ -81,25 +81,38 @@ Route::middleware(['auth'])->group(function () {
 
     Route::any('/manipulate_data', function() {
 
-        $bags = DB::table('batch_bags')->get();
+        $b_bags = BatchBag::all();
+        foreach ($b_bags as $b)
+        {
+            $b->package_id = str_replace('timeless', 'Timeless', $b->package_id);
+            $b->package_id = str_replace('trim', 'Trim', $b->package_id);
+            $b->package_id = str_replace('--', '-', $b->package_id);
+            $b->package_id = str_replace('extract', 'Extract', $b->package_id);
+            $b->package_id = str_replace(' ', '', $b->package_id);
 
+            $b->save();
+        }
+
+        $bags = ImportData::all();
         foreach ($bags as $bag)
         {
-            $b = str_replace('timeless', 'Timeless', $bag->package_id);
-            $b = str_replace('trim', 'Trim', $b);
-            $b = str_replace('--', '-', $b);
-            $b = str_replace('extract', 'Extract', $b);
-            $b = str_replace(' ', '', $b);
+            
+            $bag->bag_id = str_replace('timeless', 'Timeless', $bag->bag_id);
+            $bag->bag_id = str_replace('trim', 'Trim', $bag->bag_id);
+            $bag->bag_id = str_replace('--', '-', $bag->bag_id);
+            $bag->bag_id = str_replace('extract', 'Extract', $bag->bag_id);
+            $bag->bag_id = str_replace(' ', '', $bag->bag_id);
 
-            DB::table('batch_bags')
-                ->where('id', $bag->id)
-                ->update(['package_id' => $b]);
+            $bag->push();
         }
-        $u_bags = DB::table('batch_bags')->get();
-        dd($u_bags);
+
+        return back()->with('success', 'Data has been cleaned');
 
     });
-
+    Route::get('/test', function () {
+        $d = ImportData::has('bagMatch')->with('bagMatch')->get();
+        echo $d->toJson();
+    });
 
     /**
      * RETIRED ROUTES
