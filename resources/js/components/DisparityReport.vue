@@ -16,7 +16,7 @@
                     <th @click="sortCol('batch_id')">Batch ID</th>
                     <th @click="sortCol('package_id')">Package ID</th>
                     <th @click="sortCol('gross_weight')">Gross Weight</th>
-                    <th @click="sortCol('bag_weight')">Bag Weight</th>
+                    <th @click="sortCol('bag_weight')">Input Bag Weight</th>
                     <th @click="sortCol('disparity')">Disparity</th>
                     <th @click="sortCol('created_at')">Date Submitted</th>
                 </tr>
@@ -26,8 +26,8 @@
                     <td>{{ result.bag_match.batch_id }}</td>
                     <td>{{ result.bag_id }}</td>
                     <td>{{ result.bag_weight }}</td>
-                    <td>{{ result.bag_match.flower_weight }}</td>
-                    <td>{{ result.bag_weight - result.bag_match.flower_weight }}</td>
+                    <td>{{ result.bag_match.bag_weight }}</td>
+                    <td>{{ result.bag_weight - result.bag_match.bag_weight }}</td>
                     <td>{{ result.created_at }}</td>
                 </tr>
             </tbody>
@@ -101,13 +101,13 @@ export default {
             // run a loop over each index and push object into the export data object
             for (let i = 0; i < this.results.length; i++) {
                 // premake the disparity equation and return as var
-                let disp = this.results[i].bag_weight - this.results[i].bag_match.flower_weight;
+                let disp = this.results[i].bag_weight - this.results[i].bag_match.bag_weight;
                 // our object
                 let object = {
                     'Batch ID' : this.results[i].bag_match.batch_id,
                     'Package ID' : this.results[i].bag_id,
                     'Gross Weight' : this.results[i].bag_weight,
-                    'Bag Weight' : this.results[i].bag_match.flower_weight,
+                    'Input Bag Weight' : this.results[i].bag_match.bag_weight,
                     'Disparity' : disp,
                     'Date Submitted' : this.results[i].created_at
                 }
