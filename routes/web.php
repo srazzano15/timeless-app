@@ -6,6 +6,7 @@ use App\User;
 use App\ImportData;
 use App\BatchBag;
 use Illuminate\Support\Facades\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -79,18 +80,23 @@ Route::middleware(['auth'])->group(function () {
     })->name('test_post'); */
 
     Route::any('/manipulate_data', function() {
-        $arr = BatchBag::all();
-        foreach ($arr as $i)
+
+        $bags = DB::table('batch_bags')->get();
+
+        foreach ($bags as $bag)
         {
-            $p_id = $i->package_id;
-            $p_id = str_replace('timeless', 'Timeless', $p_id);
-            $p_id = str_replace('trim', 'Trim', $p_id);
-            $p_id = str_replace('--', '-', $p_id);
-            $p_id = str_replace(' ', '', $p_id);
-            $p_id = str_replace('extract', 'Extract', $p_id);
-            $i->save();
-            echo $p_id . '<br>';
+            $b = str_replace('timeless', 'Timeless', $bag->package_id);
+            $b = str_replace('trim', 'Trim', $b);
+            $b = str_replace('--', '-', $b);
+            $b = str_replace('extract', 'Extract', $b);
+            $b = str_replace(' ', '', $b);
+
+            DB::table('batch_bags')
+                ->where('id', $bag->id)
+                ->update(['package_id' => $b]);
         }
+        $u_bags = DB::table('batch_bags')->get();
+        dd($u_bags);
 
     });
 
