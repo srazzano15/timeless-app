@@ -80,8 +80,8 @@ Route::middleware(['auth'])->group(function () {
     })->name('test_post'); */
 
     Route::any('/manipulate_data', function() {
-
-        $b_bags = BatchBag::all();
+        
+        $b_bags = DB::table('batch_bags')->get();
         foreach ($b_bags as $b)
         {
             $b->package_id = str_replace('timeless', 'Timeless', $b->package_id);
@@ -90,9 +90,10 @@ Route::middleware(['auth'])->group(function () {
             $b->package_id = str_replace('extract', 'Extract', $b->package_id);
             $b->package_id = str_replace(' ', '', $b->package_id);
 
-            $b->save();
+            DB::table('batch_bags')
+                ->where('id', $b->id)
+                ->update(['package_id' => $b->package_id]);
         }
-
         $bags = ImportData::all();
         foreach ($bags as $bag)
         {
@@ -106,13 +107,13 @@ Route::middleware(['auth'])->group(function () {
             $bag->push();
         }
 
-        return back()->with('success', 'Data has been cleaned');
+        echo 'Success!';
 
     });
-    Route::get('/test', function () {
+/*     Route::get('/test', function () {
         $d = ImportData::has('bagMatch')->with('bagMatch')->get();
         echo $d->toJson();
-    });
+    }); */
 
     /**
      * RETIRED ROUTES
