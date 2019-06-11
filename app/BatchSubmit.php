@@ -39,5 +39,11 @@ class BatchSubmit extends Model
     {
         return $this->hasMany('App\PillowWeight', 'batch_id', 'batch_id');
     }
+
+    // pre-format data as it is going into DB for uniformity
+    public function setBatchIdAttribute($value)
+    {
+        $this->attributes['batch_id'] = str_replace(' ', '', strtoupper($value));
+    }
 }
 

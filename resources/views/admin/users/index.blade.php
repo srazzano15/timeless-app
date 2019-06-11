@@ -5,6 +5,8 @@
 
 @section('content')
 
+<user-table></user-table>
+{{-- 
     <div class="row" style="padding-top: 1.4em;">
         <div>
             <h3>Users</h3>
@@ -45,6 +47,6 @@
             @endif
         </tbody>
     </table>
-    </div>
+    </div> --}}
 @endsection
 

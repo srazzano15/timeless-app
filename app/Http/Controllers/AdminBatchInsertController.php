@@ -8,6 +8,7 @@ use App\BatchBag;
 use App\BatchSubmit;
 use App\PillowWeight;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Validator;
 
 class AdminBatchInsertController extends Controller
 {
@@ -43,18 +44,23 @@ class AdminBatchInsertController extends Controller
         // get the user
         $user = Auth::user();
 
+        $v = Validator::make($request->all(), [
+            'bnum' => 'required|unique:batch_submits,batch_id',
+            'dFilled' => 'required|date',
+            'cooler' => 'required|integer',
+            'submitter' => 'required|string',
+            'totalPillowWeight' => 'required',
+            'totalBagWeight' => 'required',
+            'submitStatus' => 'required',
+            'package_id.*' => 'required|distinct',
+            'bag_weight.*' => 'required',
+            'flow_weight.*' => 'required',
+            'pillow.*' => 'required',
+        ])->validate();
+
+
         // prepare insert
-        /* $batchSubmit = new BatchSubmit(array(
-            'user_id' => $user->id,
-            'status' => $request->input('submitStatus'),
-            'submitter' => $request->input('submitter'),
-            'batch_id' => $request->input('bnum'),
-            'cooler' => $request->input('cooler'),
-            'kegs_filled' => $request->input('kegsFilled'),
-            'date_filled' => $request->input('dFilled'),
-            'total_flower_weight' => $request->input('totalFlowWeight'),
-            'total_batch_weight' => $request->input('totalBagWeight'),
-        )); */
+        
 
         // format string for datetime
         $dateFilled = $request->input('dFilled');
@@ -87,10 +93,22 @@ class AdminBatchInsertController extends Controller
         $flowerWeight = $request->input('flow_weight');
         $pillows = $request->input('pillow');
 
+        foreach ($bagNumber as $bn)
+        {
+            $bn = str_replace('timeless', 'Timeless', $bn);
+            $bn = str_replace('trim', 'Trim', $bn);
+            $bn = str_replace('--', '-', $bn);
+            $bn = str_replace('extract', 'Extract', $bn);
+            $bn = str_replace(' ', '', $bn);
+        }
+
         // for each bag row, insert a row into the DB tied to the batch id
         for ($i = 0; $i < count($bagNumber); $i++) {
 
             $bag = new BatchBag;
+
+
+
 
             $bag->batch_id = $batchNumber;
             $bag->package_id = $bagNumber[$i];

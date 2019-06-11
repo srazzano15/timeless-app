@@ -10,10 +10,6 @@
       <slot></slot>
 
       <div v-show="step === 1">
-        
-
-
-
         <div class="row">
           <div class="input-field col s12">
             <input

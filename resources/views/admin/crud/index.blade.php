@@ -1,12 +1,31 @@
 @extends('layouts.admin')
 
 @section('content')
-<bag-form
+{{-- <bag-form
     form-action=" {{ url('/submit') }} "
 
 >
 @csrf
-</bag-form>
+</bag-form> --}}
+
+<batch-submission
+    form-route=" {{ url('/submit') }} "
+>
+    <template v-slot:csrf>
+        @csrf
+    </template>
+
+    <template v-slot:errors>
+        @if ($errors->any())
+            <ul class="mt-3">
+                @foreach ($errors->all() as $e)
+                    <li class="red--text">{{ $e }}</li>
+                @endforeach
+            </ul>
+        @endif
+    </template>
+</batch-submission>
+
 {{-- <div class="submission__form">
 
     <div class="jumbotron">

@@ -1,4 +1,133 @@
 <template>
+	<v-content>
+		<v-container>
+			<v-card>
+				<v-card-title
+					primary-title
+				>
+					<div class="display-1">Submitted Bags</div>
+					<v-spacer></v-spacer>
+					<v-text-field
+						v-model="searchFilter"
+						append-icon="search"
+						label="Search"
+						single-line
+						hide-details
+					></v-text-field>
+				</v-card-title>
+				<v-data-table
+						:headers="headers"
+						:items="bags"
+						:search="searchFilter"
+				>
+					<template v-slot:items="props">
+						<td >{{ props.item.batch_id }}</td>
+						<td >{{ props.item.package_id }}</td>
+						<td >{{ props.item.bag_weight }}</td>
+						<td >{{ props.item.flower_weight }}</td>
+						<td >{{ props.item.created_at }}</td>
+					</template>
+
+					<template v-slot:footer>
+						<v-btn 
+							@click="downloadCsv"
+							color="primary"
+							class="black--text"
+						>Export CSV</v-btn>
+					</template>
+				</v-data-table>
+			</v-card>
+		</v-container>
+	</v-content>
+</template>
+
+<script>
+
+import axios from 'axios'
+import Papa from 'papaparse'
+
+export default {
+	data() {
+		return {
+			bags: [],
+			headers: [
+				{
+					text: 'Batch ID',
+					value: 'batch_id',
+					align: 'left'
+				},
+				{
+					text: 'Package ID',
+					value: 'package_id'
+				},
+				{
+					text: 'Bag Weight',
+					value: 'bag_weight'
+				},
+				{
+					text: 'Flower Weight',
+					value: 'flower_weight'
+				},
+				{
+					text: 'Submit Date',
+					value: 'created_at'
+				}
+			],
+			searchFilter: '',
+		}
+	},
+	created() {
+		window.axios
+			.get('/api/bag_stats')
+			.then(r => {
+				this.bags = r.data
+			})
+			.catch(e => {
+				console.log(e)
+			})
+	},
+	methods: {
+		downloadCsv() {
+			// data from API
+			let csv = Papa.unparse(this.bags);
+			// new blob for csv
+			let csvData = new Blob([csv], {type: 'text/csv;charset=utf-8'});
+			// object url
+			let csvUrl = window.URL.createObjectURL(csvData);
+
+			let downloadBtn = document.createElement('a');
+			downloadBtn.href = csvUrl;
+			downloadBtn.setAttribute('download', 'bags_report.csv');
+			downloadBtn.click();
+		}
+	}
+}
+</script>
+
+<style>
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<template>
     <div class="row base__table--full">
         <h3>Bag Statistics</h3>
         <hr>
@@ -118,7 +247,7 @@ export default {
     }
 
 }
-</script>
+</script> 
 
 <style>
 th {
@@ -127,4 +256,4 @@ th {
 .bagStatsTable {
     overflow: hidden;
 }
-</style>
+</style>-->

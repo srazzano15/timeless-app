@@ -34,18 +34,9 @@ class SubmitBatch extends FormRequest
             'cooler' => 'required|integer',
             'drun' => 'required|date',
             'submitter' => 'required|string',
-            'kegsFilled' => 'required_if:status,complete|nullable',
             'totalFlowWeight' => 'required',
             'totalBatchWeight' => 'required',
             'status' => 'required',
-
-            // temp/time validation
-            'split' => 'required_if:status,complete',
-            'totTime' => 'required_if:status,complete',
-            'resTempFirst' => 'required_if:status,complete',
-            'exitTempFirst' => 'required_if:status,complete',
-            'resTempScnd' => 'required_if:status,complete',
-            'exitTempScnd' => 'required_if:status,complete',
 
             // bag/pillow validations
             'bag_number' => 'sometimes|required|string',

@@ -59,21 +59,21 @@ Route::middleware(['auth'])->group(function () {
     /* Route::get('export', 'ImportExportController@export')->name('export'); */
     Route::get('import_csv', 'ImportExportController@getImport')->name('import_csv');
     Route::post('import', 'ImportExportController@import')->name('import');
-    Route::get('/admin/edit', 'ExportsController@exportView')->name('batch_report');
+    //Route::get('/admin/edit', 'ExportsController@exportView')->name('batch_report');
     Route::get('/admin/edit/download', 'ExportsController@export')->name('report_download');
 
     // REPORTS ROUTES
     Route::get('/reports/bags_submitted', 'PagesController@bagStats')->name('report_bags_submitted');
-
+    Route::get('/reports/disparity_report', 'PagesController@disparityReport')->name('report_disparity');
 
 
     /**
      * Testing Routes
      */
-/*         Route::get('/test_form', function() {
+        Route::get('/test_form', function() {
         $user = Auth::user();
         return view('admin.test', compact('user'));
-    }); */
+    });
     /* Route::post('/test_post', function(Request $request) {
         $data = $request->get();
         dd($data);

@@ -23,6 +23,17 @@ require('./custom_scripts');
 
 window.Vue = require('vue');
 
+import Vuetify from 'vuetify'
+Vue.use(Vuetify, {
+    theme: {
+        primary: '#fdd00c'
+    }
+});
+
+import VeeValidate from 'vee-validate'
+Vue.use(VeeValidate)
+
+export const eventBus = new Vue();
 
 /**
  * The following block of code may be used to automatically register your
@@ -42,9 +53,12 @@ Vue.component('disparity-report', require('./components/DisparityReport.vue').de
 Vue.component('stuffed-table', require('./components/StuffedBatchTable.vue').default)
 Vue.component('batch-times', require('./components/BatchTimes.vue').default);
 Vue.component('stopwatch', require('./components/Stopwatch.vue').default);
-
-/* import VueCsvImport from 'vue-csv-import';
-Vue.component('vue-csv-import', VueCsvImport); */
+Vue.component('vue-footer', require('./components/Footer.vue').default)
+Vue.component('home-nav', require('./components/HomeNav.vue').default)
+Vue.component('vue-import', require('./components/VueImport.vue').default)
+Vue.component('batch-submission', require('./components/BatchSubmission.vue').default)
+Vue.component('user-table', require('./components/views/user/UserTable.vue').default)
+Vue.component('add-user', require('./components/views/user/AddUser.vue').default)
 
 import Datepicker from 'vuejs-datepicker';
 Vue.component('datepicker', Datepicker);
@@ -72,6 +86,69 @@ Vue.component('datepicker', Datepicker);
  */
 const admin = new Vue({
     el: "#admin_index",
+    data() {
+        return {
+            drawer: null,
+            singleItems: [
+                {
+                    title: 'Dashboard',
+                    icon: 'dashboard',
+                    href: '/admin'
+                },
+                {
+                    title: 'Submit Batch',
+                    icon: 'whatshot',
+                    href: '/submit'
+                },
+                {
+                    title: 'Import CSV',
+                    icon: 'publish',
+                    href: '/import_csv'
+                }
+            ],
+            dropDownItems: [
+                {
+                    active: false,
+                    title: 'Reports',
+                    icon: 'pie_chart',
+                    items: [
+                        {
+                            title: 'Submitted Bags',
+                            href: '/reports/bags_submitted'
+                        },
+                        {
+                            title: 'Disparity Report',
+                            href: '/reports/disparity_report'
+                        }
+                    ],
+                },
+                {
+                    active: false,
+                    title: 'User Management',
+                    icon: 'supervisor_account',
+                    items: [
+                        {
+                            title: 'Users',
+                            href: '/admin/users'
+                        },
+                        {
+                            title: 'Add User',
+                            href: '/admin/users/create'
+                        }
+                    ],
+                }
+
+            ]
+        }
+    },
+    methods: {
+        submitForm() {
+            let logoutForm = document.getElementById("logout-form");
+            logoutForm.submit();
+        }
+    }
+
+
 /*     data: {
         step: 1,
         bagIndex: 1,
@@ -243,3 +320,4 @@ const admin = new Vue({
         }
     } */
 });
+
