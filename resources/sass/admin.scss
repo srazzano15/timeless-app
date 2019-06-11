@@ -1,0 +1,38 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons');
+
+// Variables
+@import 'variables';
+
+// vendors
+//@import url('https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css');
+@import url('https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css');
+
+
+// Abstracts
+@import 'abstracts/mixins';
+@import 'abstracts/utilities';
+
+// Base
+@import 'base/base';
+@import 'base/typography';
+
+// Pages
+@import 'pages/login';
+@import 'pages/admin';
+
+// layouts
+@import 'layout/footer';
+@import 'layout/header';
+@import 'layout/navigation';
+@import 'layout/tables';
+@import 'layout/dashboard';
+
+// components
+@import 'components/buttons';
+@import 'components/form';
+@import 'components/cards';
+
+// themes
+@import 'themes/colors';

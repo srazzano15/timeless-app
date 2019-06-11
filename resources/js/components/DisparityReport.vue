@@ -1,4 +1,138 @@
 <template>
+	<v-content>
+		<v-container>
+			<v-card>
+				<v-card-title
+					primary-title
+				>
+					<div class="display-1">Disparity Report</div>
+					<v-spacer></v-spacer>
+					<v-text-field
+						v-model="searchFilter"
+						append-icon="search"
+						label="Search"
+						single-line
+						hide-details
+					></v-text-field>
+				</v-card-title>
+				<v-data-table
+						:headers="headers"
+						:items="results"
+						:search="searchFilter"
+				>
+					<template v-slot:items="props">
+						<td>{{ props.item.bag_match.batch_id }}</td>
+						<td>{{ props.item.bag_id }}</td>
+						<td>{{ props.item.bag_weight }}</td>
+						<td>{{ props.item.bag_match.bag_weight }}</td>
+            <td>{{ props.item.bag_weight - props.item.bag_match.bag_weight }}</td>
+						<td>{{ props.item.created_at }}</td>
+					</template>
+
+					<template v-slot:footer>
+						<v-btn 
+							@click="downloadCsv"
+							color="primary"
+							class="black--text"
+						>Export CSV</v-btn>
+					</template>
+				</v-data-table>
+			</v-card>
+		</v-container>
+	</v-content>
+</template>
+
+<script>
+
+import axios from 'axios'
+import Papa from 'papaparse'
+
+export default {
+	data() {
+		return {
+			results: [],
+			export: [],
+			headers: [
+				{
+					text: 'Batch ID',
+					value: 'batch_id',
+					align: 'left'
+				},
+				{
+					text: 'Package ID',
+					value: 'package_id'
+				},
+				{
+					text: 'Gross Weight',
+					value: 'gross_weight'
+				},
+				{
+					text: 'Input Bag Weight',
+					value: 'bag_weight'
+                },
+                {
+					text: 'Disparity',
+					value: 'disparity'
+				},
+				{
+					text: 'Submit Date',
+					value: 'created_at'
+				}
+			],
+			searchFilter: '',
+		}
+	},
+	created() {
+		window.axios
+			.get('/api/disparity_data')
+			.then(r => {
+				this.results = r.data
+				this.exportObject()
+			})
+			.catch(e => {
+				console.log(e)
+			})
+	},
+	methods: {
+		downloadCsv() {
+			// data from API
+			let csv = Papa.unparse(this.results);
+			// new blob for csv
+			let csvData = new Blob([csv], {type: 'text/csv;charset=utf-8'});
+			// object url
+			let csvUrl = window.URL.createObjectURL(csvData);
+
+			let downloadBtn = document.createElement('a');
+			downloadBtn.href = csvUrl;
+			downloadBtn.setAttribute('download', 'bags_report.csv');
+			downloadBtn.click();
+    },
+		exportObject() {
+			// callback method to follow the ajax response
+			// run a loop over each index and push object into the export data object
+			for (let i = 0; i < this.results.length; i++) {
+					// premake the disparity equation and return as var
+					let disp = this.results[i].bag_weight - this.results[i].bag_match.bag_weight;
+					// our object
+					let object = {
+							'Batch ID' : this.results[i].bag_match.batch_id,
+							'Package ID' : this.results[i].bag_id,
+							'Gross Weight' : this.results[i].bag_weight,
+							'Input Bag Weight' : this.results[i].bag_match.bag_weight,
+							'Disparity' : disp,
+							'Date Submitted' : this.results[i].created_at
+					}
+					this.export.push(object)
+			}
+		}
+	}
+}
+</script>
+
+
+
+
+<!--template>
     <div class="row base__table--full">
         <h3>Disparity Report</h3>
         <hr>
@@ -39,7 +173,7 @@
         </p>
         
     </div>
-</template>
+</<!--template>
 
 <script>
 
@@ -151,4 +285,4 @@ th {
     cursor: pointer;
 }
 
-</style>
+</style>-->

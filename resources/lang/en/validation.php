@@ -125,8 +125,8 @@ return [
     */
 
     'custom' => [
-        'dfilled' => [
-            'required' => 'Please enter a date filled!',
+        'dFilled' => [
+            'required' => 'Please enter what date this batch was filled!',
         ],
         'drun' => [
             'required' => 'Please enter a date run!',
@@ -143,7 +143,29 @@ return [
             'invalid' => 'The invite code :CODE is invalid.',
             'maxed' => 'The invite code :CODE has already been used the maximum number of times.',
             'restricted' => 'The invite code :CODE belongs to another user.',
-        ]
+        ],
+        'submitter' => [
+            'required' => 'Submitter is required.'
+        ],
+        'totalPillowWeight' => [
+            'required' => 'There is something wrong with your Total Pillow Weight'
+        ],
+        'totalBagWeight' => [
+            'required' => 'There is something wrong with your Total Bag Weight'
+        ],
+        'package_id.*' => [
+            'required' => 'Something went wrong with your bag submission inputs',
+            'distinct' => 'You can\'t submit duplicate Package IDs! Please edit and resubmit.'
+        ],
+        'bag_weight.*' => [
+            'required' => 'Something went wrong with your bag weight inputs. Please check and try again.'
+        ],
+        'flow_weight.*' => [
+            'required' => 'Something went wrong with your flower weight inputs. Please check and try again.'
+        ],
+        'pillow.*' => [
+            'required' => 'Something went wrong with your pillow weight inputs. Please check and try again.'
+        ],
     ],
 
     /*

@@ -46,7 +46,7 @@
             </div>
         </div>
     </div> --}}
-    <div class="row">
+    {{-- <div class="row">
 
     <div class="card col s12 m6 offset-m3">
         <div class="card-content">
@@ -81,17 +81,37 @@
                     <span class="form__msg--success"> {{ $message }} </span>
                 @endif
             </form>
-
+ --}}
             
-            
+    <vue-import>
+        
+        <template v-slot:import-form> 
+            <form id="import-form" action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input type="file" name="file" accept=".csv">
+            </form>
+        </template>
+        
+        <template v-slot:success>
+            @if ($message = Session::get('success'))
+                <v-alert
+                    type="success"
+                    :value="true"
+                >File Imported Successfully!</v-alert>
+            @endif                    
+        </template>
 
-        </div>
+    </vue-import>
+
+{{--         </div>
         
     </div>
-</div>
-<div class="row">
-    
-</div>
+</div> --}}
+
 
 
 @endsection
+
+@push('scripts')
+
+@endpush

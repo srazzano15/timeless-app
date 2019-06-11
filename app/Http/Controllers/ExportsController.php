@@ -18,8 +18,8 @@ class ExportsController extends Controller
         $user = Auth::user();
         $rows = ImportData::has('bagMatch')->get();
 
-        return view('admin.crud.edit', compact('rows', 'user'));
-
+        //return view('admin.crud.edit', compact('rows', 'user'));
+        /* return view('reports.disparity_report'); */
     }
 
     public function export()

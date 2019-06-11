@@ -3,7 +3,14 @@
 
 @section('content')
 
-    <form action="{{ route('users.store') }}" method="post" style="padding-top: 25px;">
+<add-user form-route="{{ route('users.store') }}">
+    <template v-slot:csrf>
+        @csrf
+    </template>
+</add-user>
+
+
+    {{-- <form action="{{ route('users.store') }}" method="post" style="padding-top: 25px;">
         @csrf
             <div class="row">
                 <div class="input-field col s12 m6">
@@ -40,7 +47,7 @@
             </tbody>
         </table>
     </div>
-
+ --}}
 
 @endsection
 

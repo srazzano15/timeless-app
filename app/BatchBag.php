@@ -24,11 +24,19 @@ class BatchBag extends Model
      */
     public function setPackageIdAttribute($value)
     {
-        $this->attributes['package_id'] = str_replace(' ', '', ucwords(strtolower($value)));
+        $this->attributes['package_id'] = str_replace(' ', '', $value);
+        $this->attributes['package_id'] = str_replace('trim', 'Trim', $value);
+        $this->attributes['package_id'] = str_replace('timeless', 'Timeless', $value);
+        $this->attributes['package_id'] = str_replace('--', '-', $value);
+        $this->attributes['package_id'] = str_replace('extract', 'Extract', $value);
     }
-
-    public function importMatch()
+    // pre-format data as it is going into DB for uniformity
+    public function setBatchIdAttribute($value)
+    {
+        $this->attributes['batch_id'] = str_replace(' ', '', strtoupper($value));
+    }
+    /* public function importMatch()
     {
         return $this->belongsTo('App\ImportData', 'bag_number', 'bag_id');
-    }
+    } */
 }

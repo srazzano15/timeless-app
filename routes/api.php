@@ -5,6 +5,8 @@ use App\BatchBag;
 use App\ImportData;
 use App\BatchSubmit;
 use App\User;
+//use Doorman;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -59,4 +61,8 @@ Route::get('/all_users', function() {
 Route::get('/imported', function() {
     $data = ImportData::doesntHave('bagMatch')->get();
     return $data;
+});
+Route::get('/invites', function() {
+    $invites = DB::table('invites')->where('uses', '=', 0)->get();
+    return $invites;
 });

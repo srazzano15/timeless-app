@@ -1,15 +1,15 @@
 <template>
-    <div class="row base__table--full">
+<!--     <div class="row base__table--full">
         <h3>Stuffed Batches</h3>
         <hr>
-<!--         <div class="row">
+        <div class="row">
             <div class="input-field col s6 m3 l3">
                 <input type="text" v-model="searchFilter" placeholder="Search for a Package ID">
             </div>
             <div class="input-field col s6 m3 l3 offset-m6 offset-l6 offset-xl6 p-t">
                 <a id="bagsStatsExport" @click="downloadCsv" type="button" class="btn btn--p">Export CSV</a>
             </div>
-        </div> -->
+        </div>
         <table class="highlight reports__table">
             <thead>
                 <tr>
@@ -40,7 +40,40 @@
             <button class="btn btn--lk" @click="nextPage">Next</button>
         </p>
         
-    </div>
+    </div> -->
+	<v-content>
+		<v-container>
+			<v-card>
+				<v-card-title
+					primary-title
+				>
+					<div class="display-1">Stuffed Batches</div>
+					<v-spacer></v-spacer>
+					<v-text-field
+						v-model="searchFilter"
+						append-icon="search"
+						label="Search"
+						single-line
+						hide-details
+					></v-text-field>
+				</v-card-title>
+				<v-data-table
+						:headers="headers"
+						:items="results"
+						:search="searchFilter"
+				>
+					<template v-slot:items="props">
+						<td>{{ props.item.submitter }}</td>
+						<td >{{ props.item.batch_id }}</td>
+						<td >{{ props.item.cooler }}</td>
+						<td >{{ props.item.total_batch_weight }}</td>
+						<td >{{ props.item.total_flower_weight }}</td>
+						<td >{{ props.item.created_at }}</td>
+					</template>
+				</v-data-table>
+			</v-card>
+		</v-container>
+	</v-content>
 </template>
 
 <script>
@@ -50,6 +83,34 @@ import Papa from 'papaparse';
 export default {
     data() {
         return {
+						headers: [
+							{
+								text: 'Submitter ID',
+								align: 'left',
+								sortable: false,
+								value: 'submitter'
+							},
+							{
+								text: 'Batch ID',
+								value: 'batch_id'
+							},
+							{
+								text: 'Cooler',
+								value: 'cooler'
+							},
+							{
+								text: 'Total Flower Weight',
+								value: 'flower_weight'
+							},
+							{
+								text: 'Total Pillow Weight',
+								value: 'pillow_weight'
+							},
+							{
+								text: 'Submit Date',
+								value: 'submit_date'
+							}
+						],
             results: [],
             currentSort: 'batch_id',
             currentSortDir: 'asc',
@@ -61,7 +122,7 @@ export default {
     },
     created() {
         window.axios
-            .get('api/stuffed_batches')
+            .get('/api/stuffed_batches')
             .then(response => {
                 this.results = response.data;
             })
@@ -71,7 +132,7 @@ export default {
         routeFormat(id) {
             return 'submit/' + id + '/edit';
         },
-        sortCol(col) {
+        /* sortCol(col) {
             // if col == current sort, reverse direction
             if (col === this.currentSort) {
                 this.currentSortDir = this.currentSortDir === 'asc' ? 'desc': 'asc';
@@ -85,7 +146,7 @@ export default {
         prevPage() {
             if (this.currentPage > 1)
             this.currentPage--;
-        },
+        }, */
         downloadCsv() {
             // data from API
             let csv = Papa.unparse(this.export);
@@ -118,7 +179,7 @@ export default {
             }
         }
     },
-    computed: {
+/*     computed: {
         sortedResults() {
             let filter = this.searchFilter.toLowerCase();
             let results = this.results.filter((row, index) => {
@@ -145,7 +206,7 @@ export default {
             return this.currentPage = 1;
         },
 
-    }
+    } */
 }
 </script>
 

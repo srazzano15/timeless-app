@@ -4,7 +4,7 @@
             <span >
 
 
-                Timeless Batch Master - Version 1.1.7 <br>
+                Timeless Batch Master - Version 1.2.0 <br>
 
                 Developed by Razzbury Holdings LLC {{ Carbon::now()->format('Y') }}.
 

@@ -24,6 +24,11 @@ class PagesController extends Controller
         return view('reports.submitted_bags');
     }
 
+    public function disparityReport()
+    {
+        return view('reports.disparity_report');
+    }
+
     public function admin() 
     {
         // get current user
