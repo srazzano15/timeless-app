@@ -59,6 +59,9 @@ Vue.component('vue-import', require('./components/VueImport.vue').default)
 Vue.component('batch-submission', require('./components/BatchSubmission.vue').default)
 Vue.component('user-table', require('./components/views/user/UserTable.vue').default)
 Vue.component('add-user', require('./components/views/user/AddUser.vue').default)
+Vue.component('imported-data', require('./components/views/reports/ImportedData.vue').default)
+
+
 
 import Datepicker from 'vuejs-datepicker';
 Vue.component('datepicker', Datepicker);
@@ -119,6 +122,10 @@ const admin = new Vue({
                         {
                             title: 'Disparity Report',
                             href: '/reports/disparity_report'
+                        },
+                        {
+                            title: 'Imported Data',
+                            href: '/reports/imported_data'
                         }
                     ],
                 },

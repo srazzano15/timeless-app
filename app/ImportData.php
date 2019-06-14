@@ -17,6 +17,19 @@ class ImportData extends Model
         'flower_weight',
     ];
 
+    public function setBatchIdAttribute($value)
+    {
+        $this->attributes['batch_id'] = str_replace(' ', '', strtoupper($value));
+    }
+
+    public function setBagIdAttribute($value)
+    {
+        $this->attributes['bag_id'] = str_replace(' ', '', $value);
+        $this->attributes['bag_id'] = str_replace('trim', 'Trim', $value);
+        $this->attributes['bag_id'] = str_replace('timeless', 'Timeless', $value);
+        $this->attributes['bag_id'] = str_replace('--', '-', $value);
+        $this->attributes['bag_id'] = str_replace('extract', 'Extract', $value);
+    }
 
     public function bagMatch()
     {

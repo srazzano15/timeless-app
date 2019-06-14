@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\ImportData;
 use App\Batchbags;
+use App\Http\Resources\ImportData as Imported;
 
 
 class ApiEndpointController extends Controller
@@ -43,4 +44,17 @@ class ApiEndpointController extends Controller
         return BatchSubmit::where('status', 'Stuffed')->get();
     }
 
+    /**
+     * Endpoint for deleting imported bags because of potential duplicates
+     * 
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function deleteImportedData($id)
+    {
+        $imported = App\ImportData::find($id);
+        $imported->delete();
+        
+        return response()->json();
+    }
 }
