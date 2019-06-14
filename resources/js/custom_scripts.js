@@ -1,8 +1,8 @@
 $(function() {
 
 // check to make sure shit is working
-testFunction = () => {console.log(`This shit works 2!`)};
-window.testFunction();
+/* testFunction = () => {console.log(`This shit works 2!`)};
+window.testFunction(); */
 
 
 /**
@@ -26,7 +26,7 @@ window.testFunction();
  * ------------------------------------------------------------------------ *
  *
  */
-    var hours = (minutes = seconds = milliseconds = 0);
+/*     var hours = (minutes = seconds = milliseconds = 0);
     var prev_hours = (prev_minutes = prev_seconds = prev_milliseconds = undefined);
     var timeUpdate;
     let splitCount = 0;
@@ -215,7 +215,7 @@ window.testFunction();
 
         return ++i;
         }
-    };
+    }; */
 /*--------------------------------------------------------------------------*/
 
 /**
@@ -227,7 +227,7 @@ window.testFunction();
  *
  */
 
-    weightCalculator = ( field, sumField ) => {
+/*     weightCalculator = ( field, sumField ) => {
 
         // set total value variable and set param for input column array
         let total = 0;
@@ -247,9 +247,9 @@ window.testFunction();
         });
 
     }
-
-    weightCalculator(`.flower_weight`, `#totalFlowerWeight`);
-    weightCalculator(`.pillow_weight`, `#totalBatchWeight`);
+ */
+   /*  weightCalculator(`.flower_weight`, `#totalFlowerWeight`);
+    weightCalculator(`.pillow_weight`, `#totalBatchWeight`); */
 
 
 /**
@@ -261,7 +261,7 @@ window.testFunction();
  * ------------------------------------------------------------------------ *
  *
  */
-    dynamicRows = ( add, rmv, tbl, i) => {
+/*     dynamicRows = ( add, rmv, tbl, i) => {
         i = 8
 
         $(add).click(function() {
@@ -285,11 +285,11 @@ window.testFunction();
             }
         });
 
-    }
+    } */
 
-    dynamicRows( `#addRow`, `#rmvRow`, `row` );
+/*     dynamicRows( `#addRow`, `#rmvRow`, `row` );
     dynamicRows( `#addPillow`, `#rmvPillow`, `pillow` );
-    dynamicRows( `#adminAddRow`, '#adminRmvRow', `adminRow` )
+    dynamicRows( `#adminAddRow`, '#adminRmvRow', `adminRow` ) */
 
 
     /* adminRows = ( add, rmv, i) => {
@@ -336,7 +336,7 @@ window.testFunction();
 /**
  * Beginning of Admin Panel scripts
  */
-    $('#selectAllBoxes').click(function(event){
+/*     $('#selectAllBoxes').click(function(event){
 
         if(this.checked) {
 
@@ -362,13 +362,13 @@ window.testFunction();
 
 
 
-
+ */
 
     /**************** User Profile **********************/
 
 
 
-    var panels = $('.user-infos');
+/*     var panels = $('.user-infos');
     var panelsButton = $('.dropdown-user');
     panels.hide();
 
@@ -397,7 +397,7 @@ window.testFunction();
     $('[data-toggle="tooltip"]').tooltip();
 
 
-
+ */
 }); // end function
 
 $(document).ready(function () {

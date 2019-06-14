@@ -5,6 +5,7 @@ use App\BatchBag;
 use App\ImportData;
 use App\BatchSubmit;
 use App\User;
+use App\Http\Resources\ImportData as Imported;
 //use Doorman;
 
 
@@ -66,3 +67,8 @@ Route::get('/invites', function() {
     $invites = DB::table('invites')->where('uses', '=', 0)->get();
     return $invites;
 });
+
+/**
+ * ImportData Resource Endpoints
+ */
+Route::apiResource('/reports/imported_data', 'ImportDataController');

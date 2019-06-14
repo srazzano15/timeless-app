@@ -65,7 +65,7 @@ Route::middleware(['auth'])->group(function () {
     // REPORTS ROUTES
     Route::get('/reports/bags_submitted', 'PagesController@bagStats')->name('report_bags_submitted');
     Route::get('/reports/disparity_report', 'PagesController@disparityReport')->name('report_disparity');
-
+    Route::get('/reports/imported_data', 'PagesController@importedData')->name('imported_data');
 
     /**
      * Testing Routes

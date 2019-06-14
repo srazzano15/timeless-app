@@ -39,20 +39,20 @@ export default {
     return {
       headers: [
         {
-          'text': 'ID',
-          'value': 'id'
+          text: 'ID',
+          value: 'id'
         },
         {
-          'text': 'Name',
-          'value': 'name'
+          text: 'Name',
+          value: 'name'
         },
         {
-          'text': 'Email',
-          'value': 'email'
+          text: 'Email',
+          value: 'email'
         },
         {
-          'text': 'Date Registered',
-          'value': 'created_at'
+          text: 'Date Registered',
+          value: 'created_at'
         }
       ],
       results: [],

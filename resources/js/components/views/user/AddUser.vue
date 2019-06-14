@@ -72,16 +72,16 @@ export default {
       email: null,
       headers: [
         {
-          'text': 'Invite Code',
-          'value': 'code'
+          text: 'Invite Code',
+          value: 'code'
         },
         {
-          'text': 'Email Associated',
-          'value': 'email'
+          text: 'Email Associated',
+          value: 'email'
         },
         {
-          'text': 'Date Generated',
-          'value': 'created_at'
+          text: 'Date Generated',
+          value: 'created_at'
         }
       ],
       searchFilter: '',

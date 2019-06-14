@@ -29,6 +29,11 @@ class PagesController extends Controller
         return view('reports.disparity_report');
     }
 
+    public function importedData()
+    {
+        return view('reports.imported_data');
+    }
+
     public function admin() 
     {
         // get current user
