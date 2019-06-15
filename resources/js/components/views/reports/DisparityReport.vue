@@ -19,13 +19,14 @@
 						:headers="headers"
 						:items="results"
 						:search="searchFilter"
+						must-sort
 				>
 					<template v-slot:items="props">
 						<td>{{ props.item.bag_match.batch_id }}</td>
 						<td>{{ props.item.bag_id }}</td>
 						<td>{{ props.item.bag_weight }}</td>
 						<td>{{ props.item.bag_match.bag_weight }}</td>
-            <td>{{ props.item.bag_weight - props.item.bag_match.bag_weight }}</td>
+						<td>{{ props.item.disparity }}</td>
 						<td>{{ props.item.created_at }}</td>
 					</template>
 
@@ -46,6 +47,7 @@
 
 import axios from 'axios'
 import Papa from 'papaparse'
+import moment from 'moment'
 
 export default {
 	data() {
@@ -55,22 +57,22 @@ export default {
 			headers: [
 				{
 					text: 'Batch ID',
-					value: 'batch_id',
+					value: 'bag_match.batch_id',
 					align: 'left'
 				},
 				{
 					text: 'Package ID',
-					value: 'package_id'
+					value: 'bag_id'
 				},
 				{
 					text: 'Gross Weight',
-					value: 'gross_weight'
+					value: 'bag_weight'
 				},
 				{
 					text: 'Input Bag Weight',
-					value: 'bag_weight'
-                },
-                {
+					value: 'bag_match.bag_weight'
+				},
+				{
 					text: 'Disparity',
 					value: 'disparity'
 				},
@@ -87,6 +89,7 @@ export default {
 			.get('/api/disparity_data')
 			.then(r => {
 				this.results = r.data
+				this.format()
 				this.exportObject()
 			})
 			.catch(e => {
@@ -96,7 +99,7 @@ export default {
 	methods: {
 		downloadCsv() {
 			// data from API
-			let csv = Papa.unparse(this.results);
+			let csv = Papa.unparse(this.export);
 			// new blob for csv
 			let csvData = new Blob([csv], {type: 'text/csv;charset=utf-8'});
 			// object url
@@ -104,27 +107,36 @@ export default {
 
 			let downloadBtn = document.createElement('a');
 			downloadBtn.href = csvUrl;
-			downloadBtn.setAttribute('download', 'bags_report.csv');
+			downloadBtn.setAttribute('download', `disparity_report_${moment().format('MM-DD-YY')}.csv`);
 			downloadBtn.click();
     },
 		exportObject() {
 			// callback method to follow the ajax response
 			// run a loop over each index and push object into the export data object
 			for (let i = 0; i < this.results.length; i++) {
-					// premake the disparity equation and return as var
-					let disp = this.results[i].bag_weight - this.results[i].bag_match.bag_weight;
 					// our object
 					let object = {
-							'Batch ID' : this.results[i].bag_match.batch_id,
-							'Package ID' : this.results[i].bag_id,
-							'Gross Weight' : this.results[i].bag_weight,
-							'Input Bag Weight' : this.results[i].bag_match.bag_weight,
-							'Disparity' : disp,
-							'Date Submitted' : this.results[i].created_at
+						'Batch ID' : this.results[i].bag_match.batch_id,
+						'Package ID' : this.results[i].bag_id,
+						'Gross Weight' : this.results[i].bag_weight,
+						'Input Bag Weight' : this.results[i].bag_match.bag_weight,
+						'Disparity' : this.results[i].disparity,
+						'Date Submitted' : this.results[i].created_at
 					}
 					this.export.push(object)
 			}
-		}
+		},
+		format() {
+			for (let i = 0; i < this.results.length; i++) {
+					// format the date as it is coming in through the request
+					let t = moment(this.results[i].created_at)
+					this.results[i].created_at = t.format('MM-DD-YYYY')
+					// premake the disparity values and create as new object property
+					let d = this.results[i].bag_weight - this.results[i].bag_match.bag_weight
+					this.results[i].disparity = d
+			}
+		},
+		
 	}
 }
 </script>

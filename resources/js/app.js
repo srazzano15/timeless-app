@@ -7,19 +7,12 @@
 
 require('./bootstrap');
 
-
 /**
  * We will add in our own custom scripts made for the purpose of making
  * custom JS apps work as well as scripts for plugins.
  */
 
 require('./custom_scripts');
-
-/**
- * Papa Parse is a neat JSON -> CSV utility and vice versa.
- */
-
-
 
 window.Vue = require('vue');
 
@@ -44,28 +37,22 @@ export const eventBus = new Vue();
  */
 
 /* Vue.component('example-component', require('./components/ExampleComponent.vue')); */
-Vue.component('dashboard', require('./components/Dashboard.vue').default)
-Vue.component('text-field', require('./components/TextInput.vue').default);
-Vue.component('bag-form', require('./components/BagForm.vue').default);
-Vue.component('admin-nav', require('./components/AdminNav.vue').default);
-Vue.component('batch-statistics', require('./components/BatchStatistics.vue').default);
-Vue.component('disparity-report', require('./components/DisparityReport.vue').default);
-Vue.component('stuffed-table', require('./components/StuffedBatchTable.vue').default)
-Vue.component('batch-times', require('./components/BatchTimes.vue').default);
-Vue.component('stopwatch', require('./components/Stopwatch.vue').default);
-Vue.component('vue-footer', require('./components/Footer.vue').default)
-Vue.component('home-nav', require('./components/HomeNav.vue').default)
-Vue.component('vue-import', require('./components/VueImport.vue').default)
-Vue.component('batch-submission', require('./components/BatchSubmission.vue').default)
+//Vue.component('dashboard', require('./components/Dashboard.vue').default)
+//Vue.component('text-field', require('./components/TextInput.vue').default);
+//Vue.component('bag-form', require('./components/BagForm.vue').default);
+//Vue.component('admin-nav', require('./components/AdminNav.vue').default);
+Vue.component('batch-statistics', require('./components/views/reports/BatchStatistics.vue').default);
+Vue.component('disparity-report', require('./components/views/reports/DisparityReport.vue').default);
+Vue.component('stuffed-table', require('./components/views/reports/StuffedBatchTable.vue').default)
+Vue.component('batch-times', require('./components/layout/BatchTimes.vue').default);
+Vue.component('stopwatch', require('./components/layout/Stopwatch.vue').default);
+Vue.component('vue-footer', require('./components/layout/Footer.vue').default)
+//Vue.component('home-nav', require('./components/HomeNav.vue').default)
+Vue.component('vue-import', require('./components/views/pages/VueImport.vue').default)
+Vue.component('batch-submission', require('./components/views/pages/BatchSubmission.vue').default)
 Vue.component('user-table', require('./components/views/user/UserTable.vue').default)
 Vue.component('add-user', require('./components/views/user/AddUser.vue').default)
 Vue.component('imported-data', require('./components/views/reports/ImportedData.vue').default)
-
-
-
-import Datepicker from 'vuejs-datepicker';
-Vue.component('datepicker', Datepicker);
-
 
 
 // const files = require.context('./', true, /\.vue$/i)
