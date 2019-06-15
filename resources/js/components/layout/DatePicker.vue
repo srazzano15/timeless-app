@@ -1,6 +1,6 @@
 
 
-<script>
+<!--<script>
 
 
 export default {
@@ -17,4 +17,4 @@ export default {
         }
     } */
 }
-</script>
+</script>-->

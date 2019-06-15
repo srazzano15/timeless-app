@@ -8,18 +8,16 @@
 <!-- CSRF Token -->
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
-
-<!--Styles-->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-<!--Font Awesome 5-->
-<link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+<!-- Fonts -->
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
 <!--Internal Styles-->
+<link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+
 <link rel="shortcut icon" href="{{ asset('images/timeless_drip_logo.png') }}" type="image/x-icon">
 
 {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> --}}
 <!-- MaterializeCSS Styles -->
-<link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
-<!--Laravel DataTables-->
+
 
 <style>
   [v-cloak] {
@@ -52,7 +50,7 @@
       app
     >
       <v-toolbar-side-icon class="yel--text" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title class="white--text display-1">Timeless Batch Master</v-toolbar-title>
+      <v-toolbar-title class="white--text headline">Timeless Batch Master</v-toolbar-title>
       <v-spacer></v-spacer>
     </v-toolbar>
     

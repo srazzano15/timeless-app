@@ -16,9 +16,10 @@
 					></v-text-field>
 				</v-card-title>
 				<v-data-table
-						:headers="headers"
-						:items="bags"
-						:search="searchFilter"
+					:headers="headers"
+					:items="bags"
+					:search="searchFilter"
+					must-sort
 				>
 					<template v-slot:items="props">
 						<td >{{ props.item.batch_id }}</td>
@@ -45,6 +46,7 @@
 
 import axios from 'axios'
 import Papa from 'papaparse'
+import moment from 'moment'
 
 export default {
 	data() {
@@ -58,19 +60,19 @@ export default {
 				},
 				{
 					text: 'Package ID',
-					value: 'package_id'
+					value: 'package_id',
 				},
 				{
 					text: 'Bag Weight',
-					value: 'bag_weight'
+					value: 'bag_weight',
 				},
 				{
 					text: 'Flower Weight',
-					value: 'flower_weight'
+					value: 'flower_weight',
 				},
 				{
 					text: 'Submit Date',
-					value: 'created_at'
+					value: 'created_at',
 				}
 			],
 			searchFilter: '',
@@ -81,6 +83,7 @@ export default {
 			.get('/api/bag_stats')
 			.then(r => {
 				this.bags = r.data
+				this.format()
 			})
 			.catch(e => {
 				console.log(e)
@@ -97,8 +100,14 @@ export default {
 
 			let downloadBtn = document.createElement('a');
 			downloadBtn.href = csvUrl;
-			downloadBtn.setAttribute('download', 'bags_report.csv');
+			downloadBtn.setAttribute('download', `bags_report_${moment().format('MM-DD-YY')}.csv`);
 			downloadBtn.click();
+		},
+		format() {
+			for (let i = 0; i < this.bags.length; i++) {
+				let t = moment(this.bags[i].created_at)
+				this.bags[i].created_at	= t.format('MM-DD-YYYY')			
+			}
 		}
 	}
 }
