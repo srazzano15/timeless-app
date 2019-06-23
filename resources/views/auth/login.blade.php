@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row">
+ {{--    <div class="row">
         <div class="col sm12 m6 offset-m3">
             <div class="card center-align">
                 <div class="card-title">{{ __('Login') }}</div>
@@ -67,5 +67,12 @@
             </div>
         </div>
     </div>  
-</div>
+</div> --}}
+<v-app>
+<vue-login form-route="{{ route('login') }}">
+    <template v-slot:csrf>
+        @csrf
+    </template>
+</vue-login>
+</v-app>
 @endsection

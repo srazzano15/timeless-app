@@ -23,6 +23,7 @@ Vue.use(Vuetify, {
     }
 });
 
+
 import VeeValidate from 'vee-validate'
 Vue.use(VeeValidate)
 
@@ -53,8 +54,9 @@ Vue.component('batch-submission', require('./components/views/pages/BatchSubmiss
 Vue.component('user-table', require('./components/views/user/UserTable.vue').default)
 Vue.component('add-user', require('./components/views/user/AddUser.vue').default)
 Vue.component('imported-data', require('./components/views/reports/ImportedData.vue').default)
-
-
+Vue.component('vue-login', require('./components/views/pages/LoginForm.vue').default)
+Vue.component('home-index', require('./components/views/pages/HomeIndex.vue').default)
+Vue.component('register-form', require('./components/views/pages/RegisterForm.vue').default)
 // const files = require.context('./', true, /\.vue$/i)
 
 // files.keys().map(key => {

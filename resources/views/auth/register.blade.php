@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row">
+{{--     <div class="row">
         <div class="col sm12 m6 offset-m3">
             <div class="card center-align">
                 <div class="card-title">{{ __('Register') }}</div>
@@ -82,6 +82,10 @@
                 </div>
             </div>
         </div>
-    </div>
-
+    </div> --}}
+<register-form form-route="{{ route('register') }}">
+    <template v-slot:csrf>
+        @csrf
+    </template>
+</register-form>
 @endsection

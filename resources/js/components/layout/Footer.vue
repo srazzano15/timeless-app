@@ -8,7 +8,7 @@
       <v-flex 
 				text-xs-center
 			>
-				Timeless Batch Master - Version 1.2.0 <br>
+				Timeless Batch Master - Version 1.2.3 <br>
 				Developed by Razzbury Holdings LLC - {{ year }}
 			</v-flex>
     </v-layout>
