@@ -77,8 +77,9 @@
 		</div>
 	  </div> --}}
 
-	  {{-- @include('inc.adminDataTable') --}}
-<stuffed-table></stuffed-table>
+		{{-- @include('inc.adminDataTable') --}}
+		<dashboard></dashboard>
+		<stuffed-table></stuffed-table>
 @endsection
 
 @if ($success = true)

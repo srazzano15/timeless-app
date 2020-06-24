@@ -42,3 +42,12 @@
 .pm-b {
     margin-bottom: 15px !important;
 }
+
+.justify-xs-center {
+    @media screen and (max-width: 599px) {
+        justify-content: center !important;
+    }
+}
+.justify-c {
+    justify-content: center !important
+}

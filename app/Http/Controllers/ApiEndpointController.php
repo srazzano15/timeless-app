@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\ImportData;
 use App\Batchbags;
 use App\Http\Resources\ImportData as Imported;
+use DB;
 
 
 class ApiEndpointController extends Controller
@@ -57,4 +58,5 @@ class ApiEndpointController extends Controller
         
         return response()->json();
     }
+    
 }

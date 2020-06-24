@@ -400,6 +400,6 @@ window.testFunction(); */
  */
 }); // end function
 
-$(document).ready(function () {
+/* $(document).ready(function () {
     M.updateTextFields();
-});
+}); */

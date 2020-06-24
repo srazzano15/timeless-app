@@ -45,15 +45,22 @@
     </home-nav> --}}
 
     {{-- TODO: NOT have this be on the root instance and get good --}}
+    
+        
+    
     <v-toolbar
-      class="grey darken-2"
+      class="background--grey"
       app
     >
-      <v-toolbar-side-icon class="yel--text" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+    @auth
+        <v-toolbar-side-icon class="yel--text" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+    @endauth
+      
       <v-toolbar-title class="white--text headline">Timeless Batch Master</v-toolbar-title>
       <v-spacer></v-spacer>
     </v-toolbar>
-    
+
+    @auth
     <v-navigation-drawer
       v-model="drawer"
       absolute
@@ -135,9 +142,11 @@
           @csrf
       </form>
     </v-navigation-drawer>
-
-    @yield('content')
-    
+    @endauth
+    <v-content>
+      @yield('content')
+    </v-content>
+     
     <vue-footer></vue-footer>
   </v-app>
 <!-- Top container -->
@@ -246,7 +255,6 @@
 <!--Custom Scripts-->
 @stack('scripts')
 <!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="{{ asset('js/app.js') }}"></script>
 
 </body>

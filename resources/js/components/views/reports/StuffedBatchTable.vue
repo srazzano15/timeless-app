@@ -1,52 +1,119 @@
 <template>
-	<v-content>
-		<v-container>
-			<v-dialog
-				v-model="dialog"
-			>
-
-			</v-dialog>
+	<v-container>
+		<!-- <v-dialog
+			v-model="modal"
+			max-width="500px"
+		>
 			<v-card>
-				<v-card-title primary-title>
-					<div class="display-1">Stuffed Batches</div>
-					<v-spacer></v-spacer>
-					<v-text-field
-						v-model="searchFilter"
-						append-icon="search"
-						label="Search"
-						single-line
-						hide-details
-					></v-text-field>
-				</v-card-title>
-				<v-data-table
-					:headers="headers"
-					:items="results"
-					:search="searchFilter"
+				<v-card-title 
+					class="elevation-3 grey"
+					primary-title
 				>
-					<template v-slot:items="props">
-						<td>{{ props.item.submitter }}</td>
-						<td>{{ props.item.batch_id }}</td>
-						<td>{{ props.item.cooler }}</td>
-						<td>{{ props.item.total_batch_weight }}</td>
-						<td>{{ props.item.total_flower_weight }}</td>
-						<td>{{ props.item.created_at }}</td>
-						<td class=" layout px-0">
-              <v-btn
-								flat
-                small
-                class="mr-2 grey"
-								outline
-                @click.once="runBatch(props.item)"
-              >
-                Run Batch
-              </v-btn>
-              
-            </td>
-					</template>
-				</v-data-table>
+					<span class="headline white--text">Run Batch</span>
+				</v-card-title>
+				<v-divider></v-divider>
+				<v-card-text class="pa-4">
+					<v-form 
+						ref="form"
+						v-model="valid"
+					>
+						<v-text-field
+							v-model="editedItem.batch_id"
+							label="Batch ID"
+							persistent-hint
+							hint="Include if applicable, else, leave blank"
+							name="batch_id"
+						></v-text-field>
+
+						<v-text-field
+							v-model="editedItem.bag_id"
+							label="Bag ID"
+							name="bag_id"
+							:rules="[rules.required, rules.unique]"
+							required
+							validate-on-blur
+						></v-text-field>
+
+						<v-text-field
+							v-model.number="editedItem.bag_weight"
+							label="Gross Weight"
+							name="bag_weight"
+							:rules="[rules.required]"
+							required
+							validate-on-blur
+						></v-text-field>
+
+						<v-text-field
+							v-model.number="editedItem.flower_weight"
+							label="Flower Weight"
+							name="flower_weight"
+							:rules="[rules.required]"
+							required
+							validate-on-blur
+						></v-text-field>
+					</v-form>
+				</v-card-text>
+
+				<v-card-actions class="pa-4">
+					<v-spacer></v-spacer>
+					
+					<v-btn
+						flat
+						class="black--text "
+						@click.stop="close"
+					>Cancel</v-btn>
+
+					<v-btn
+						color="primary"
+						class="black--text"
+						@click.stop="save"
+						:disabled="valid == false"
+					>Save</v-btn>
+				</v-card-actions>
 			</v-card>
-		</v-container>
-	</v-content>
+		</v-dialog> -->
+		<!--End Modal-->
+
+		<v-card>
+			<v-card-title primary-title>
+				<div class="display-1">Stuffed Batches</div>
+				<v-spacer></v-spacer>
+				<v-text-field
+					v-model="searchFilter"
+					append-icon="search"
+					label="Search"
+					single-line
+					hide-details
+				></v-text-field>
+			</v-card-title>
+			<v-data-table
+				:headers="headers"
+				:items="results"
+				:search="searchFilter"
+			>
+				<template v-slot:items="props">
+					<td>{{ props.item.submitter }}</td>
+					<td>{{ props.item.batch_id }}</td>
+					<td>{{ props.item.cooler }}</td>
+					<td>{{ props.item.total_batch_weight }}</td>
+					<td>{{ props.item.total_flower_weight }}</td>
+					<td>{{ props.item.created_at }}</td>
+					<td class=" layout px-0">
+						<v-btn
+							flat
+							small
+							class="mr-2 grey"
+							outline
+							@click.once="runBatch(props.item)"
+						>
+							Run Batch
+						</v-btn>
+						
+					</td>
+				</template>
+			</v-data-table>
+		</v-card>
+	</v-container>
 </template>
 
 <script>

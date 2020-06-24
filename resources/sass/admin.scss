@@ -8,6 +8,7 @@
 // vendors
 //@import url('https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css');
 @import url('https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css');
+@import '~vuetify/dist/vuetify.min.css';
 
 
 // Abstracts
@@ -36,3 +37,4 @@
 
 // themes
 @import 'themes/colors';
+@import 'themes/logos';

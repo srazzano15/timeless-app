@@ -13,7 +13,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
     
 
     <link rel="shortcut icon" href="{{ asset('images/timeless_drip_logo.png') }}" type="image/x-icon">
@@ -21,19 +21,29 @@
 </head>
 <body>
     <div id="admin_index">
-        <header class="header">
-            <div class="container-fluid">
-                @include('inc.navbar')
-            </div>
-        </header>
-        <main class="main-content">
-            <div class="container">
-                @yield('content')
-            </div>
-        </main>
+        <v-app>
+            <v-toolbar
+							app
+							class="background--grey "
+						>
+							<v-layout
+								class="justify-xs-center"
+							>
+								<img src="images/timeless_drip_logo.png" alt="Timeless Vapes Logo" class="main__logo text-xs-center">
+
+								<v-toolbar-title
+									class="white--text display-1 font-weight-light hidden-xs-only"
+								>Timeless Batch Master</v-toolbar-title>
+							</v-layout>
+
+						</v-toolbar>
+
+        @yield('content')
+        <vue-footer></vue-footer>
+        </v-app>
     </div>
 
-        @include('inc.footer')
+        
     
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
