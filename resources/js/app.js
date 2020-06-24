@@ -15,7 +15,7 @@ require('./bootstrap');
 require('./custom_scripts');
 
 window.Vue = require('vue');
-
+import "vuetify/dist/vuetify.min.css";
 import Vuetify from 'vuetify'
 Vue.use(Vuetify, {
     theme: {
