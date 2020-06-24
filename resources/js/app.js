@@ -38,7 +38,7 @@ export const eventBus = new Vue();
  */
 
 /* Vue.component('example-component', require('./components/ExampleComponent.vue')); */
-//Vue.component('dashboard', require('./components/Dashboard.vue').default)
+Vue.component('dashboard', require('./components/layout/Dashboard.vue').default)
 //Vue.component('text-field', require('./components/TextInput.vue').default);
 //Vue.component('bag-form', require('./components/BagForm.vue').default);
 //Vue.component('admin-nav', require('./components/AdminNav.vue').default);
