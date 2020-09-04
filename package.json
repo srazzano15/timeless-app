@@ -16,7 +16,7 @@
         "laravel-mix": "^4.0.16",
         "lodash": "^4.17.5",
         "moment": "^2.24.0",
-        "papaparse": "^4.6.3",
+        "papaparse": "^5.2.0",
         "resolve-url-loader": "^3.1.0",
         "sass": "^1.21.0",
         "sass-loader": "^7.1.0",
